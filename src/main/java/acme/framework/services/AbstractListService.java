@@ -46,4 +46,5 @@ public interface AbstractListService<R extends UserRole, E> extends //
 	default void onFailure(final Request<E> request, final Response<E> response, final Throwable oops) {
 	}
 
+
 }

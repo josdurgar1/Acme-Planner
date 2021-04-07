@@ -24,4 +24,5 @@ public interface AnonymousUserAccountRepository extends AbstractRepository {
 	@Query("select ua from UserAccount ua where ua.username = ?1")
 	UserAccount findOneUserAccountByUsername(String username);
 
+
 }

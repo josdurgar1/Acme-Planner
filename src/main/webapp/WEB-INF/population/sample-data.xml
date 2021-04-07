@@ -18,5 +18,94 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<import resource="classpath:/WEB-INF/population/conversion-service.xml"/>	
+<!-- Shouts -->
 
+	
+	<bean id="shout01" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2021/02/13 19:39"/>
+		<property name="author" value="John Doe"/>
+		<property name="text" value="I'm happy!"/>
+		<property name="info"><null/></property>	
+	</bean>
+
+	
+
+	<bean id="shout02" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2019/08/09 15:55"/>
+		<property name="author" value="Jane Doe"/>
+		<property name="text" value="I'm the master of my room!"/>
+		<property name="info" value="http://example.org"/>		
+	</bean>
+
+	
+
+	<bean id="shout03" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2020/09/07 00:00"/>
+		<property name="author" value="Foo Bar"/>
+		<property name="text" value="Just turning 50!"/>
+		<property name="info" value="http://happybirthday.com"/>		
+	</bean>
+
+	<bean id="shout04" class="acme.entities.shouts.Shout">
+		<property name="author" value="Leslie Design-Testing"/>
+		<property name="text" value="Woa! This app's so cool!"/>
+		<property name="moment" value="2021/02/13 12:30"/>
+		<property name="info" value="http://sample-app.com"/>
+	</bean>
+
+	
+
+	<bean id="shout05" class="acme.entities.shouts.Shout">
+		<property name="author" value="Luis Delgado"/>
+		<property name="text" value="Creando mi primer bean"/>
+		<property name="moment" value="2021/03/22 12:30"/>
+		<property name="info"><null/></property>
+	</bean>
+
+	
+
+	<bean id="shout06" class="acme.entities.shouts.Shout">
+		<property name="author" value="Daniel Castroviejo"/>
+		<property name="text" value="Creando mi primer bean"/>
+		<property name="moment" value="2021/03/20 12:30"/>
+		<property name="info"><null/></property>
+	</bean>
+
+	
+
+	<bean id="shout07" class="acme.entities.shouts.Shout">
+		<property name="author" value="Holaaaaa"/>
+		<property name="text" value="Creando mi segundo bean"/>
+		<property name="moment" value="2020/03/21 12:30"/>
+		<property name="info"><null/></property>
+	</bean>
+
+	<!-- Tasks-->
+	
+	
+	<bean id="task01" class="acme.entities.tasks.Task">
+		<property name="title" value="Holaaaaa"/>
+		<property name="initialMoment" value="2021/08/31 12:30"/>
+		<property name="endMoment" value="2021/09/25 12:00"/>
+		<property name="description" value="Descripcion aaaaaaaaa"></property>
+		<property name="link"><null/></property>
+	</bean>
+	
+	<bean id="task02" class="acme.entities.tasks.Task">
+		<property name="title" value="Task 2"/>
+		<property name="initialMoment" value="2021/02/05 10:30"/>
+		<property name="endMoment" value="2021/03/31 12:30"/>
+		<property name="description" value="Esta es la segunda Task"></property>
+		<property name="link"><null/></property>
+	</bean>
+	
+	<bean id="task03" class="acme.entities.tasks.Task">
+		<property name="title" value="Task 3"/>
+		<property name="initialMoment" value="2021/04/20 12:30"/>
+		<property name="endMoment" value="2021/05/31 12:30"/>
+		<property name="description" value="Esta es la tercera Task"></property>
+		<property name="link"><null/></property>
+	</bean>
+
+	
 </beans>
