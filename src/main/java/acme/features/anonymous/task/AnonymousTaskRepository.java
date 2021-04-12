@@ -14,9 +14,6 @@ public interface AnonymousTaskRepository extends AbstractRepository{
 	@Query("select t from Task t where t.endMoment > current_timestamp() order by t.initialMoment DESC")
 	Collection<Task> findMany();
 	
-	@Query("select t from Task t where t.endMoment < current_timestamp() order by t.initialMoment DESC")
-	Collection<Task> findManyFinished();
-	
 	@Query("select t from Task t where t.id = ?1 and t.endMoment > current_timestamp()")
 	Task findOneTaskById(int id);
 	

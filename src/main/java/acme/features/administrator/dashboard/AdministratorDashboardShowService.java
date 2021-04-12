@@ -45,7 +45,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert entity != null;
 		assert model != null;
 		request.unbind(entity, model, "totalNumberOfPublicPrivateTasks","averageNumberOfTaskExecutionPeriods", "stdDevTaskExecutionPeriods", "totalNumberOfFinishedNonFinishedTasks",
-			"minExecutionPeriod", "maxExecutionPeriod");
+			"minExecutionPeriod", "maxExecutionPeriod", "maxWorkload");
 	}
 
 	@Override
@@ -59,7 +59,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		Double getStdDevTaskExecutionPeriods;
 		Integer minExecutionPeriod;
 		Integer maxExecutionPeriod;
-		final Double 	maxWorkload;
+		final Double  maxWorkload;
 		final Double  minWorkload;
 		final Double 	averageNumberOfTaskWorkloads;
 		final Double 	stdDevTaskWorkloads;
@@ -71,7 +71,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		getStdDevTaskExecutionPeriods = this.repository.stdDevTaskExecutionPeriods();
 		minExecutionPeriod = this.repository.minExecutionPeriod();
 		maxExecutionPeriod = this.repository.maxExecutionPeriod();
-//		maxWorkload = this.repository.maxWorkload();
+		maxWorkload = this.repository.maxWorkload();
 //		minWorkload = this.repository.minWorkload();
 //		averageNumberOfTaskWorkloads = this.repository.averageNumberOfTaskWorkloads();
 //		stdDevTaskWorkloads = this.repository.stdDevTaskWorkloads();
@@ -86,6 +86,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setStdDevTaskExecutionPeriods(getStdDevTaskExecutionPeriods);
 		result.setMinExecutionPeriod(minExecutionPeriod);
 		result.setMaxExecutionPeriod(maxExecutionPeriod);
+		result.setMaxWorkload(maxWorkload);
 //		result.setMaxWorkload(maxWorkload);
 //		result.setMinWorkload(minWorkload);
 //		result.setAverageNumberOfTaskWorkloads(averageNumberOfTaskWorkloads);
@@ -94,5 +95,6 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		return result;
 	}
+	
 
 }

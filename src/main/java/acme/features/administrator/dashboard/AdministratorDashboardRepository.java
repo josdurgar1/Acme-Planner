@@ -41,8 +41,8 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select max(DATEDIFF(t.endMoment, t.initialMoment)) from Task t")
 	Integer maxExecutionPeriod();
 	
-//	@Query("select max(t.workload) from Task t")
-//	Double maxWorkload();
+	@Query("select max(t.workload) from Task t")
+	Double maxWorkload();
 //	
 //	@Query("select min(t.workload) from Task t")
 //	Double minWorkload();

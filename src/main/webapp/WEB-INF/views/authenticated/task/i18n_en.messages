@@ -11,8 +11,6 @@
 manager.task.list.label.title = Title
 manager.task.list.label.initialMoment = Initial Moment
 manager.task.list.label.endMoment = End Moment
-manager.task.list.label.executionPeriod = Execution Period
-manager.task.list.label.workload = Workload
 manager.task.list.label.description = Description
 
 authenticated.task.form.label.title = Title:

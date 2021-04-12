@@ -10,7 +10,6 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AnonymousShoutRepository extends AbstractRepository {
 	
-//	@Query("select s from Shout s order by s.moment DESC")
 	@Query("select s from Shout s where DATEDIFF(current_timestamp(), s.moment) < 30")
 	Collection<Shout> findMany();
 	

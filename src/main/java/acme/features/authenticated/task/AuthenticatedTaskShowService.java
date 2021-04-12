@@ -47,6 +47,7 @@ public class AuthenticatedTaskShowService implements AbstractShowService<Authent
 			id = request.getModel().getInteger("id");
 			executionPeriod = this.repository.getExecutionPeriod(id);
 			result = this.repository.findOneTaskById(id);
+			result.setWorkload((double) (result.endMoment.getTime() - result.initialMoment.getTime()) / 3600000);
 			result.setExecutionPeriod(executionPeriod);
 			
 			

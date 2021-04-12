@@ -10,7 +10,6 @@ import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
-import org.springframework.data.annotation.Transient;
 
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
@@ -36,11 +35,12 @@ public class Task extends DomainEntity {
 
 	@Temporal(TemporalType.TIMESTAMP)
 	public Date					endMoment;
-
-	@Transient
-	public Double getWorkload(){
-		return (double) (this.endMoment.getTime() - this.initialMoment.getTime()) / 3600000;
-	}
+	
+	public Double workload;
+//
+//	public Double getWorkload(){
+//		return (double) (this.endMoment.getTime() - this.initialMoment.getTime()) / 3600000;
+//	}
 	
 
 	@NotEmpty

@@ -12,10 +12,7 @@ anonymous.task.list.label.title = Titulo
 anonymous.task.list.label.initialMoment = Momento inicial
 anonymous.task.list.label.endMoment = Momento final
 anonymous.task.list.label.executionPeriod = Periodo de ejecución
-anonymous.task.list.label.workload = Carga de Trabajo
 anonymous.task.list.label.description = Descripcion
-anonymous.task.list.label.link = Link
-anonymous.task.list.button.show = Mirar detalles
 
 anonymous.task.form.label.title = Titulo:
 anonymous.task.form.label.initialMoment = Momento inicial:

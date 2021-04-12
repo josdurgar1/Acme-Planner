@@ -20,6 +20,10 @@ public class AnonymousTaskListService implements AbstractListService<Anonymous, 
 	@Autowired
 
 	protected AnonymousTaskRepository repository;
+	
+	public Double getWorkload(final Request<Task> request,  final Task entity, final Model model){
+		return (double) (entity.endMoment.getTime() - entity.initialMoment.getTime()) / 3600000;
+	}
 		
 	@Override
 	public boolean authorise(final Request<Task> request) {
@@ -32,7 +36,7 @@ public class AnonymousTaskListService implements AbstractListService<Anonymous, 
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "title", "initialMoment","endMoment", "workload", "description");
+		request.unbind(entity, model, "title", "initialMoment","endMoment", "description");
 	}
 
 	@Override
@@ -40,13 +44,6 @@ public class AnonymousTaskListService implements AbstractListService<Anonymous, 
 		assert request != null;
 		Collection<Task> result;
 		result = this.repository.findMany();
-		return result;
-	}
-	
-	public Collection<Task> findManyFinished(final Request<Task> request) {
-		assert request != null;
-		Collection<Task> result;
-		result = this.repository.findManyFinished();
 		return result;
 	}
 

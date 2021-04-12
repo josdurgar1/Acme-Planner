@@ -1,5 +1,7 @@
 package acme.features.anonymous.task;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,6 +42,7 @@ public class AnonymousTaskShowService implements AbstractShowService<Anonymous, 
 	public Task findOne(final Request<Task> request) {
 		assert request != null;
 		Double executionPeriod;
+		final Date date = new Date();
 		Task result;
 		int id;
 		
@@ -47,11 +50,17 @@ public class AnonymousTaskShowService implements AbstractShowService<Anonymous, 
 		id = request.getModel().getInteger("id");
 		executionPeriod = this.repository.getExecutionPeriod(id);
 		result = this.repository.findOneTaskById(id);
+		result.setWorkload((double) (result.initialMoment.getTime() - date.getTime()) / 3600000);
+		if(result.initialMoment.getTime()-date.getTime()>0) {
+			result.setWorkload(0.);
+		}
 		result.setExecutionPeriod(executionPeriod);
 		
 		
 
 		return result;
 	}
-
+	public Double getWorkload(final Task entity){
+		return (double) (entity.endMoment.getTime() - entity.initialMoment.getTime()) / 3600000;
+	}
 }
