@@ -50,9 +50,12 @@ public class AnonymousTaskShowService implements AbstractShowService<Anonymous, 
 		id = request.getModel().getInteger("id");
 		executionPeriod = this.repository.getExecutionPeriod(id);
 		result = this.repository.findOneTaskById(id);
-		result.setWorkload((double) (result.initialMoment.getTime() - date.getTime()) / 3600000);
 		if(result.initialMoment.getTime()-date.getTime()>0) {
 			result.setWorkload(0.);
+		}else if(result.endMoment.getTime()-date.getTime()<0) {
+			result.setWorkload((double)(result.endMoment.getTime() - result.initialMoment.getTime()) / 3600000);
+		}else {
+			result.setWorkload((double) (date.getTime() - result.initialMoment.getTime()) / 3600000);
 		}
 		result.setExecutionPeriod(executionPeriod);
 		

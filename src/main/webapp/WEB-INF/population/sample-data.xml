@@ -106,6 +106,22 @@
 		<property name="description" value="Esta es la tercera Task"></property>
 		<property name="link"><null/></property>
 	</bean>
+	
+	<bean id="task04" class="acme.entities.tasks.Task">
+		<property name="title" value="Task 4"/>
+		<property name="initialMoment" value="2021/03/20 12:30"/>
+		<property name="endMoment" value="2021/04/30 12:30"/>
+		<property name="description" value="aaaaaaaaaaaa"></property>
+		<property name="link"><null/></property>
+	</bean>
+	
+	<bean id="task05" class="acme.entities.tasks.Task">
+		<property name="title" value="Task 5"/>
+		<property name="initialMoment" value="2021/03/20 12:30"/>
+		<property name="endMoment" value="2021/03/31 12:30"/>
+		<property name="description" value="aaaaaaaaaaaa"></property>
+		<property name="link"><null/></property>
+	</bean>
 
 	
 </beans>
