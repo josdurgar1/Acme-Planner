@@ -1,7 +1,5 @@
 package acme.features.anonymous.task;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,29 +39,29 @@ public class AnonymousTaskShowService implements AbstractShowService<Anonymous, 
 	@Override
 	public Task findOne(final Request<Task> request) {
 		assert request != null;
-		Double executionPeriod;
-		final Date date = new Date();
+//		Double executionPeriod;
+//		final Date date = new Date();
 		Task result;
 		int id;
 		
 
 		id = request.getModel().getInteger("id");
-		executionPeriod = this.repository.getExecutionPeriod(id);
+//		executionPeriod = this.repository.getExecutionPeriod(id);
 		result = this.repository.findOneTaskById(id);
-		if(result.initialMoment.getTime()-date.getTime()>0) {
-			result.setWorkload(0.);
-		}else if(result.endMoment.getTime()-date.getTime()<0) {
-			result.setWorkload((double)(result.endMoment.getTime() - result.initialMoment.getTime()) / 3600000);
-		}else {
-			result.setWorkload((double) (date.getTime() - result.initialMoment.getTime()) / 3600000);
-		}
-		result.setExecutionPeriod(executionPeriod);
+//		if(result.initialMoment.getTime()-date.getTime()>0) {
+//			result.setWorkload(0.);
+//		}else if(result.endMoment.getTime()-date.getTime()<0) {
+//			result.setWorkload((double)(result.endMoment.getTime() - result.initialMoment.getTime()) / 3600000);
+//		}else {
+//			result.setWorkload((double) (date.getTime() - result.initialMoment.getTime()) / 3600000);
+//		}
+//		result.setExecutionPeriod(executionPeriod);
 		
 		
 
 		return result;
 	}
-	public Double getWorkload(final Task entity){
-		return (double) (entity.endMoment.getTime() - entity.initialMoment.getTime()) / 3600000;
-	}
+//	public Double getWorkload(final Task entity){
+//		return (double) (entity.endMoment.getTime() - entity.initialMoment.getTime()) / 3600000;
+//	}
 }

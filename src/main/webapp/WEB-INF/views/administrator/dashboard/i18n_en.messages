@@ -11,11 +11,18 @@
 administrator.dashboard.form.title.show = Dashboard
 
 administrator.dashboard.form.title.general-indicators = General indicators
+administrator.dashboard.form.label.totalpublictasks = Total number of public tasks
+administrator.dashboard.form.label.totalprivatetasks = Total number of private tasks
 administrator.dashboard.form.label.totaltasks = Total numbers of public private tasks
 administrator.dashboard.form.label.average-execute-period = Average of task execution periods
+administrator.dashboard.form.label.totalFinishedTasks = Total finished tasks
+administrator.dashboard.form.label.totalNonFinishedTasks = Total non finished tasks
 administrator.dashboard.form.label.totalTaskFinishedAndNotFinished = Total number of tasks finished and not finished
 administrator.dashboard.form.label.stdDevTaskExecutionPeriods = Total deviation of execution period of tasks
 administrator.dashboard.form.label.minExecutionPeriod = Minimum execution period
 administrator.dashboard.form.label.maxExecutionPeriod = Maximum execution period
 administrator.dashboard.form.label.maxWorkload = Maximum workload
+administrator.dashboard.form.label.minWorkload = Minimun workload
+administrator.dashboard.form.label.averageNumberOfTaskWorkloads = Average of task workloads
+administrator.dashboard.form.label.stdDevTaskWorkloads = Total deviation of workloads of tasks
 

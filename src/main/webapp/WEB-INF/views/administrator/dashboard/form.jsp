@@ -22,7 +22,23 @@
 <table class="table table-sm">
 	<caption>
 		<acme:message code="administrator.dashboard.form.title.general-indicators"/>
-	</caption>	
+	</caption>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.totalpublictasks"/>
+		</th>
+		<td>
+			<acme:print value="${totalPublicTasks}"/>
+		</td>
+	</tr>	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.totalprivatetasks"/>
+		</th>
+		<td>
+			<acme:print value="${totalPrivateTasks}"/>
+		</td>
+	</tr>
 	<tr>
 		<th scope="row">
 			<acme:message code="administrator.dashboard.form.label.totaltasks"/>
@@ -37,6 +53,23 @@
 		</th>
 		<td>
 			<acme:print value="${averageNumberOfTaskExecutionPeriods}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.totalFinishedTasks"/>
+		</th>
+		<td>
+			<acme:print value="${totalFinishedTasks}"/>
+		</td>
+	</tr>
+	<tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.totalNonFinishedTasks"/>
+		</th>
+		<td>
+			<acme:print value="${totalNonFinishedTasks}"/>
 		</td>
 	</tr>
 	<tr>
@@ -77,6 +110,30 @@
 		</th>
 		<td>
 			<acme:print value="${maxWorkload}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.minWorkload"/>
+		</th>
+		<td>
+			<acme:print value="${minWorkload}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.averageNumberOfTaskWorkloads"/>
+		</th>
+		<td>
+			<acme:print value="${averageNumberOfTaskWorkloads}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.stdDevTaskWorkloads"/>
+		</th>
+		<td>
+			<acme:print value="${stdDevTaskWorkloads}"/>
 		</td>
 	</tr>
 </table>

@@ -39,16 +39,16 @@ public class AuthenticatedTaskShowService implements AbstractShowService<Authent
 		@Override
 		public Task findOne(final Request<Task> request) {
 			assert request != null;
-			Double executionPeriod;
+//			final Double executionPeriod;
 			Task result;
 			int id;
 			
 
 			id = request.getModel().getInteger("id");
-			executionPeriod = this.repository.getExecutionPeriod(id);
+//			executionPeriod = this.repository.getExecutionPeriod(id);
 			result = this.repository.findOneTaskById(id);
-			result.setWorkload((double) (result.endMoment.getTime() - result.initialMoment.getTime()) / 3600000);
-			result.setExecutionPeriod(executionPeriod);
+//			result.setWorkload((double) (result.endMoment.getTime() - result.initialMoment.getTime()) / 3600000);
+//			result.setExecutionPeriod(executionPeriod);
 			
 			
 

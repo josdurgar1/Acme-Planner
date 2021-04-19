@@ -44,8 +44,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "totalNumberOfPublicPrivateTasks","averageNumberOfTaskExecutionPeriods", "stdDevTaskExecutionPeriods", "totalNumberOfFinishedNonFinishedTasks",
-			"minExecutionPeriod", "maxExecutionPeriod", "maxWorkload");
+		request.unbind(entity, model, "totalPublicTasks","totalPrivateTasks" ,"totalNumberOfPublicPrivateTasks","averageNumberOfTaskExecutionPeriods", "stdDevTaskExecutionPeriods", "totalFinishedTasks","totalNonFinishedTasks","totalNumberOfFinishedNonFinishedTasks",
+			"minExecutionPeriod", "maxExecutionPeriod", "maxWorkload", "minWorkload", "averageNumberOfTaskWorkloads", "stdDevTaskWorkloads");
 	}
 
 	@Override
@@ -53,8 +53,12 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert request != null;
 
 		Dashboard result;
+		final Integer	totalPublicTasks;
+		final Integer	totalPrivateTasks;
 		Double totalNumberOfPublicPrivateTasks;
 		Double averageNumberOfTaskExecutionPeriods;
+		final Integer totalFinishedTasks;
+		final Integer totalNonFinishedTasks;
 		Double totalNumberOfFinishedNonFinishedTasks;
 		Double getStdDevTaskExecutionPeriods;
 		Integer minExecutionPeriod;
@@ -65,32 +69,40 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final Double 	stdDevTaskWorkloads;
 
 
+		totalPublicTasks = this.repository.totalPublicTasks();
+		totalPrivateTasks = this.repository.totalPrivateTasks();
 		totalNumberOfPublicPrivateTasks = this.repository.totalNumberOfPublicPrivateTasks();
 		averageNumberOfTaskExecutionPeriods = this.repository.averageNumberOfTaskExecutionPeriods();
+		totalFinishedTasks = this.repository.totalFinishedTasks();
+		totalNonFinishedTasks = this.repository.totalNonFinishedTasks();
 		totalNumberOfFinishedNonFinishedTasks = this.repository.totalNumberOfFinishedNonFinishedTasks();
 		getStdDevTaskExecutionPeriods = this.repository.stdDevTaskExecutionPeriods();
 		minExecutionPeriod = this.repository.minExecutionPeriod();
 		maxExecutionPeriod = this.repository.maxExecutionPeriod();
 		maxWorkload = this.repository.maxWorkload();
-//		minWorkload = this.repository.minWorkload();
-//		averageNumberOfTaskWorkloads = this.repository.averageNumberOfTaskWorkloads();
-//		stdDevTaskWorkloads = this.repository.stdDevTaskWorkloads();
+		minWorkload = this.repository.minWorkload();
+		averageNumberOfTaskWorkloads = this.repository.averageNumberOfTaskWorkloads();
+		stdDevTaskWorkloads = this.repository.stdDevTaskWorkloads();
 		
 		
 
 
 		result = new Dashboard();
+		result.setTotalPublicTasks(totalPublicTasks);
+		result.setTotalPrivateTasks(totalPrivateTasks);
 		result.setTotalNumberOfPublicPrivateTasks(totalNumberOfPublicPrivateTasks);
 		result.setAverageNumberOfTaskExecutionPeriods(averageNumberOfTaskExecutionPeriods);
+		result.setTotalFinishedTasks(totalFinishedTasks);
+		result.setTotalNonFinishedTasks(totalNonFinishedTasks);
 		result.setTotalNumberOfFinishedNonFinishedTasks(totalNumberOfFinishedNonFinishedTasks);
 		result.setStdDevTaskExecutionPeriods(getStdDevTaskExecutionPeriods);
 		result.setMinExecutionPeriod(minExecutionPeriod);
 		result.setMaxExecutionPeriod(maxExecutionPeriod);
 		result.setMaxWorkload(maxWorkload);
-//		result.setMaxWorkload(maxWorkload);
-//		result.setMinWorkload(minWorkload);
-//		result.setAverageNumberOfTaskWorkloads(averageNumberOfTaskWorkloads);
-//		result.setStdDevTaskWorkloads(stdDevTaskWorkloads);
+		result.setMaxWorkload(maxWorkload);
+		result.setMinWorkload(minWorkload);
+		result.setAverageNumberOfTaskWorkloads(averageNumberOfTaskWorkloads);
+		result.setStdDevTaskWorkloads(stdDevTaskWorkloads);
 
 
 		return result;

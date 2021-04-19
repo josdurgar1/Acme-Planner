@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -37,11 +38,6 @@ public class Task extends DomainEntity {
 	public Date					endMoment;
 	
 	public Double workload;
-//
-//	public Double getWorkload(){
-//		return (double) (this.endMoment.getTime() - this.initialMoment.getTime()) / 3600000;
-//	}
-	
 
 	@NotEmpty
 	@Length(max = 500)
@@ -60,6 +56,10 @@ public class Task extends DomainEntity {
 		return result;
 	}
 	
+	@NotNull
 	public Double executionPeriod;
+	
+	@NotNull
+	public Boolean isPublic;
 
 }

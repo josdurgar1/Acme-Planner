@@ -19,15 +19,24 @@ import acme.framework.repositories.AbstractRepository;
 
 @Repository
 public interface AdministratorDashboardRepository extends AbstractRepository {
-
+	
+	@Query("select count(t) from Task t where t.isPublic = true")
+	Integer totalPublicTasks();
+	
+	@Query("select count(t) from Task t where t.isPublic = false")
+	Integer totalPrivateTasks();
+	
 	@Query("select count(t) from Task t")
 	Double totalNumberOfPublicPrivateTasks();
 	
+	@Query("select count(t) from Task t where t.endMoment < current_timestamp()")
+	Integer totalNonFinishedTasks();
+	
+	@Query("select count(t) from Task t where t.endMoment > current_timestamp()")
+	Integer totalFinishedTasks();
+	
 	@Query("select count(t) from Task t")
 	Double totalNumberOfFinishedNonFinishedTasks();
-	
-	@Query("select count(t) from Task t where t.endMoment < current_timestamp()")
-	Double totalNumberOfFinishedTasks();
 	
 	@Query("select avg(DATEDIFF(t.endMoment, t.initialMoment)) from Task t")
 	Double averageNumberOfTaskExecutionPeriods();
@@ -43,14 +52,14 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	
 	@Query("select max(t.workload) from Task t")
 	Double maxWorkload();
-//	
-//	@Query("select min(t.workload) from Task t")
-//	Double minWorkload();
-//	
-//	@Query("select avg(t.workload) from Task t")
-//	Double averageNumberOfTaskWorkloads();
-//	
-//	@Query("select stddev(t.workload) from Task t")
-//	Double stdDevTaskWorkloads();
+	
+	@Query("select min(t.workload) from Task t")
+	Double minWorkload();
+	
+	@Query("select avg(t.workload) from Task t")
+	Double averageNumberOfTaskWorkloads();
+	
+	@Query("select stddev(t.workload) from Task t")
+	Double stdDevTaskWorkloads();
 
 }

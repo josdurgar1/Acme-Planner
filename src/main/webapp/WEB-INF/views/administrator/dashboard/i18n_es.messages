@@ -11,11 +11,18 @@
 administrator.dashboard.form.title.show = Panel de indicadores
 
 administrator.dashboard.form.title.general-indicators = Indicadores generales
+administrator.dashboard.form.label.totalpublictasks = Número total de tareas públicas
+administrator.dashboard.form.label.totalprivatetasks = Número total de tareas privadas
 administrator.dashboard.form.label.totaltasks =  Número total de tareas públicas y privadas
 administrator.dashboard.form.label.average-execute-period = Promedio del periodo de ejecución de las tareas
+administrator.dashboard.form.label.totalFinishedTasks = Número de tareas finalizadas
+administrator.dashboard.form.label.totalNonFinishedTasks = Número de tareas no finalizadas
 administrator.dashboard.form.label.totalTaskFinishedAndNotFinished = Número total de tareas finalizadas y no finalizadas
 administrator.dashboard.form.label.stdDevTaskExecutionPeriods = Desviación total del periodo de ejecución de las tareas
 administrator.dashboard.form.label.minExecutionPeriod = Periodo de ejecución mínimo
 administrator.dashboard.form.label.maxExecutionPeriod = Periodo de ejecución máximo
 administrator.dashboard.form.label.maxWorkload = Carga de trabajo máxima
+administrator.dashboard.form.label.minWorkload = Carga de trabajo mínima
+administrator.dashboard.form.label.averageNumberOfTaskWorkloads = Media de carga de trabajo
+administrator.dashboard.form.label.stdDevTaskWorkloads = Desviación de la carga de trabajo total
 
