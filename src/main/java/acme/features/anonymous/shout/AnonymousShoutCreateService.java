@@ -1,6 +1,7 @@
 
 package acme.features.anonymous.shout;
 
+import java.io.IOException;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Anonymous;
 import acme.framework.services.AbstractCreateService;
+import acme.spam.SpamRead;
 
 @Service
 public class AnonymousShoutCreateService implements AbstractCreateService<Anonymous, Shout> {
@@ -74,7 +76,15 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 	public void validate(final Request<Shout> request, final Shout entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
+		try {
+			if (SpamRead.isSpam(0.01, entity.getText(), "http://localhost:8080/Acme-Planner/spam/spam.txt")){
+				errors.add("spam", "spam");
+			}
+		} catch (final IOException e) {
+			
+		}
 		assert errors != null;
+		
 		
 	}
 
