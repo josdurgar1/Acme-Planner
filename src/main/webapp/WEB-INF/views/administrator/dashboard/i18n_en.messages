@@ -19,10 +19,10 @@ administrator.dashboard.form.label.totalFinishedTasks = Total finished tasks
 administrator.dashboard.form.label.totalNonFinishedTasks = Total non finished tasks
 administrator.dashboard.form.label.totalTaskFinishedAndNotFinished = Total number of tasks finished and not finished
 administrator.dashboard.form.label.stdDevTaskExecutionPeriods = Total deviation of execution period of tasks
-administrator.dashboard.form.label.minExecutionPeriod = Minimum execution period
-administrator.dashboard.form.label.maxExecutionPeriod = Maximum execution period
-administrator.dashboard.form.label.maxWorkload = Maximum workload
-administrator.dashboard.form.label.minWorkload = Minimun workload
-administrator.dashboard.form.label.averageNumberOfTaskWorkloads = Average of task workloads
-administrator.dashboard.form.label.stdDevTaskWorkloads = Total deviation of workloads of tasks
+administrator.dashboard.form.label.minExecutionPeriod = Minimum execution period (Days)
+administrator.dashboard.form.label.maxExecutionPeriod = Maximum execution period (Days)
+administrator.dashboard.form.label.maxWorkload = Maximum workload (Hours)
+administrator.dashboard.form.label.minWorkload = Minimun workload (Hours)
+administrator.dashboard.form.label.averageNumberOfTaskWorkloads = Average of task workloads 
+administrator.dashboard.form.label.stdDevTaskWorkloads = Total deviation of workloads of tasks 
 

@@ -79,6 +79,27 @@
 		<property name="moment" value="2020/03/21 12:30"/>
 		<property name="info"><null/></property>
 	</bean>
+	
+	<bean id="shout08" class="acme.entities.shouts.Shout">
+		<property name="author" value="Shout 8"/>
+		<property name="text" value="Poblando la BD"/>
+		<property name="moment" value="2021/04/19 10:30"/>
+		<property name="info"><null/></property>
+	</bean>
+
+	<bean id="shout09" class="acme.entities.shouts.Shout">
+		<property name="author" value="Shout 9"/>
+		<property name="text" value="Creando mi 9 shout!"/>
+		<property name="moment" value="2021/01/21 12:30"/>
+		<property name="info"><null/></property>
+	</bean>
+
+	<bean id="shout10" class="acme.entities.shouts.Shout">
+		<property name="author" value="Shout 10"/>
+		<property name="text" value="Holaaaaaaa!!!"/>
+		<property name="moment" value="2021/02/13 18:30"/>
+		<property name="info" value="http://xataka.com"></property>
+	</bean>
 
 	<!-- Tasks-->
 	
@@ -138,6 +159,60 @@
 		<property name="link"><null/></property>
 	</bean>
 	
+	<bean id="task06" class="acme.entities.tasks.Task">
+		<property name="title" value="Task 6"/>
+		<property name="initialMoment" value="2021/02/21 12:30"/>
+		<property name="endMoment" value="2021/03/12 10:30"/>
+		<property name="description" value="Creando mi 6 tarea :)"></property>
+		<property name="workload" value="25.3"></property>
+		<property name="executionPeriod" value="30"></property>
+		<property name="isPublic" value="true"></property>
+		<property name="link"><null/></property>
+	</bean>
+
+	<bean id="task07" class="acme.entities.tasks.Task">
+		<property name="title" value="Task 7"/>
+		<property name="initialMoment" value="2021/05/20 09:30"/>
+		<property name="endMoment" value="2021/08/15 17:30"/>
+		<property name="description" value="Realización de la task 7"></property>
+		<property name="workload" value="25.3"></property>
+		<property name="executionPeriod" value="30"></property>
+		<property name="isPublic" value="true"></property>
+		<property name="link"><null/></property>
+	</bean>
+
+	<bean id="task08" class="acme.entities.tasks.Task">
+		<property name="title" value="Task 8"/>
+		<property name="initialMoment" value="2021/04/19 15:30"/>
+		<property name="endMoment" value="2021/05/01 10:30"/>
+		<property name="description" value="Task 8 realizada"></property>
+		<property name="workload" value="25.3"></property>
+		<property name="executionPeriod" value="30"></property>
+		<property name="isPublic" value="true"></property>
+		<property name="link"><null/></property>
+	</bean>
+
+	<bean id="task09" class="acme.entities.tasks.Task">
+		<property name="title" value="Task 9"/>
+		<property name="initialMoment" value="2021/08/10 15:30"/>
+		<property name="endMoment" value="2021/11/07 10:30"/>
+		<property name="description" value="Popular base de datos"></property>
+		<property name="workload" value="25.3"></property>
+		<property name="executionPeriod" value="30"></property>
+		<property name="isPublic" value="true"></property>
+		<property name="link"><null/></property>
+	</bean>
+
+	<bean id="task10" class="acme.entities.tasks.Task">
+		<property name="title" value="Task 10"/>
+		<property name="initialMoment" value="2021/02/10 13:30"/>
+		<property name="endMoment" value="2021/04/25 10:30"/>
+		<property name="description" value="Task 8 realizada"></property>
+		<property name="workload" value="25.3"></property>
+		<property name="executionPeriod" value="30"></property>
+		<property name="isPublic" value="true"></property>
+		<property name="link"><null/></property>
+	</bean>
 
 	
 </beans>

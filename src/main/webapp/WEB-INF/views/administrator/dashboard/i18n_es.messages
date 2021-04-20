@@ -19,10 +19,10 @@ administrator.dashboard.form.label.totalFinishedTasks = Número de tareas finali
 administrator.dashboard.form.label.totalNonFinishedTasks = Número de tareas no finalizadas
 administrator.dashboard.form.label.totalTaskFinishedAndNotFinished = Número total de tareas finalizadas y no finalizadas
 administrator.dashboard.form.label.stdDevTaskExecutionPeriods = Desviación total del periodo de ejecución de las tareas
-administrator.dashboard.form.label.minExecutionPeriod = Periodo de ejecución mínimo
-administrator.dashboard.form.label.maxExecutionPeriod = Periodo de ejecución máximo
-administrator.dashboard.form.label.maxWorkload = Carga de trabajo máxima
-administrator.dashboard.form.label.minWorkload = Carga de trabajo mínima
+administrator.dashboard.form.label.minExecutionPeriod = Periodo de ejecución mínimo (Días)
+administrator.dashboard.form.label.maxExecutionPeriod = Periodo de ejecución máximo (Días)
+administrator.dashboard.form.label.maxWorkload = Carga de trabajo máxima (Horas)
+administrator.dashboard.form.label.minWorkload = Carga de trabajo mínima (Horas)
 administrator.dashboard.form.label.averageNumberOfTaskWorkloads = Media de carga de trabajo
 administrator.dashboard.form.label.stdDevTaskWorkloads = Desviación de la carga de trabajo total
 
