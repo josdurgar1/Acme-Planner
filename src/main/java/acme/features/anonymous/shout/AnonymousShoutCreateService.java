@@ -1,13 +1,14 @@
 
 package acme.features.anonymous.shout;
 
-import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.shouts.Shout;
+import acme.features.administrator.spam.AdministratorSpamListService;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -23,6 +24,10 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 	@Autowired
 
 	protected AnonymousShoutRepository repository;
+	
+	// Other Services--------------------
+	@Autowired
+	protected AdministratorSpamListService spamService;
 
 	// AbstractCreateService<Administrator, Shout> interface --------------
 
@@ -76,13 +81,23 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 	public void validate(final Request<Shout> request, final Shout entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
-		try {
-			if (SpamRead.isSpam(0.01, entity.getText(), "http://localhost:8080/Acme-Planner/spam/spam.txt")){
-				errors.add("spam", "spam");
+		List<String> spamList;
+		double umbral;
+		umbral= this.spamService.umbral();
+		spamList=this.spamService.findAllSpamWord();
+		
+		
+			if (SpamRead.isSpam(umbral, entity.getText(), spamList)){
+				
+				switch (request.getLocale().getLanguage()) {
+					case "es":  errors.add("text", "Este mensaje se considera SPAM. El umbral es del "+umbral+"%");
+	                     break;
+					case "en":  errors.add("text", "This message is considered SPAM. The threshold is "+umbral+"%");
+	                     break;                
+					default: errors.add("text", "SPAM");
+	            		break;
+				}
 			}
-		} catch (final IOException e) {
-			
-		}
 		assert errors != null;
 		
 		
