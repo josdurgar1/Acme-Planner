@@ -29,24 +29,24 @@ public class Task extends DomainEntity {
 
 	@NotEmpty
 	@Length(max = 80)
-	public String				title;
+	protected String				title;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	public Date					initialMoment;
+	protected Date					initialMoment;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	public Date					endMoment;
+	protected Date					endMoment;
 	
-	public Double workload;
+	protected Double workload;
 
 	@NotEmpty
 	@Length(max = 500)
-	public String				description;
+	protected String				description;
 
 	@URL
-	public String				link;
+	protected String				link;
 	
-	public boolean isFinished() {
+	protected boolean isFinished() {
 		boolean result;
 		Date now;
 
@@ -57,9 +57,9 @@ public class Task extends DomainEntity {
 	}
 	
 	@NotNull
-	public Double executionPeriod;
+	protected Double executionPeriod;
 	
 	@NotNull
-	public Boolean isPublic;
+	protected Boolean isPublic;
 
 }
