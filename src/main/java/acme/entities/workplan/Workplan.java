@@ -1,12 +1,15 @@
-package ame.entities.workplan;
+package acme.entities.workplan;
 
-import java.util.List;
+import java.util.Collection;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.Valid;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 
 import acme.entities.tasks.Task;
@@ -31,13 +34,19 @@ public class Workplan extends DomainEntity {
 	@NotNull
 	protected Double executionPeriod;
 	
+	@Digits(integer = 3, fraction = 2)
 	protected Double workload;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date					init;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date					end;
 	
 	// Relationship -----------------------------------------------------------
 	
-	@ManyToMany(mappedBy = "task_id", fetch = FetchType.EAGER)
-	@JoinTable(name = "workplan_Tasks", joinColumns = @JoinColumn(name = "workplan_id"),
-	inverseJoinColumns = @JoinColumn(name = "task_id"))
-	protected List<Task> task;
+	@Valid
+	@ManyToMany(fetch = FetchType.EAGER)
+	protected Collection<Task> tasks;
 
 }

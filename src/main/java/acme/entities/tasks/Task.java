@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -37,6 +38,7 @@ public class Task extends DomainEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date					endMoment;
 	
+	@Digits(integer = 3, fraction = 2)
 	protected Double workload;
 
 	@NotEmpty
