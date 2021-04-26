@@ -39,7 +39,8 @@ public class Task extends DomainEntity {
 	public Date					endMoment;
 	
 	@Digits(integer = 3, fraction = 2)
-	public Double workload;
+	protected Double workload;
+
 
 	@NotEmpty
 	@Length(max = 500)
