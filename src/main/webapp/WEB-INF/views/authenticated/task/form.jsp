@@ -10,6 +10,7 @@
 		<acme:form-moment code="authenticated.task.form.label.workload" path="workload"/>	
 		<acme:form-moment code="authenticated.task.form.label.executionPeriod" path="executionPeriod"/>	
 		<acme:form-textarea code="authenticated.task.form.label.description" path="description"/>	
+		<acme:form-textarea code="authenticated.task.form.label.isPublic" path="isPublic"/>	
 		<acme:form-url code="authenticated.task.form.label.link" path="link"/>
 		
 		<acme:form-return code="authenticated.task.form.button.return"/>	
