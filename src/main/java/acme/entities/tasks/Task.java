@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -29,24 +30,25 @@ public class Task extends DomainEntity {
 
 	@NotEmpty
 	@Length(max = 80)
-	protected String				title;
+	public String				title;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	protected Date					initialMoment;
+	public Date					initialMoment;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	protected Date					endMoment;
+	public Date					endMoment;
 	
-	protected Double workload;
+	@Digits(integer = 3, fraction = 2)
+	public Double workload;
 
 	@NotEmpty
 	@Length(max = 500)
-	protected String				description;
+	public String				description;
 
 	@URL
-	protected String				link;
+	public String				link;
 	
-	protected boolean isFinished() {
+	public boolean isFinished() {
 		boolean result;
 		Date now;
 
@@ -57,9 +59,9 @@ public class Task extends DomainEntity {
 	}
 	
 	@NotNull
-	protected Double executionPeriod;
+	public Double executionPeriod;
 	
 	@NotNull
-	protected Boolean isPublic;
+	public Boolean isPublic;
 
 }
