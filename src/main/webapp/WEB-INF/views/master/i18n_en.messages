@@ -58,7 +58,7 @@ master.menu.authenticated.task.list = Tasks List
 
 master.menu.manager = Manager
 master.menu.manager.workplan.create = Create Workplan
-
+master.menu.manager.workplan.list = List my Workplans
 
 # master.menu.consumer ##########################################################
 

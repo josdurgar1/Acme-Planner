@@ -7,14 +7,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.components.CustomCommand;
+import acme.entities.roles.Manager;
 import acme.entities.workplan.Workplan;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
-import acme.framework.entities.Authenticated;
 
 @Controller
 @RequestMapping("/manager/workplan/")
-public class ManagerWorkplanController extends AbstractController<Authenticated, Workplan>{
+public class ManagerWorkplanController extends AbstractController<Manager, Workplan>{
 	
 	// Internal state ---------------------------------------------------------
 
@@ -28,6 +28,8 @@ public class ManagerWorkplanController extends AbstractController<Authenticated,
 		protected ManagerWorkplanPublishService	publishService;
 		@Autowired
 		protected ManagerWorkplanUpdateService	updateService;
+		@Autowired
+		protected ManagerWorkplanDeleteService deleteService;
 
 		// Constructors -----------------------------------------------------------
 
@@ -38,6 +40,7 @@ public class ManagerWorkplanController extends AbstractController<Authenticated,
 			super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 			super.addBasicCommand(BasicCommand.LIST, this.listService);
 			super.addBasicCommand(BasicCommand.SHOW, this.showService);
+			super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
 			
 			super.addCustomCommand(CustomCommand.PUBLISH, BasicCommand.UPDATE, this.publishService);
 		}

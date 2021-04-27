@@ -5,14 +5,14 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.roles.Manager;
 import acme.entities.workplan.Workplan;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class ManagerWorkplanListService implements AbstractListService<Authenticated, Workplan>{
+public class ManagerWorkplanListService implements AbstractListService<Manager, Workplan>{
 
 	
 	// Internal state ---------------------------------------------------------
@@ -34,7 +34,7 @@ public class ManagerWorkplanListService implements AbstractListService<Authentic
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "isPublic", "init","end","workload");
+		request.unbind(entity, model, "title", "isPublic", "init","end","workload","isPublished","executionPeriod");
 		
 	}
 
