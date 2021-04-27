@@ -50,7 +50,7 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Authe
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "isPublic","init","end","workload");
+		request.unbind(entity, model,"title", "isPublic","init","end","workload","isPublished");
 		
 	}
 

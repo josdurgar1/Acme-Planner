@@ -41,7 +41,8 @@ public class ManagerWorkplanListService implements AbstractListService<Authentic
 	@Override
 	public Collection<Workplan> findMany(final Request<Workplan> request) {
 		Collection<Workplan> res;
-		res=this.repository.findManyByManagerId(request.getPrincipal().getAccountId());
+		final int id=request.getPrincipal().getAccountId();
+		res=this.repository.findManyByManagerId(id);
 		
 		return res;
 	}
