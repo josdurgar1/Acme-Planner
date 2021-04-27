@@ -44,8 +44,12 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "totalPublicTasks","totalPrivateTasks" ,"totalNumberOfPublicPrivateTasks","averageNumberOfTaskExecutionPeriods", "stdDevTaskExecutionPeriods", "totalFinishedTasks","totalNonFinishedTasks","totalNumberOfFinishedNonFinishedTasks",
-			"minExecutionPeriod", "maxExecutionPeriod", "maxWorkload", "minWorkload", "averageNumberOfTaskWorkloads", "stdDevTaskWorkloads");
+		request.unbind(entity, model, "totalPublicTasks","totalPrivateTasks" ,"totalNumberOfPublicPrivateTasks",
+			"averageNumberOfTaskExecutionPeriods", "stdDevTaskExecutionPeriods", "totalFinishedTasks","totalNonFinishedTasks","totalNumberOfFinishedNonFinishedTasks",
+			"minExecutionPeriod", "maxExecutionPeriod", "maxWorkload", "minWorkload", "averageNumberOfTaskWorkloads", "stdDevTaskWorkloads", "totalPublicWorkplan",
+			"totalPrivateWorkplan", "totalNumberOfPublicPrivateWorkplan","totalNonFinishedWorkplan","totalFinishedWorkplan","totalNumberOfFinishedNonFinishedWorkplan",
+			"averageNumberOfWorkplanExecutionPeriods","stdDevWorkplanExecutionPeriods","minWorkplanExecutionPeriod","maxWorkplanExecutionPeriod",
+			"maxWorkplanWorkload","minWorkplanWorkload","averageNumberOfWorkplanWorkloads","stdDevWorkplanWorkloads");
 	}
 
 	@Override
@@ -53,9 +57,11 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert request != null;
 
 		Dashboard result;
+		
+		// -----------------------------TASK-------------------------------
 		final Integer	totalPublicTasks;
 		final Integer	totalPrivateTasks;
-		Double totalNumberOfPublicPrivateTasks;
+		Integer totalNumberOfPublicPrivateTasks;
 		Double averageNumberOfTaskExecutionPeriods;
 		final Integer totalFinishedTasks;
 		final Integer totalNonFinishedTasks;
@@ -103,7 +109,52 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setMinWorkload(minWorkload);
 		result.setAverageNumberOfTaskWorkloads(averageNumberOfTaskWorkloads);
 		result.setStdDevTaskWorkloads(stdDevTaskWorkloads);
-
+		// -----------------------------WORKPLAN-------------------------------
+		
+		final Integer						totalPublicWorkplan;
+		final Integer						totalPrivateWorkplan;
+		Integer						totalNumberOfPublicPrivateWorkplan;
+		Integer						totalNonFinishedWorkplan;
+		Integer						totalFinishedWorkplan;
+		Double						totalNumberOfFinishedNonFinishedWorkplan;
+		Double						averageNumberOfWorkplanExecutionPeriods;
+		Double						stdDevWorkplanExecutionPeriods;
+		Integer						minWorkplanExecutionPeriod;
+		Integer						maxWorkplanExecutionPeriod;
+		Double 						maxWorkplanWorkload;
+		Double 						minWorkplanWorkload;
+		Double 						averageNumberOfWorkplanWorkloads;
+		Double 						stdDevWorkplanWorkloads;
+		
+		totalPublicWorkplan = this.repository.totalPublicWorkplan();
+		totalPrivateWorkplan = this.repository.totalPrivateWorkplan();
+		totalNumberOfPublicPrivateWorkplan = this.repository.totalNumberOfPublicPrivateWorkplan();
+		averageNumberOfWorkplanExecutionPeriods = this.repository.averageNumberOfWorkplanExecutionPeriods();
+		totalFinishedWorkplan = this.repository.totalFinishedWorkplan();
+		totalNonFinishedWorkplan = this.repository.totalNonFinishedWorkplan();
+		totalNumberOfFinishedNonFinishedWorkplan = this.repository.totalNumberOfFinishedNonFinishedWorkplan();
+		stdDevWorkplanExecutionPeriods = this.repository.stdDevWorkplanExecutionPeriods();
+		minWorkplanExecutionPeriod = this.repository.minWorkplanExecutionPeriod();
+		maxWorkplanExecutionPeriod = this.repository.maxWorkplanExecutionPeriod();
+		maxWorkplanWorkload = this.repository.maxWorkplanWorkload();
+		minWorkplanWorkload = this.repository.minWorkplanWorkload();
+		averageNumberOfWorkplanWorkloads = this.repository.averageNumberOfWorkplanWorkloads();
+		stdDevWorkplanWorkloads = this.repository.stdDevWorkplanWorkloads();
+		
+		result.setTotalPublicWorkplan(totalPublicWorkplan);
+		result.setTotalPrivateWorkplan(totalPrivateWorkplan);
+		result.setTotalNumberOfPublicPrivateWorkplan (totalNumberOfPublicPrivateWorkplan );
+		result.setAverageNumberOfWorkplanExecutionPeriods(averageNumberOfWorkplanExecutionPeriods);
+		result.setTotalFinishedWorkplan(totalFinishedWorkplan);
+		result.setTotalNonFinishedWorkplan(totalNonFinishedWorkplan);
+		result.setTotalNumberOfFinishedNonFinishedWorkplan(totalNumberOfFinishedNonFinishedWorkplan);
+		result.setStdDevWorkplanExecutionPeriods(stdDevWorkplanExecutionPeriods);
+		result.setMinWorkplanExecutionPeriod(minWorkplanExecutionPeriod);
+		result.setMaxWorkplanExecutionPeriod(maxWorkplanExecutionPeriod);
+		result.setMaxWorkplanWorkload(maxWorkplanWorkload);
+		result.setMinWorkplanWorkload(minWorkplanWorkload);
+		result.setAverageNumberOfWorkplanWorkloads(averageNumberOfWorkplanWorkloads);
+		result.setStdDevWorkplanWorkloads(stdDevWorkplanWorkloads);
 
 		return result;
 	}
