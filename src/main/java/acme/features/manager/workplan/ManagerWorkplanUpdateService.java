@@ -121,7 +121,6 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		
 		entity.setExecutionPeriod(horas);
 		Double workload = 0.0;
-	//	List<Task> tasks=repository.findAllTasksByWorkplanId(entity.getId());
 		for(final Task t:entity.getTasks()) {
 			workload=workload+t.getWorkload();
 		}
