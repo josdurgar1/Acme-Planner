@@ -85,21 +85,23 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		double umbral;
 		umbral= this.spamService.umbral();
 		spamList=this.spamService.findAllSpamWord();
-		
-		
-			if (SpamRead.isSpam(umbral, entity.getText(), spamList)){
-				
-				switch (request.getLocale().getLanguage()) {
-					case "es":  errors.add("text", "Este mensaje se considera SPAM. El umbral es del "+umbral+"%");
-	                     break;
-					case "en":  errors.add("text", "This message is considered SPAM. The threshold is "+umbral+"%");
-	                     break;                
-					default: errors.add("text", "SPAM");
-	            		break;
-				}
-			}
 		assert errors != null;
+		if (!errors.hasErrors("text")){
+			final boolean res=SpamRead.isSpam(umbral, entity.getText(), spamList);
+			
+			errors.state(request, !res, "text", "anonymous.shout.form.error.spam");
+			}
 		
+//		if (!errors.hasErrors("author")){
+//			final boolean res=SpamRead.isSpam(umbral, entity.getAuthor(), spamList);
+//			
+//			errors.state(request, !res, "author", "anonymous.shout.form.error.spam");
+//			}
+//		if (!errors.hasErrors("info")){
+//			final boolean res=SpamRead.isSpam(umbral, entity.getInfo(), spamList);
+//			
+//			errors.state(request, !res, "info", "anonymous.shout.form.error.spam");
+//			}
 		
 	}
 
