@@ -15,15 +15,34 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<acme:form readonly="true">
+<acme:form>
+	
 	<acme:form-textbox code="manager.workplan.form.label.title" path="title"/>
-	<acme:form-double code="manager.workplan.form.label.workload" path="workload"/>	
+	<jstl:if test="${command == 'show'}" >
+	<acme:form-double readonly="true" code="manager.workplan.form.label.workload" path="workload"/>	
+	</jstl:if>
 	<acme:form-moment code="manager.workplan.form.label.init" path="init"/>
 	<acme:form-moment code="manager.workplan.form.label.end" path="end"/>
-	<acme:form-textbox code="manager.workplan.form.label.isPublic" path="isPublic"/>
-	<acme:form-textbox code="manager.workplan.form.label.isPublished" path="isPublished"/>
-	
-	<acme:form-submit test="${command == 'show'}" code="manager.workplan.form.button.apply" method="get" action="/manager/application/create?workplanId=${id}"/>
+	<jstl:if test="${command == 'show'}" >
+	<acme:form-double readonly="true" code="manager.workplan.form.label.executionPeriod" path="executionPeriod"/>	
+	</jstl:if>
+	<acme:form-select code="manager.workplan.form.label.isPublic" path="isPublic">
+		<acme:form-option code="manager.workplan.form.label.true" value="true" selected="${isPublic == 'true'}"/>
+		<acme:form-option code="manager.workplan.form.label.false" value="false" selected="${isPublic == 'false'}"/>
+	</acme:form-select>
+	<acme:form-select code="manager.workplan.form.label.isPublished" path="isPublished">
+		<acme:form-option code="manager.workplan.form.label.false" value="false" selected="${isPublished == 'false'}"/>
+		<acme:form-option code="manager.workplan.form.label.true" value="true" selected="${isPublished == 'true'}"/>
+	</acme:form-select>
+
+
+	<acme:form-submit test="${command == 'show' && isPublished == 'false'}" code="manager.workplan.form.button.update" action="/manager/workplan/update"/>
+	<acme:form-submit test="${command == 'show' && isPublished == 'false'}" code="manager.workplan.form.button.delete" action="/manager/workplan/delete"/>
+	<acme:form-submit test="${command == 'show' && isPublished == 'false'}" code="manager.workplan.form.button.publish" action="/manager/workplan/publish"/>
+	<acme:form-submit test="${command == 'create'}" code="manager.workplan.form.button.create" action="/manager/workplan/create"/>
+	<acme:form-submit test="${command == 'update'}" code="manager.workplan.form.button.update" action="/manager/workplan/update"/>
+	<acme:form-submit test="${command == 'publish'}" code="manager.workplan.form.button.publish" action="/manager/workplan/publish"/>
+	<acme:form-submit test="${command == 'delete'}" code="manager.workplan.form.button.delete" action="/manager/workplan/delete"/>		
 	<acme:form-return code="manager.workplan.form.button.return"/>	
 </acme:form>
 

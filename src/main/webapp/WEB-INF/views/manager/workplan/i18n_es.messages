@@ -10,9 +10,21 @@
 
 manager.workplan.form.label.title		=	 Título
 manager.workplan.form.label.workload	=	 Carga de Trabajo
+manager.workplan.form.label.executionPeriod	=	 Tiempo de ejecución
 manager.workplan.form.label.init		= 	Inicio
 manager.workplan.form.label.end			=	Final 
 manager.workplan.form.label.isPublic	= 	¿Es pública?
 manager.workplan.form.label.isPublished = 	¿Está publicada?
 manager.workplan.form.button.apply		= 	Enviar
 manager.workplan.form.button.return		= 	Volver
+manager.workplan.form.button.create		= 	Crear
+manager.workplan.form.button.update		= 	Actualizar
+manager.workplan.form.button.delete		=	Eliminar
+manager.workplan.form.button.publish	= 	Publicar
+manager.workplan.form.label.true		= 	Si
+manager.workplan.form.label.false		=	No
+manager.workplan.form.error.init		= 	La fecha de inicio debe ser posterior a la actual
+manager.task.form.error.period			= 	La fecha de fin debe ser posterior a la de inicio
+manager.task.form.error.workload		=	La carga de trabajo no puede ser superior al periodo de ejecución
+manager.workplan.form.error.spam		=   Compruebe el SPAM
+

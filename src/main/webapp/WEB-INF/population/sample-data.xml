@@ -34,8 +34,8 @@
 		</property>
 		<property name="roles">
 			<list>
-				<ref bean="manager1Manager" />
 				<ref bean="manager1Authenticated" />
+				<ref bean="manager1Manager" />
 			</list>
 		</property>
 	</bean>

@@ -10,9 +10,21 @@
 
 manager.workplan.form.label.title		=	 Title
 manager.workplan.form.label.workload	=	 Workload
+manager.workplan.form.label.executionPeriod=	Execution Period
 manager.workplan.form.label.init		=	 Init
 manager.workplan.form.label.end			= 	 End
 manager.workplan.form.label.isPublic	= 	 Is Public?
 manager.workplan.form.label.isPublished	= 	 Is Published?
 manager.workplan.form.button.apply		= 	 Send
 manager.workplan.form.button.return		= 	 Return
+manager.workplan.form.button.create		=	 Create
+manager.workplan.form.button.update		= 	 Update
+manager.workplan.form.button.delete		= 	 Delete
+manager.workplan.form.button.publish	=	 Publish
+manager.workplan.form.label.true		= 	 True
+manager.workplan.form.label.false		=	 False
+manager.workplan.form.error.init		= 	The start date must be later than the current one
+manager.task.form.error.period			= 	The end date must be after the start date
+manager.task.form.error.workload		=	The workload cannot exceed the execution period
+manager.workplan.form.error.spam		=   Check SPAM
+

@@ -53,6 +53,7 @@ master.menu.authenticated.task.list = Lista de tareas
 
 master.menu.manager = Gerente
 master.menu.manager.workplan.create = Crear Plan de Trabajo
+master.menu.manager.workplan.list =  Mis planes de trabajo
 
 # master.menu.consumer ##########################################################
 
