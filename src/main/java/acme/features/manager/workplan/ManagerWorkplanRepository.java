@@ -15,10 +15,10 @@ public interface ManagerWorkplanRepository extends AbstractRepository {
 	@Query("select m from Manager m where m.id = ?1")
 	Manager findOneManagerById(int id);
 	
-	@Query("select w from Workplan w where w.manager.id = ?1")
+	@Query("select w from Workplan w where w.manager.userAccount.id = ?1")
 	Collection<Workplan> findManyByManagerId(int managerId);
 	
-	@Query("select w from Workplan w where w.manager.id = ?1 and w.isPublish=0")
+	@Query("select w from Workplan w where w.manager.userAccount.id = ?1 and w.isPublished=0")
 	Collection<Workplan> findAllNotPublishByManagerId(int managerId);
 
 	@Query("select w from Workplan w where w.id=?1")

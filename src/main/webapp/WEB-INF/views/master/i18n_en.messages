@@ -43,7 +43,7 @@ master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shutdown = Shut down
 
-# master.menu.manager #########################################################
+# master.menu.authenticated #########################################################
 
 
 master.menu.manager = Manager
@@ -51,11 +51,14 @@ master.menu.manager.task.taskList = Tasks List
 master.menu.manager.task.my-task = My tasks
 master.menu.manager.task.taskCreate = Create Task
 master.menu.authenticated.manager.taskList = Tasks List
+master.menu.authenticated = Authenticated
+master.menu.authenticated.task.list = Tasks List
 
-# master.menu.provider ########################################################
+# master.menu.manager ########################################################
 
-master.menu.provider = Provider
-master.menu.provider.favourite-link = Favourite link
+master.menu.manager = Manager
+master.menu.manager.workplan.create = Create Workplan
+
 
 # master.menu.consumer ##########################################################
 
