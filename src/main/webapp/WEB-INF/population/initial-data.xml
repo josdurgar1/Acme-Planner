@@ -75,7 +75,7 @@
 	
  	
 	<!-- Managers user -->
-<!--	
+	
 	<bean name="managerUserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="manager" />
 		<property name="password" value="manager" />
@@ -104,5 +104,5 @@
 	<bean name="managerAuthenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="managerUserAccount" />
 	</bean>
--->
+
 </beans>

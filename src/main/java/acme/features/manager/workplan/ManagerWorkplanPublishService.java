@@ -1,11 +1,13 @@
 package acme.features.manager.workplan;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
+import acme.entities.tasks.Task;
 import acme.entities.workplan.Workplan;
 import acme.features.administrator.spam.AdministratorSpamListService;
 import acme.framework.components.Errors;
@@ -98,6 +100,28 @@ public class ManagerWorkplanPublishService implements AbstractUpdateService<Mana
 			
 			errors.state(request, !res, "title", "manager.workplan.form.error.spam");
 			}
+		if(!errors.hasErrors("init")){
+			final Date now= new Date();
+			final boolean res=entity.getInit().after(now);
+			errors.state(request, res, "init", "manager.workplan.form.error.init");
+		}
+		if(!errors.hasErrors("workload")) {
+			final long end=entity.getEnd().getTime();
+			final long init=entity.getInit().getTime();
+			
+			final long diff =end-init;
+			final double horas=(Math.abs(diff)*1.0)/3600000;
+			boolean res;
+			res = horas<entity.getWorkload();
+			
+			errors.state(request, !res, "workload", "manager.task.form.error.workload");
+		}
+		
+		if(!errors.hasErrors("end")){
+			boolean res=false;
+			res=entity.getEnd().after(entity.getInit());
+			errors.state(request,res, "end", "manager.task.form.error.period");
+		}
 		
 	}
 
@@ -106,6 +130,18 @@ public class ManagerWorkplanPublishService implements AbstractUpdateService<Mana
 		assert request != null;
 		assert entity != null;
 
+		final long end=entity.getEnd().getTime();
+		final long init=entity.getInit().getTime();
+		
+		final long diff =end-init;
+		final double horas=(Math.abs(diff)*1.0)/3600000;
+		Double workload = 0.0;
+		for(final Task t:entity.getTasks()) {
+			workload=workload+t.getWorkload();
+		}
+		
+		entity.setWorkload(workload);
+		entity.setExecutionPeriod(horas);
 		entity.setIsPublished(true);
 		this.repository.save(entity);
 	}
