@@ -20,5 +20,6 @@ anonymous.task.form.label.endMoment = End moment:
 anonymous.task.form.label.executionPeriod = Execution Period (Days):
 anonymous.task.form.label.workload = Workload (Hours):
 anonymous.task.form.label.description = Description:
+anonymous.task.form.label.isPublic = Is public:
 anonymous.task.form.label.link = Link:
 anonymous.task.form.button.return = Return
