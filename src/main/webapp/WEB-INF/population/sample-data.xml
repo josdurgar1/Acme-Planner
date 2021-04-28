@@ -41,8 +41,9 @@
 		</property>
 	</bean>
 
-	<bean name="managerManagerEx" class="acme.framework.entities.Manager">
+	<bean name="managerManagerEx" class="acme.entities.roles.Manager">
 		<property name="userAccount" ref="managerUserAccountEx" />
+		<property name="name" value="Javier"/>
 	</bean>
 	
 	<bean name="managerAuthenticatedEx" class="acme.framework.entities.Authenticated">

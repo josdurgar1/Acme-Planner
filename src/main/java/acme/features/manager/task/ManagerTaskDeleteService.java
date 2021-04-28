@@ -2,12 +2,12 @@ package acme.features.manager.task;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.features.authenticated.task.AuthenticatedTaskRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Manager;
 import acme.framework.entities.Principal;
 import acme.framework.services.AbstractDeleteService;
 
