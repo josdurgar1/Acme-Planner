@@ -29,6 +29,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 	@Autowired
 	protected AdministratorSpamListService spamService;
 	
+	@Autowired
 	protected AuthenticatedManagerRepository managerService;
 	
 
@@ -79,8 +80,9 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		result.setEndMoment(endMoment);
 		result.setWorkload(5.0);
 		result.setDescription("This is a description");
-		result.setLink("http://example.org");
-		result.getExecutionPeriod();
+		result.setLink(null);
+		result.setExecutionPeriod(10.0);
+		result.isFinished();
 		result.setIsPublic(true);
 		result.setManager(manager);
 		

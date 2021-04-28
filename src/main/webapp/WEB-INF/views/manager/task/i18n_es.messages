@@ -8,8 +8,17 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.manager.manager.form.title.create = Crear nueva tarea.
-authenticated.manager.manager.form.title.update = Actualizar tarea.
+manager.manager.form.title.create = Crear nueva tarea.
+manager.manager.form.title.update = Actualizar tarea.
+
+manager.task.form.label.title = Título	
+manager.task.form.label.initialMoment = Momento de Inicio
+manager.task.form.label.endMoment = Momento de Finalización
+manager.task.form.label.workload = Carga de Trabajo
+manager.task.form.label.description = Descripción
+manager.task.form.label.link = Link
+manager.task.form.label.executionPeriod = Periodo de Ejecución
+manager.task.form.label.isPublic = Visibilidad
 
 manager.task.list.label.title = Título
 manager.task.list.label.initialMoment = Momento de Inicio
@@ -18,7 +27,7 @@ manager.task.list.label.executionPeriod = Periodo de Ejecución
 manager.task.list.label.workload = Carga de Trabajo
 manager.task.list.label.description = Descripción
 
-authenticated.manager.manager.task.form.button.create = Crear
-authenticated.manager.manager.task.form.button.update = Actualizar
-authenticated.manager.manager.task.form.button.delete = Borrar
-authenticated.manager.manager.task.form.button.return = Return
+manager.manager.task.form.button.create = Crear
+manager.manager.task.form.button.update = Actualizar
+manager.manager.task.form.button.delete = Borrar
+manager.manager.task.form.button.return = Return
