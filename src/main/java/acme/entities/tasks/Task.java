@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -31,24 +32,25 @@ public class Task extends DomainEntity {
 
 	@NotEmpty
 	@Length(max = 80)
-	public String				title;
+	protected String				title;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	public Date					initialMoment;
+	protected Date					initialMoment;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	public Date					endMoment;
+	protected Date					endMoment;
 	
-	public Double workload;
+	@Digits(integer = 3, fraction = 2)
+	protected Double workload;
 
 	@NotEmpty
 	@Length(max = 500)
-	public String				description;
+	protected String				description;
 
 	@URL
-	public String				link;
+	protected String				link;
 	
-	public boolean isFinished() {
+	protected boolean isFinished() {
 		boolean result;
 		Date now;
 
@@ -59,10 +61,10 @@ public class Task extends DomainEntity {
 	}
 	
 	@NotNull
-	public Double executionPeriod;
+	protected Double executionPeriod;
 	
 	@NotNull
-	public Boolean isPublic;
+	protected Boolean isPublic;
 	
 	// Relationships -----------------------------------------------------------
 	
