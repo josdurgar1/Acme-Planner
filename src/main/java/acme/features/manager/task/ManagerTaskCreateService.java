@@ -1,5 +1,6 @@
 package acme.features.manager.task;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -68,12 +69,25 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		Manager manager;
 		Date initialMoment;
 		Date endMoment;
+		Calendar initialCalendar;
+		Calendar endlCalendar;
 		
 		
-		initialMoment = new Date(System.currentTimeMillis() -1);
-		endMoment = new Date(System.currentTimeMillis() + 1000);
+		/*initialMoment = new Date(System.currentTimeMillis() -1);
+		endMoment = new Date(System.currentTimeMillis() + 10000000);*/
 		manager = this.managerService.findOneManagerByUserAccountId(request.getPrincipal().getAccountId());
 		
+		initialMoment = new Date();
+		initialCalendar = Calendar.getInstance();
+		initialCalendar.setTime(initialMoment);
+		initialCalendar.add(Calendar.SECOND, -1);
+		initialMoment = initialCalendar.getTime();
+		
+		endMoment = new Date();
+		endlCalendar = Calendar.getInstance();
+		endlCalendar.setTime(endMoment);
+		endlCalendar.add(Calendar.SECOND, 0);
+		endMoment = endlCalendar.getTime();
 		
 		result = new Task();
 		result.setTitle("Task-01");

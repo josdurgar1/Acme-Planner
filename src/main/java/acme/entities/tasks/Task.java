@@ -55,9 +55,8 @@ public class Task extends DomainEntity {
 		boolean result;
 		Date now;
 
-		now = new Date();
+		now = new Date(System.currentTimeMillis());
 		result = now.after(this.endMoment);
-
 		return result;
 	}
 	

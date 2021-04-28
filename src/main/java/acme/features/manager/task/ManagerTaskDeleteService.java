@@ -64,7 +64,7 @@ public Task findOne(final Request<Task> request) {
 	Task result;
 	int taskId;
 	
-	taskId = request.getModel().getInteger("taskId");
+	taskId = request.getModel().getInteger("id");
 	result = this.repository.findOneTaskById(taskId);
 	
 	return result;

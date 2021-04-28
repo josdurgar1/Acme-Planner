@@ -33,7 +33,7 @@ public class ManagerTaskListService
 			assert request != null;
 			assert entity != null;
 			assert model != null;
-			request.unbind(entity, model, "title", "initialMoment","endMoment", "workload", "description");
+			request.unbind(entity, model, "title", "initialMoment","endMoment", "workload", "description", "executionPeriod", "visibility");
 		}
 
 
