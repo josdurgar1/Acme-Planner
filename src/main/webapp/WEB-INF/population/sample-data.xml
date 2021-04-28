@@ -17,7 +17,40 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<import resource="classpath:/WEB-INF/population/conversion-service.xml"/>	
+	<import resource="classpath:/WEB-INF/population/conversion-service.xml"/>
+	
+<!-- Manager -->	
+
+
+<bean name="managerUserAccountEx" class="acme.framework.entities.UserAccount">
+		<property name="username" value="managerEx" />
+		<property name="password" value="managerEx" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Javier" />
+				<property name="surname" value="Perez" />
+				<property name="email" value="javpermar4@alum.us.es" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="managerManagerEx" />
+				<ref bean="managerAuthenticatedEx" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="managerManagerEx" class="acme.framework.entities.Manager">
+		<property name="userAccount" ref="managerUserAccountEx" />
+	</bean>
+	
+	<bean name="managerAuthenticatedEx" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="managerUserAccountEx" />
+	</bean>
+	
+	
+	
 <!-- Shouts -->
 
 	
@@ -37,7 +70,6 @@
 		<property name="info" value="http://example.org"/>		
 	</bean>
 
-	
 
 	<bean id="shout03" class="acme.entities.shouts.Shout">
 		<property name="moment" value="2021/04/07 00:00"/>
@@ -113,6 +145,7 @@
 		<property name="executionPeriod" value="20"></property>
 		<property name="isPublic" value="true"></property>
 		<property name="link"><null/></property>
+		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 	
 	<bean id="task02" class="acme.entities.tasks.Task">
@@ -124,6 +157,7 @@
 		<property name="executionPeriod" value="22"></property>
 		<property name="isPublic" value="false"></property>
 		<property name="link"><null/></property>
+		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 	
 	<bean id="task03" class="acme.entities.tasks.Task">
@@ -135,6 +169,7 @@
 		<property name="executionPeriod" value="30"></property>
 		<property name="isPublic" value="true"></property>
 		<property name="link"><null/></property>
+		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 	
 	<bean id="task04" class="acme.entities.tasks.Task">
@@ -146,6 +181,7 @@
 		<property name="executionPeriod" value="30"></property>
 		<property name="isPublic" value="false"></property>
 		<property name="link"><null/></property>
+		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 	
 	<bean id="task05" class="acme.entities.tasks.Task">
@@ -157,6 +193,7 @@
 		<property name="executionPeriod" value="10"></property>
 		<property name="isPublic" value="true"></property>
 		<property name="link"><null/></property>
+		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 	
 	<bean id="task06" class="acme.entities.tasks.Task">
@@ -168,6 +205,7 @@
 		<property name="executionPeriod" value="30"></property>
 		<property name="isPublic" value="true"></property>
 		<property name="link"><null/></property>
+		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 
 	<bean id="task07" class="acme.entities.tasks.Task">
@@ -179,6 +217,7 @@
 		<property name="executionPeriod" value="30"></property>
 		<property name="isPublic" value="true"></property>
 		<property name="link"><null/></property>
+		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 
 	<bean id="task08" class="acme.entities.tasks.Task">
@@ -190,6 +229,7 @@
 		<property name="executionPeriod" value="30"></property>
 		<property name="isPublic" value="true"></property>
 		<property name="link"><null/></property>
+		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 
 	<bean id="task09" class="acme.entities.tasks.Task">
@@ -201,6 +241,7 @@
 		<property name="executionPeriod" value="30"></property>
 		<property name="isPublic" value="true"></property>
 		<property name="link"><null/></property>
+		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 
 	<bean id="task10" class="acme.entities.tasks.Task">
@@ -212,6 +253,7 @@
 		<property name="executionPeriod" value="30"></property>
 		<property name="isPublic" value="true"></property>
 		<property name="link"><null/></property>
+		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 	
 	
@@ -282,18 +324,10 @@
 				<ref bean="spamWord13"/>
 				<ref bean="spamWord14"/>
 			</list>
-		</property>
-	
+	</property>
 	</bean>
 	
 	<!-- WorkPlan-->
 	
-		<bean id="workplan01" class="acme.entities.workplan.Workplan">
-			<property name="isPublic" value="true"/>
-			<property name="executionPeriod" value="4.0"/>
-			<property name="workload" value="2.0"/>
-			<property name="init" value="2021/01/01 00:00"/>
-			<property name="end" value="2021/12/31 23:59"/>
-		</bean>
 	
 </beans>

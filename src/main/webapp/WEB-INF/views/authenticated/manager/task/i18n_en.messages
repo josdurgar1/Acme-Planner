@@ -8,9 +8,17 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+authenticated.manager.manager.form.title.create = Create new task.
+authenticated.manager.manager.form.title.update = Update task.
+
 manager.task.list.label.title = Title
 manager.task.list.label.initialMoment = Initial Moment
 manager.task.list.label.endMoment = End Moment
 manager.task.list.label.executionPeriod = Execution Period
 manager.task.list.label.workload = Workload
 manager.task.list.label.description = Description
+
+authenticated.manager.manager.task.form.button.create = Create
+authenticated.manager.manager.task.form.button.update = Update
+authenticated.manager.manager.task.form.button.delete = Delete
+authenticated.manager.manager.task.form.button.return = Return

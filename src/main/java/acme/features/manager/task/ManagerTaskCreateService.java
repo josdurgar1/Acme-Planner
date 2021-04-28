@@ -6,14 +6,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.features.administrator.spam.AdministratorSpamListService;
+import acme.features.authenticated.manager.AuthenticatedManagerRepository;
 import acme.features.authenticated.task.AuthenticatedTaskRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Principal;
+import acme.framework.entities.Manager;
 import acme.framework.services.AbstractCreateService;
 import acme.spam.SpamRead;
 
@@ -29,25 +29,13 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 	@Autowired
 	protected AdministratorSpamListService spamService;
 	
+	protected AuthenticatedManagerRepository managerService;
+	
 
 	@Override
 	public boolean authorise(final Request<Task> request) {
-		assert request != null;
-		
-		boolean result;
-		final int taskId;
-		Task task;
-		final Manager manager;
-		final Principal principal;
-		
-		taskId = request.getModel().getInteger("taskId");
-		task = this.repository.findOneTaskById(taskId);
-		manager = task.getManager();
-		principal = request.getPrincipal();
-		
-		result = manager.getId() == principal.getAccountId();
-		
-		return result;
+		assert request != null;	
+		return true;
 	}
 
 	// AbstractCreateService<Manager, Task> interface --------------------------
@@ -67,7 +55,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "title", "initialMoment","endMoment", "executionPeriod", "workload", "description");
+		request.unbind(entity, model, "title", "initialMoment","endMoment", "executionPeriod", "workload", "description", "manager");
 	}
 
 	@Override
@@ -75,12 +63,14 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert request != null;
 		
 		Task result;
+		Manager manager;
 		Date initialMoment;
 		Date endMoment;
 		
 		
 		initialMoment = new Date(System.currentTimeMillis() -1);
 		endMoment = new Date(System.currentTimeMillis() + 1000);
+		manager = this.managerService.findOneManagerByUserAccountId(request.getPrincipal().getAccountId());
 		
 		
 		result = new Task();
@@ -92,7 +82,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		result.setLink("http://example.org");
 		result.getExecutionPeriod();
 		result.setIsPublic(true);
-		
+		result.setManager(manager);
 		
 		return result;
 	}
@@ -117,6 +107,17 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
                      break;                
 				default: errors.add("text", "SPAM");
             		break;
+			}
+		}
+		if (entity.getEndMoment().before(entity.getInitialMoment())) {
+			
+			switch (request.getLocale().getLanguage()) {
+			case "es": errors.add("text", "La fecha de final no puede ser anterior a la de inicio.");
+				break;
+			case "en": errors.add("text", "The end date can't be earlier than the start date.");
+				break;
+			default: errors.add("text", "DATE");
+				break;
 			}
 		}
 		assert errors != null;

@@ -47,6 +47,8 @@ master.menu.administrator.shutdown = Parar el sistema
 
 master.menu.manager = Manager
 master.menu.authenticated.manager.taskList = Lista de tareas
+master.menu.authenticated.manager.task.taskCreate = Crear tarea
+
 
 # master.menu.provider ########################################################
 
