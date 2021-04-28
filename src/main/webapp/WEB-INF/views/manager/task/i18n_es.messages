@@ -18,7 +18,7 @@ manager.task.form.label.workload = Carga de Trabajo
 manager.task.form.label.description = Descripción
 manager.task.form.label.link = Link
 manager.task.form.label.executionPeriod = Periodo de Ejecución
-manager.task.form.label.isPublic = Visibilidad
+manager.task.form.label.visibility = Visibilidad
 
 manager.task.list.label.title = Título
 manager.task.list.label.initialMoment = Momento de Inicio
@@ -26,6 +26,7 @@ manager.task.list.label.endMoment = Momento de Finalización
 manager.task.list.label.executionPeriod = Periodo de Ejecución
 manager.task.list.label.workload = Carga de Trabajo
 manager.task.list.label.description = Descripción
+manager.task.list.label.visibility = Visibilidad
 
 manager.manager.task.form.button.create = Crear
 manager.manager.task.form.button.update = Actualizar

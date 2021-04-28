@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
+import acme.entities.tasks.TaskVisibility;
 import acme.features.administrator.spam.AdministratorSpamListService;
 import acme.features.authenticated.manager.AuthenticatedManagerRepository;
 import acme.features.authenticated.task.AuthenticatedTaskRepository;
@@ -56,7 +57,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "title", "initialMoment","endMoment", "executionPeriod", "workload", "description", "manager");
+		request.unbind(entity, model, "title", "initialMoment","endMoment", "executionPeriod", "workload", "description","visibility");
 	}
 
 	@Override
@@ -80,10 +81,9 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		result.setEndMoment(endMoment);
 		result.setWorkload(5.0);
 		result.setDescription("This is a description");
-		result.setLink(null);
+		result.setLink("This is a link");
 		result.setExecutionPeriod(10.0);
-		result.isFinished();
-		result.setIsPublic(true);
+		result.setVisibility(TaskVisibility.PUBLIC);
 		result.setManager(manager);
 		
 		return result;
@@ -114,7 +114,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		if (entity.getEndMoment().before(entity.getInitialMoment())) {
 			
 			switch (request.getLocale().getLanguage()) {
-			case "es": errors.add("text", "La fecha de final no puede ser anterior a la de inicio.");
+			case "es": errors.add("text", "La fecha de finalización no puede ser anterior a la de inicio.");
 				break;
 			case "en": errors.add("text", "The end date can't be earlier than the start date.");
 				break;
@@ -130,10 +130,6 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 	public void create(final Request<Task> request, final Task entity) {
 		assert request != null;
 		assert entity != null;
-		
-		Date moment;
-		moment = new Date(System.currentTimeMillis() - 1);
-		entity.setInitialMoment(moment);
 		
 		this.repository.save(entity);
 	}

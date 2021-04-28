@@ -1,6 +1,7 @@
 package acme.features.manager.task;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
@@ -11,6 +12,7 @@ import acme.framework.components.Request;
 import acme.framework.entities.Principal;
 import acme.framework.services.AbstractDeleteService;
 
+@Service
 public class ManagerTaskDeleteService implements AbstractDeleteService<Manager, Task> {
 	
 	// Internal state ---------------------------------------------------------
@@ -52,7 +54,7 @@ public void unbind(final Request<Task> request, final Task entity, final Model m
 	assert entity != null;
 	assert model != null;
 	
-	request.unbind(entity, model, "title", "initialMoment","endMoment", "executionPeriod", "workload", "description", "manager");
+	request.unbind(entity, model, "title", "initialMoment","endMoment", "executionPeriod", "workload", "description", "visibility");
 }
 
 @Override

@@ -20,10 +20,10 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AdministratorDashboardRepository extends AbstractRepository {
 	
-	@Query("select count(t) from Task t where t.isPublic = true")
+	@Query("select count(t) from Task t where visibility = PUBLIC")
 	Integer totalPublicTasks();
 	
-	@Query("select count(t) from Task t where t.isPublic = false")
+	@Query("select count(t) from Task t where visibility = PRIVATE")
 	Integer totalPrivateTasks();
 	
 	@Query("select count(t) from Task t")

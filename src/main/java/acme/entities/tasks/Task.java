@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -14,6 +15,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.entities.roles.Manager;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -63,12 +65,13 @@ public class Task extends DomainEntity {
 	protected Double executionPeriod;
 	
 	@NotNull
-	protected Boolean isPublic;
+	protected TaskVisibility visibility;
 	
 	// Relationships -----------------------------------------------------------
 	
+	@Valid
 	@NotNull
 	@ManyToOne(optional=false)
-	protected acme.entities.roles.Manager manager;
+	protected Manager manager;
 
 }

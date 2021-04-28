@@ -10,6 +10,7 @@
 		<acme:list-column code="manager.task.list.label.executionPeriod" path="executionPeriod" width="20%"/>
 		<acme:list-column code="manager.task.list.label.workload" path="workload" width="20%"/>	
 		<acme:list-column code="manager.task.list.label.description" path="description" width="60%"/>	
+		<acme:list-column code="manager.task.list.label.visibility" path="visibility" width="20%"/>
 </acme:list>
 	
 	

@@ -144,7 +144,7 @@
 		<property name="description" value="Descripcion aaaaaaaaa"></property>
 		<property name="workload" value="20.3"></property>
 		<property name="executionPeriod" value="20"></property>
-		<property name="isPublic" value="true"></property>
+		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
@@ -156,7 +156,7 @@
 		<property name="description" value="Esta es la segunda Task"></property>
 		<property name="workload" value="28.3"></property>
 		<property name="executionPeriod" value="22"></property>
-		<property name="isPublic" value="false"></property>
+		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
@@ -168,7 +168,7 @@
 		<property name="description" value="Esta es la tercera Task"></property>
 		<property name="workload" value="0"></property>
 		<property name="executionPeriod" value="30"></property>
-		<property name="isPublic" value="true"></property>
+		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
@@ -180,7 +180,7 @@
 		<property name="description" value="aaaaaaaaaaaa"></property>
 		<property name="workload" value="25.3"></property>
 		<property name="executionPeriod" value="30"></property>
-		<property name="isPublic" value="false"></property>
+		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
@@ -192,7 +192,7 @@
 		<property name="description" value="aaaaaaaaaaaa"></property>
 		<property name="workload" value="25.3"></property>
 		<property name="executionPeriod" value="10"></property>
-		<property name="isPublic" value="true"></property>
+		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
@@ -204,7 +204,7 @@
 		<property name="description" value="Creando mi 6 tarea :)"></property>
 		<property name="workload" value="25.3"></property>
 		<property name="executionPeriod" value="30"></property>
-		<property name="isPublic" value="true"></property>
+		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
@@ -216,7 +216,7 @@
 		<property name="description" value="Realización de la task 7"></property>
 		<property name="workload" value="25.3"></property>
 		<property name="executionPeriod" value="30"></property>
-		<property name="isPublic" value="true"></property>
+		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
@@ -228,7 +228,7 @@
 		<property name="description" value="Task 8 realizada"></property>
 		<property name="workload" value="25.3"></property>
 		<property name="executionPeriod" value="30"></property>
-		<property name="isPublic" value="true"></property>
+		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
@@ -240,7 +240,7 @@
 		<property name="description" value="Popular base de datos"></property>
 		<property name="workload" value="25.3"></property>
 		<property name="executionPeriod" value="30"></property>
-		<property name="isPublic" value="true"></property>
+		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
@@ -252,7 +252,7 @@
 		<property name="description" value="Task 8 realizada"></property>
 		<property name="workload" value="25.3"></property>
 		<property name="executionPeriod" value="30"></property>
-		<property name="isPublic" value="true"></property>
+		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
