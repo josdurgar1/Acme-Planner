@@ -8,8 +8,8 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-manager.form.title.create = Create new task.
-manager.form.title.update = Update task.
+manager.task.form.title.create = Create new task.
+manager.task.form.title.update = Update task.
 
 manager.task.form.label.title = Title	
 manager.task.form.label.initialMoment = Initial Moment
@@ -33,3 +33,12 @@ manager.task.form.button.create = Create
 manager.task.form.button.update = Update
 manager.task.form.button.delete = Delete
 manager.task.form.button.return = Return
+
+manager.task.list.title = Tasks
+manager.task.list.title.myTask = My tasks
+
+manager.task.form.error.workload = The workload cannot exceed the execution period
+manager.task.form.error.initialMoment = The task cannot start in the past
+manager.task.form.error.endMoment = The task cannot end before it begins
+manager.task.form.error.description = Check SPAM
+manager.task.form.error.manager = You cannot modify/delete someone else's task.

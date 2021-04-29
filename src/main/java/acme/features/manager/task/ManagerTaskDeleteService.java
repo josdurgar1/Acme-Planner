@@ -75,6 +75,14 @@ public void validate(final Request<Task> request, final Task entity, final Error
 	assert request != null;
 	assert entity != null;
 	assert errors != null;
+	
+	if(!errors.hasErrors("manager")) {
+		final boolean res;
+		
+		res = entity.getManager().getId() != request.getPrincipal().getAccountId();
+		errors.state(request, res, "manager", "manager.task.form.error.manager");
+	}
+	
 }
 
 @Override

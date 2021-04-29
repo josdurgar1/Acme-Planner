@@ -40,7 +40,9 @@ public class ManagerTaskListService
 		@Override
 		public Collection<Task> findMany(final Request<Task> request) {
 			assert request != null;
+			
 			Collection<Task> result;
+			
 			result = this.repository.findMany();
 			return result;
 		}

@@ -70,8 +70,8 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		Date initialMoment;
 		Date endMoment;
 		Calendar initialCalendar;
-		Calendar endlCalendar;
-		
+		Calendar endCalendar;
+	
 		
 		/*initialMoment = new Date(System.currentTimeMillis() -1);
 		endMoment = new Date(System.currentTimeMillis() + 10000000);*/
@@ -80,23 +80,22 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		initialMoment = new Date();
 		initialCalendar = Calendar.getInstance();
 		initialCalendar.setTime(initialMoment);
-		initialCalendar.add(Calendar.SECOND, -1);
+		initialCalendar.add(Calendar.SECOND, 0);
 		initialMoment = initialCalendar.getTime();
 		
 		endMoment = new Date();
-		endlCalendar = Calendar.getInstance();
-		endlCalendar.setTime(endMoment);
-		endlCalendar.add(Calendar.SECOND, 0);
-		endMoment = endlCalendar.getTime();
+		endCalendar = Calendar.getInstance();
+		endCalendar.setTime(endMoment);
+		endCalendar.add(Calendar.SECOND, 3600);
+		endMoment = endCalendar.getTime();
 		
 		result = new Task();
 		result.setTitle("Task-01");
 		result.setInitialMoment(initialMoment);
 		result.setEndMoment(endMoment);
-		result.setWorkload(5.0);
 		result.setDescription("This is a description");
 		result.setLink("This is a link");
-		result.setExecutionPeriod(10.0);
+		result.setWorkload(0.0);
 		result.setVisibility(TaskVisibility.PUBLIC);
 		result.setManager(manager);
 		
@@ -107,36 +106,43 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 	public void validate(final Request<Task> request, final Task entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
+		assert errors != null;
 		
 		List<String> spamList;
 		double umbral;
 		
 		spamList = this.spamService.findAllSpamWord();
 		umbral = this.spamService.umbral();
+				
+				if(!errors.hasErrors("initialMoment")) {
+					final Date now = new Date();
+					final boolean res = entity.getInitialMoment().after(now);
+					errors.state(request, res, "initialMoment", "manager.task.form.error.initialMoment");
+				}
 		
-		if (SpamRead.isSpam(umbral, entity.getTitle(), spamList) || SpamRead.isSpam(umbral, entity.getDescription(), spamList)){
-			
-			switch (request.getLocale().getLanguage()) {
-				case "es":  errors.add("text", "Este mensaje se considera SPAM. El umbral es del "+umbral+"%");
-                     break;
-				case "en":  errors.add("text", "This message is considered SPAM. The threshold is "+umbral+"%");
-                     break;                
-				default: errors.add("text", "SPAM");
-            		break;
-			}
-		}
-		if (entity.getEndMoment().before(entity.getInitialMoment())) {
-			
-			switch (request.getLocale().getLanguage()) {
-			case "es": errors.add("text", "La fecha de finalización no puede ser anterior a la de inicio.");
-				break;
-			case "en": errors.add("text", "The end date can't be earlier than the start date.");
-				break;
-			default: errors.add("text", "DATE");
-				break;
-			}
-		}
-		assert errors != null;
+				if(!errors.hasErrors("endMoment")) {
+					final boolean res = entity.getInitialMoment().after(entity.getEndMoment());
+					errors.state(request, !res, "endMoment", "manager.task.form.error.endMoment");
+
+				}
+				if(!errors.hasErrors("workload")) {
+					final long endMoment = entity.getEndMoment().getTime();
+					final long initialMoment = entity.getInitialMoment().getTime();
+					
+					final long diff = endMoment-initialMoment;
+					final double horas = (Math.abs(diff)*1.0)/3600000;
+					boolean res;
+					res = horas<entity.getWorkload();
+					
+					errors.state(request, !res, "workload", "manager.task.form.error.workload");
+					
+				}
+				if(!errors.hasErrors("description")) {
+					boolean res;
+					
+					res = SpamRead.isSpam(umbral, entity.getDescription(), spamList);
+					errors.state(request, !res, "description", "manager.task.form.error.description");
+				}
 		
 	}
 
@@ -144,6 +150,14 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 	public void create(final Request<Task> request, final Task entity) {
 		assert request != null;
 		assert entity != null;
+		
+		final long endMoment = entity.getEndMoment().getTime();
+		final long initialMoment = entity.getInitialMoment().getTime();
+		
+		final long diff = endMoment-initialMoment;
+		final double horas = (Math.abs(diff)*1.0)/3600000;
+		
+		entity.setExecutionPeriod(horas);
 		
 		this.repository.save(entity);
 	}

@@ -1,5 +1,6 @@
 package acme.features.manager.task;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,6 +82,7 @@ public Task findOne(final Request<Task> request) {
 public void validate(final Request<Task> request, final Task entity, final Errors errors) {
 	assert request != null;
 	assert entity != null;
+	assert errors != null;
 	
 	List<String> spamList;
 	double umbral;
@@ -88,36 +90,57 @@ public void validate(final Request<Task> request, final Task entity, final Error
 	spamList = this.spamService.findAllSpamWord();
 	umbral = this.spamService.umbral();
 	
-	if (SpamRead.isSpam(umbral, entity.getTitle(), spamList) || SpamRead.isSpam(umbral, entity.getDescription(), spamList)){
-		
-		switch (request.getLocale().getLanguage()) {
-			case "es":  errors.add("text", "Este mensaje se considera SPAM. El umbral es del "+umbral+"%");
-                 break;
-			case "en":  errors.add("text", "This message is considered SPAM. The threshold is "+umbral+"%");
-                 break;                
-			default: errors.add("text", "SPAM");
-        		break;
-		}
-	}
-	if (entity.getEndMoment().before(entity.getInitialMoment())) {
-		
-		switch (request.getLocale().getLanguage()) {
-		case "es": errors.add("text", "La fecha de final no puede ser anterior a la de inicio.");
-			break;
-		case "en": errors.add("text", "The end date can't be earlier than the start date.");
-			break;
-		default: errors.add("text", "DATE");
-			break;
-		}
-	}
+			if(!errors.hasErrors("initialMoment")) {
+				final Date now = new Date();
+				final boolean res = entity.getInitialMoment().after(now);
+				errors.state(request, res, "initialMoment", "manager.task.form.error.initialMoment");
+			}
 	
-	assert errors != null;
+			if(!errors.hasErrors("endMoment")) {
+				final boolean res = entity.getInitialMoment().after(entity.getEndMoment());
+				errors.state(request, !res, "endMoment", "manager.task.form.error.endMoment");
+
+			}
+			if(!errors.hasErrors("workload")) {
+				final long endMoment = entity.getEndMoment().getTime();
+				final long initialMoment = entity.getInitialMoment().getTime();
+				
+				final long diff = endMoment-initialMoment;
+				final double horas = (Math.abs(diff)*1.0)/3600000;
+				boolean res;
+				res = horas<entity.getWorkload();
+				
+				errors.state(request, !res, "workload", "manager.task.form.error.workload");
+				
+			}
+			if(!errors.hasErrors("description")) {
+				boolean res;
+				
+				res = SpamRead.isSpam(umbral, entity.getDescription(), spamList);
+				errors.state(request, !res, "description", "manager.task.form.error.description");
+			}
+			if(!errors.hasErrors("manager")) {
+				final boolean res;
+				
+				res = entity.getManager().getId() != request.getPrincipal().getAccountId();
+				errors.state(request, res, "manager", "manager.task.form.error.manager");
+			}
+
 }
 
 @Override
 public void update(final Request<Task> request, final Task entity) {
 	assert request != null;
 	assert entity != null;
+	
+	final long endMoment = entity.getEndMoment().getTime();
+	final long initialMoment = entity.getInitialMoment().getTime();
+	
+	final long diff = endMoment-initialMoment;
+	final double horas = (Math.abs(diff)*1.0)/3600000;
+	
+	entity.setExecutionPeriod(horas);
+	entity.setWorkload(0.0);
 
 	this.repository.save(entity);
 }
