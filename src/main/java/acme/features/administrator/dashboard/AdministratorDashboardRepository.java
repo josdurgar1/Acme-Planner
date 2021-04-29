@@ -61,5 +61,16 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	
 	@Query("select stddev(t.workload) from Task t")
 	Double stdDevTaskWorkloads();
+	
+	//CHARTS
+	
+	@Query("select count(w) from Workplan w")
+	Integer totalNumberWorkplans();
+	
+	@Query("select count(w) from Workplan w where w.isPublished=true")
+	Integer totalNumberWorkplansPublished();
+	
+	@Query("select count(w) from Workplan w where w.isPublished=false")
+	Integer totalNumberWorkplansNonPublished();
 
 }

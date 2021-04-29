@@ -31,6 +31,12 @@ public class Dashboard implements Serializable {
 	Double 						minWorkload;
 	Double 						averageNumberOfTaskWorkloads;
 	Double 						stdDevTaskWorkloads;
+	
+	//CHART ATTRIBUTES
+	
+	Integer						totalNumberWorkplans;
+	Integer						totalNumberWorkplansPublished;
+	Integer						totalNumberWorkplansNonPublished;
 
 
 	// Derived attributes -----------------------------------------------------

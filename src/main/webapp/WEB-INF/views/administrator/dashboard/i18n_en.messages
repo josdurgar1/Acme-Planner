@@ -26,3 +26,11 @@ administrator.dashboard.form.label.minWorkload = Minimun workload (Hours)
 administrator.dashboard.form.label.averageNumberOfTaskWorkloads = Average of task workloads 
 administrator.dashboard.form.label.stdDevTaskWorkloads = Total deviation of workloads of tasks 
 
+
+administrator.chart.form.title.show = Chart
+
+administrator.chart.form.title.general-indicators = General indicators
+administrator.chart.form.label.totalNumberWorkplans = Total number of Workplans
+administrator.chart.form.label.totalNumberWorkplansPublished = Total number of Workplans published
+administrator.chart.form.label.totalNumberWorkplansNonPublished = Total number of Workplans  non published
+

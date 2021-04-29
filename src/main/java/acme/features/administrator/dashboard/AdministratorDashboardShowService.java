@@ -45,7 +45,9 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert entity != null;
 		assert model != null;
 		request.unbind(entity, model, "totalPublicTasks","totalPrivateTasks" ,"totalNumberOfPublicPrivateTasks","averageNumberOfTaskExecutionPeriods", "stdDevTaskExecutionPeriods", "totalFinishedTasks","totalNonFinishedTasks","totalNumberOfFinishedNonFinishedTasks",
-			"minExecutionPeriod", "maxExecutionPeriod", "maxWorkload", "minWorkload", "averageNumberOfTaskWorkloads", "stdDevTaskWorkloads");
+			"minExecutionPeriod", "maxExecutionPeriod", "maxWorkload", "minWorkload", "averageNumberOfTaskWorkloads", "stdDevTaskWorkloads",
+			//CHART
+			"totalNumberWorkplans","totalNumberWorkplansPublished" ,"totalNumberWorkplansNonPublished");
 	}
 
 	@Override
@@ -67,6 +69,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final Double  minWorkload;
 		final Double 	averageNumberOfTaskWorkloads;
 		final Double 	stdDevTaskWorkloads;
+		
+		Integer	totalNumberWorkplans;
+		Integer totalNumberWorkplansPublished;
+		Integer totalNumberWorkplansNonPublished;
 
 
 		totalPublicTasks = this.repository.totalPublicTasks();
@@ -83,6 +89,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		minWorkload = this.repository.minWorkload();
 		averageNumberOfTaskWorkloads = this.repository.averageNumberOfTaskWorkloads();
 		stdDevTaskWorkloads = this.repository.stdDevTaskWorkloads();
+		
+		totalNumberWorkplans = this.repository.totalNumberWorkplans();
+		totalNumberWorkplansPublished = this.repository.totalNumberWorkplansPublished();
+		totalNumberWorkplansNonPublished = this.repository.totalNumberWorkplansNonPublished();
 		
 		
 
@@ -103,6 +113,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setMinWorkload(minWorkload);
 		result.setAverageNumberOfTaskWorkloads(averageNumberOfTaskWorkloads);
 		result.setStdDevTaskWorkloads(stdDevTaskWorkloads);
+		
+		result.setTotalNumberWorkplans(totalNumberWorkplans);
+		result.setTotalNumberWorkplansPublished(totalNumberWorkplansPublished);
+		result.setTotalNumberWorkplansNonPublished(totalNumberWorkplansNonPublished);
 
 
 		return result;
