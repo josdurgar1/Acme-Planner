@@ -45,7 +45,7 @@ master.menu.administrator.shutdown = Shut down
 
 # master.menu.manager #########################################################
 
-master.menu.manager = Manager
+master.menu.manager = Authenticated
 master.menu.authenticated.manager.taskList = Tasks List
 
 # master.menu.provider ########################################################
@@ -66,6 +66,8 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+master.menu.user-account.become-manager = Become a manager
+master.menu.user-account.manager = Manager data
 
 # master.footer ###############################################################
 

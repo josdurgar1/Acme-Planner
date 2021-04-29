@@ -38,7 +38,7 @@ public class SpamRead {
 				detectadas++;
 			}
 		}
-		if(((detectadas*1.0)/numeroDePalabras>(umbral/100))) {
+		if(((detectadas*1.0)/numeroDePalabras>=(umbral/100))) {
 			result=true;
 		}
 		return result;

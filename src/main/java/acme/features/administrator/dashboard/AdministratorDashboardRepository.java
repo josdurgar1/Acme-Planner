@@ -20,6 +20,7 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AdministratorDashboardRepository extends AbstractRepository {
 	
+	//--------------------------------------TASK---------------------------------------------
 	@Query("select count(t) from Task t where t.isPublic = true")
 	Integer totalPublicTasks();
 	
@@ -27,7 +28,7 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	Integer totalPrivateTasks();
 	
 	@Query("select count(t) from Task t")
-	Double totalNumberOfPublicPrivateTasks();
+	Integer totalNumberOfPublicPrivateTasks();
 	
 	@Query("select count(t) from Task t where t.endMoment < current_timestamp()")
 	Integer totalNonFinishedTasks();
@@ -62,6 +63,7 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select stddev(t.workload) from Task t")
 	Double stdDevTaskWorkloads();
 	
+
 	//CHARTS
 	
 	@Query("select count(w) from Workplan w")
@@ -72,5 +74,49 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	
 	@Query("select count(w) from Workplan w where w.isPublished=false")
 	Integer totalNumberWorkplansNonPublished();
+
+	//--------------------------------------WORKPLAN---------------------------------------------
+	@Query("select count(t) from Workplan t where t.isPublic = true")
+	Integer totalPublicWorkplan();
+	
+	@Query("select count(t) from Workplan t where t.isPublic = false")
+	Integer totalPrivateWorkplan();
+	
+	@Query("select count(t) from Workplan t")
+	Integer totalNumberOfPublicPrivateWorkplan();
+	
+	@Query("select count(t) from Workplan t where t.end < current_timestamp()")
+	Integer totalNonFinishedWorkplan();
+	
+	@Query("select count(t) from Workplan t where t.end > current_timestamp()")
+	Integer totalFinishedWorkplan();
+	
+	@Query("select count(t) from Workplan t")
+	Double totalNumberOfFinishedNonFinishedWorkplan();
+	
+	@Query("select avg(DATEDIFF(t.end, t.init)) from Workplan t")
+	Double averageNumberOfWorkplanExecutionPeriods();
+	
+	@Query("select stddev(DATEDIFF(t.end, t.init)) from Workplan t")
+	Double stdDevWorkplanExecutionPeriods();
+	
+	@Query("select min(DATEDIFF(t.end, t.init)) from Workplan t")
+	Integer minWorkplanExecutionPeriod();
+
+	@Query("select max(DATEDIFF(t.end, t.init)) from Workplan t")
+	Integer maxWorkplanExecutionPeriod();
+	
+	@Query("select max(t.workload) from Workplan t")
+	Double maxWorkplanWorkload();
+	
+	@Query("select min(t.workload) from Workplan t")
+	Double minWorkplanWorkload();
+	
+	@Query("select avg(t.workload) from Workplan t")
+	Double averageNumberOfWorkplanWorkloads();
+	
+	@Query("select stddev(t.workload) from Workplan t")
+	Double stdDevWorkplanWorkloads();
+
 
 }

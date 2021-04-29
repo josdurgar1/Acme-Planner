@@ -15,11 +15,11 @@ public class Dashboard implements Serializable {
 
 	protected static final long	serialVersionUID	= 1L;
 
-	// Attributes -------------------------------------------------------------
+	// Attributes TASKS-------------------------------------------------------------
 
 	Integer						totalPublicTasks;
 	Integer						totalPrivateTasks;
-	Double						totalNumberOfPublicPrivateTasks;
+	Integer						totalNumberOfPublicPrivateTasks;
 	Integer						totalNonFinishedTasks;
 	Integer						totalFinishedTasks;
 	Double						totalNumberOfFinishedNonFinishedTasks;
@@ -32,15 +32,32 @@ public class Dashboard implements Serializable {
 	Double 						averageNumberOfTaskWorkloads;
 	Double 						stdDevTaskWorkloads;
 	
-	//CHART ATTRIBUTES
+
+	// Attributes WORKPLANS-------------------------------------------------------------
 	
-	Integer						totalNumberWorkplans;
+	Integer						totalPublicWorkplan;
+	Integer						totalPrivateWorkplan;
+	Integer						totalNumberOfPublicPrivateWorkplan;
+	Integer						totalNonFinishedWorkplan;
+	Integer						totalFinishedWorkplan;
+	Double						totalNumberOfFinishedNonFinishedWorkplan;
+	Double						averageNumberOfWorkplanExecutionPeriods;
+	Double						stdDevWorkplanExecutionPeriods;
+	Integer						minWorkplanExecutionPeriod;
+	Integer						maxWorkplanExecutionPeriod;
+	Double 						maxWorkplanWorkload;
+	Double 						minWorkplanWorkload;
+	Double 						averageNumberOfWorkplanWorkloads;
+	Double 						stdDevWorkplanWorkloads;
+	
+  	//CHART ATTRIBUTES
+  Integer						totalNumberWorkplans;
 	Integer						totalNumberWorkplansPublished;
 	Integer						totalNumberWorkplansNonPublished;
+	
 
+// Derived attributes -----------------------------------------------------
 
-	// Derived attributes -----------------------------------------------------
-
-	// Relationships ----------------------------------------------------------
+// Relationships ----------------------------------------------------------
 
 }
