@@ -139,6 +139,37 @@
 			<acme:print value="${stdDevTaskWorkloads}"/>
 		</td>
 	</tr>
+	
+	<!-- CHARTS -->
+	
+	<caption>
+		<acme:message code="administrator.chart.form.title.general-indicators"/>
+	</caption>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.chart.form.label.totalNumberWorkplans"/>
+		</th>
+		<td>
+			<acme:print value="${totalNumberWorkplans}"/>
+		</td>
+	</tr>	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.chart.form.label.totalNumberWorkplansPublished"/>
+		</th>
+		<td>
+			<acme:print value="${totalNumberWorkplansPublished}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.chart.form.label.totalNumberWorkplansNonPublished"/>
+		</th>
+		<td>
+			<acme:print value="${totalNumberWorkplansNonPublished}"/>
+		</td>
+	</tr>
+	
 </table>
 
 <h2>
