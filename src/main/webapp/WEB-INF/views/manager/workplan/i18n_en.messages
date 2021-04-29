@@ -27,4 +27,7 @@ manager.workplan.form.error.init		= 	The start date must be later than the curre
 manager.task.form.error.period			= 	The end date must be after the start date
 manager.task.form.error.workload		=	The workload cannot exceed the execution period
 manager.workplan.form.error.spam		=   Check SPAM
+manager.workplan.form.label.link.deallocate	= Deallocate
+manager.workplan.form.label.task.unassigned	= Unnassigned Tasks
+manager.workplan.form.label.link.assign		= Assign
 
