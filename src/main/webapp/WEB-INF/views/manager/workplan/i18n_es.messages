@@ -27,4 +27,7 @@ manager.workplan.form.error.init		= 	La fecha de inicio debe ser posterior a la 
 manager.task.form.error.period			= 	La fecha de fin debe ser posterior a la de inicio
 manager.task.form.error.workload		=	La carga de trabajo no puede ser superior al periodo de ejecución
 manager.workplan.form.error.spam		=   Compruebe el SPAM
+manager.workplan.form.label.link.deallocate	= Desasignar
+manager.workplan.form.label.task.unassigned	= Tareas para asignar
+manager.workplan.form.label.link.assign		= Asignar
 
