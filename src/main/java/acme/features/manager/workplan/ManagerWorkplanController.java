@@ -30,6 +30,10 @@ public class ManagerWorkplanController extends AbstractController<Manager, Workp
 		protected ManagerWorkplanUpdateService	updateService;
 		@Autowired
 		protected ManagerWorkplanDeleteService deleteService;
+		@Autowired
+		protected ManagerWorkplanAssignService assignService;
+		@Autowired
+		protected ManagerWorkplanUnnassignService unnassignService;
 
 		// Constructors -----------------------------------------------------------
 
@@ -43,6 +47,8 @@ public class ManagerWorkplanController extends AbstractController<Manager, Workp
 			super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
 			
 			super.addCustomCommand(CustomCommand.PUBLISH, BasicCommand.UPDATE, this.publishService);
+			super.addCustomCommand(CustomCommand.ASSIGN, BasicCommand.UPDATE, this.assignService);
+			super.addCustomCommand(CustomCommand.UNNASSIGN, BasicCommand.UPDATE, this.unnassignService);
 		}
 
 }

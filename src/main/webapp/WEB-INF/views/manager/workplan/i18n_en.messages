@@ -30,4 +30,6 @@ manager.workplan.form.error.spam		=   Check SPAM
 manager.workplan.form.label.link.deallocate	= Deallocate
 manager.workplan.form.label.task.unassigned	= Unnassigned Tasks
 manager.workplan.form.label.link.assign		= Assign
+manager.workplan.form.label.task.assigned	= Assign Tasks
+manager.workplan.form.label.link.unnassign	= Unnasign
 
