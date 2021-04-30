@@ -36,14 +36,41 @@
 		<acme:form-option code="manager.workplan.form.label.true" value="true" selected="${isPublished == 'true'}"/>
 	</acme:form-select>
 
+<h2><acme:message code="manager.workplan.form.label.task.assigned"/></h2>
+	<table id="taskTable" class="table table-striped">
+		<thead>
+			<tr>
+				<th style="width: 35%;"><acme:message code="manager.workplan.form.label.title"/></th>
+				<th style="width: 35%;"><acme:message code="manager.workplan.form.label.workload"/></th>
+				<jstl:if test="${isPublished=='false'}" >
+				<th style="width: 30%;"><acme:message code="manager.workplan.form.label.link.unnassign"/></th>
+		 		</jstl:if>
+			</tr>
+		</thead>
+		<tbody>
+			<jstl:forEach var="task" items="${tasks}">
+				<tr>
+					<td>${task.title}</td>
+					<td><acme:print value="${task.workload }"/></td>
+					<jstl:if test="${isPublished=='false'}" >
+					<td>
+                	
+            <acme:form-submit test="${command == 'show' && isPublished == 'false'}" code="manager.workplan.form.label.link.unnassign" action="/manager/workplan/unnassign?tId=${aTasks.id}&wId=${id}"/>
+                </td>
+                </jstl:if>
+				</tr>
+			</jstl:forEach>
+		</tbody>
+	</table>
+
  <h2><acme:message code="manager.workplan.form.label.task.unassigned"/></h2>
 	<table id="taskTable" class="table table-striped">
 		<thead>
 			<tr>
 				<th style="width: 35%;"><acme:message code="manager.workplan.form.label.title"/></th>
-				<th style="width: 35%;"><acme:message code="manager.workplan.form.label.title"/></th>
+				<th style="width: 35%;"><acme:message code="manager.workplan.form.label.workload"/></th>
 				<jstl:if test="${isPublished=='false'}" >
-				<th style="width: 30%;"><acme:message code="manager.workplan.form.label.link.deallocate"/></th>
+				<th style="width: 30%;"><acme:message code="manager.workplan.form.label.link.assign"/></th>
 		 		</jstl:if>
 			</tr>
 		</thead>
@@ -54,14 +81,16 @@
 					<td><acme:print value="${aTasks.workload }"/></td>
 					<jstl:if test="${isPublished=='false'}" >
 					<td>
-                	<a href="manager/workplan/assign/${aTasks.id}"><acme:message code="manager.workplan.form.label.link.assign"/></a>
-            
+                	<!-- <a href="manager/workplan/assign?tId=${aTasks.id}&wId=${id}"><acme:message code="manager.workplan.form.label.link.assign"/></a> -->
+           			 <acme:form-submit test="${command == 'show' && isPublished == 'false'}" code="manager.workplan.form.label.link.assign" action="/manager/workplan/assign?tId=${aTasks.id}&wId=${id}"/>
                 </td>
                 </jstl:if>
 				</tr>
 			</jstl:forEach>
 		</tbody>
 	</table>
+	
+	
 
 	<acme:form-submit test="${command == 'show' && isPublished == 'false'}" code="manager.workplan.form.button.update" action="/manager/workplan/update"/>
 	<acme:form-submit test="${command == 'show' && isPublished == 'false'}" code="manager.workplan.form.button.delete" action="/manager/workplan/delete"/>

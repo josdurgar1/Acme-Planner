@@ -56,7 +56,7 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 		}else {
 			tasks=this.repository.findAllTaskPrivateByManagerId(entity.getManager().getId());
 		}
-		//tasks.retainAll(entity.getTasks());
+		tasks.removeAll(entity.getTasks());
 		
 		model.setAttribute("unnasignedTask", tasks);
 		request.unbind(entity, model, "title", "isPublic", "init","end","workload","isPublished","executionPeriod","tasks");
