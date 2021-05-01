@@ -44,8 +44,10 @@
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
 		
-		<acme:menu-option code="master.menu.manager" access="isAuthenticated()">
-			<acme:menu-suboption code="master.menu.authenticated.manager.taskList" action="/authenticated/task/list"/>
+		<acme:menu-option code="master.menu.manager" access="hasRole('Manager')">
+			<acme:menu-suboption code="master.menu.manager.task.taskList" action="/manager/task/list"/>
+			<acme:menu-suboption code="master.menu.manager.task.my-task" action="/manager/task/list-mine"/>
+			<acme:menu-suboption code="master.menu.manager.task.taskCreate" action="/manager/task/create"/>
 		</acme:menu-option>
 		
 	</acme:menu-left>

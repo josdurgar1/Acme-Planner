@@ -1,0 +1,43 @@
+# i18n_es.messages
+#
+# Copyright (C) 2012-2021 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+manager.task.form.title.create = Crear nueva tarea.
+manager.task.form.title.update = Actualizar tarea.
+
+manager.task.form.label.title = Título	
+manager.task.form.label.initialMoment = Momento de Inicio
+manager.task.form.label.endMoment = Momento de Finalización
+manager.task.form.label.workload = Carga de Trabajo
+manager.task.form.label.description = Descripción
+manager.task.form.label.link = Enlace 
+manager.task.form.label.executionPeriod = Periodo de Ejecución
+manager.task.form.label.visibility = Visibilidad
+
+manager.task.list.label.title = Título
+manager.task.list.label.initialMoment = Momento de Inicio
+manager.task.list.label.endMoment = Momento de Finalización
+manager.task.list.label.executionPeriod = Periodo de Ejecución
+manager.task.list.label.workload = Carga de Trabajo
+manager.task.list.label.description = Descripción
+manager.task.list.label.visibility = Visibilidad
+
+manager.task.form.button.create = Crear
+manager.task.form.button.update = Actualizar
+manager.task.form.button.delete = Borrar
+manager.task.form.button.return = Return
+
+manager.task.list.title.list = Tareas
+manager.task.list.title.myTask = Mis tareas
+
+manager.task.form.error.workload = La carga de trabajo no puede exceder al periodo de ejecución
+manager.task.form.error.initialMoment = La tarea no puede comenzar en el pasado
+manager.task.form.error.endMoment = La tarea no puede acabar antes de comenzar
+manager.task.form.error.description = Comprueba el SPAM
+manager.task.form.error.manager = No puedes modificar/eliminar una tarea ajena

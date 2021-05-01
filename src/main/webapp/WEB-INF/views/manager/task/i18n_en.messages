@@ -1,0 +1,43 @@
+# i18n_en.messages
+#
+# Copyright (C) 2012-2021 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+manager.task.form.title.create = Create new task.
+manager.task.form.title.update = Update task.
+
+manager.task.form.label.title = Title	
+manager.task.form.label.initialMoment = Initial Moment
+manager.task.form.label.endMoment = End Moment
+manager.task.form.label.workload = Workload
+manager.task.form.label.description = Description
+manager.task.form.label.link = Link
+manager.task.form.label.executionPeriod = Execution Period
+manager.task.form.label.visibility = Visibility
+
+manager.task.list.label.title = Title
+manager.task.list.label.initialMoment = Initial Moment
+manager.task.list.label.endMoment = End Moment
+manager.task.list.label.executionPeriod = Execution Period
+manager.task.list.label.workload = Workload
+manager.task.list.label.description = Description
+manager.task.list.label.visibility = Visibility
+
+manager.task.form.button.create = Create
+manager.task.form.button.update = Update
+manager.task.form.button.delete = Delete
+manager.task.form.button.return = Return
+
+manager.task.list.title = Tasks
+manager.task.list.title.myTask = My tasks
+
+manager.task.form.error.workload = The workload cannot exceed the execution period
+manager.task.form.error.initialMoment = The task cannot start in the past
+manager.task.form.error.endMoment = The task cannot end before it begins
+manager.task.form.error.description = Check SPAM
+manager.task.form.error.manager = You cannot modify/delete someone else's task.
