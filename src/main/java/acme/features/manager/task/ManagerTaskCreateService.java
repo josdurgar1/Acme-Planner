@@ -58,7 +58,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "title", "initialMoment","endMoment", "executionPeriod", "workload", "description","visibility");
+		request.unbind(entity, model, "title", "initialMoment","endMoment", "workload", "description","visibility", "isFinished", "executionPeriod");
 	}
 
 	@Override
@@ -66,12 +66,12 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert request != null;
 		
 		Task result;
-		Manager manager;
+		final Manager manager;
 		Date initialMoment;
 		Date endMoment;
 		Calendar initialCalendar;
 		Calendar endCalendar;
-	
+
 		
 		/*initialMoment = new Date(System.currentTimeMillis() -1);
 		endMoment = new Date(System.currentTimeMillis() + 10000000);*/
@@ -89,6 +89,8 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		endCalendar.add(Calendar.SECOND, 3600);
 		endMoment = endCalendar.getTime();
 		
+		
+		
 		result = new Task();
 		result.setTitle("Task-01");
 		result.setInitialMoment(initialMoment);
@@ -98,7 +100,8 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		result.setWorkload(0.0);
 		result.setVisibility(TaskVisibility.PUBLIC);
 		result.setManager(manager);
-		
+		request.getModel().setAttribute("isFinished", false);
+				
 		return result;
 	}
 
@@ -157,6 +160,10 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		final long diff = endMoment-initialMoment;
 		final double horas = (Math.abs(diff)*1.0)/3600000;
 		
+		final Date currentMoment = new Date(System.currentTimeMillis()-1);
+		final boolean isFinished = currentMoment.after(entity.getEndMoment());
+		
+		request.getModel().setAttribute("isFinished", isFinished);;
 		entity.setExecutionPeriod(horas);
 		
 		this.repository.save(entity);

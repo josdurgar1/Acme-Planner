@@ -20,7 +20,6 @@ manager.task.form.label.link = Link
 manager.task.form.label.executionPeriod = Execution Period
 manager.task.form.label.visibility = Visibility
 
-
 manager.task.list.label.title = Title
 manager.task.list.label.initialMoment = Initial Moment
 manager.task.list.label.endMoment = End Moment

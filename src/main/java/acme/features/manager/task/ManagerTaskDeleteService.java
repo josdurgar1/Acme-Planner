@@ -54,7 +54,7 @@ public void unbind(final Request<Task> request, final Task entity, final Model m
 	assert entity != null;
 	assert model != null;
 	
-	request.unbind(entity, model, "title", "initialMoment","endMoment", "executionPeriod", "workload", "description", "visibility");
+	request.unbind(entity, model, "title", "initialMoment","endMoment", "workload", "description", "visibility", "isFinished", "executionPeriod");
 }
 
 @Override

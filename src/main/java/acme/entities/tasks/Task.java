@@ -43,7 +43,7 @@ public class Task extends DomainEntity {
 	
 	@NotNull
 	@Digits(integer = 3, fraction = 2)
-	protected Double workload;
+	protected Double 				workload;
 
 	@NotEmpty
 	@Length(max = 500)
@@ -52,19 +52,14 @@ public class Task extends DomainEntity {
 	@URL
 	protected String				link;
 	
-	public boolean isFinished() {
-		boolean result;
-		Date now;
-
-		now = new Date(System.currentTimeMillis());
-		result = now.after(this.endMoment);
-		return result;
-	}
-	
-	protected Double executionPeriod;
-	
 	@NotNull
-	protected TaskVisibility visibility;
+	protected TaskVisibility 		visibility;
+	// Derived attributes ----------------------------------------------------
+	
+	protected boolean 				isFinished;
+
+	
+	protected Double 				executionPeriod;
 	
 	// Relationships -----------------------------------------------------------
 	

@@ -146,6 +146,7 @@
 		<property name="executionPeriod" value="20"></property>
 		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
+		<property name="Finished" value="false"></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 	
@@ -158,6 +159,7 @@
 		<property name="executionPeriod" value="22"></property>
 		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
+		<property name="Finished" value="true"></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 	
@@ -170,6 +172,7 @@
 		<property name="executionPeriod" value="30"></property>
 		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
+		<property name="Finished" value="false"></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 	
@@ -182,6 +185,7 @@
 		<property name="executionPeriod" value="30"></property>
 		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
+		<property name="Finished" value="true"></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 	
@@ -194,6 +198,7 @@
 		<property name="executionPeriod" value="10"></property>
 		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
+		<property name="Finished" value="true"></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 	
@@ -206,6 +211,7 @@
 		<property name="executionPeriod" value="30"></property>
 		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
+		<property name="Finished" value="true"></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 
@@ -218,6 +224,7 @@
 		<property name="executionPeriod" value="30"></property>
 		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
+		<property name="Finished" value="false"></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 
@@ -230,6 +237,7 @@
 		<property name="executionPeriod" value="30"></property>
 		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
+		<property name="Finished" value="true"></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 
@@ -242,6 +250,7 @@
 		<property name="executionPeriod" value="30"></property>
 		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
+		<property name="Finished" value="false"></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 
@@ -254,6 +263,7 @@
 		<property name="executionPeriod" value="30"></property>
 		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
+		<property name="Finished" value="true"></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 	

@@ -20,8 +20,8 @@
 	</acme:form-select>
 	
 	
-	<acme:form-submit test="${command == 'show' && isFinished == 'true'}" code="manager.task.form.button.update" action="/manager/task/update"/>
-	<acme:form-submit test="${command == 'show' && isFinished == 'true'}" code="manager.task.form.button.delete" action="/manager/task/delete"/>
+	<acme:form-submit test="${command == 'show'}" code="manager.task.form.button.update" action="/manager/task/update"/>
+	<acme:form-submit test="${command == 'show'}" code="manager.task.form.button.delete" action="/manager/task/delete"/>
 	
 	
 	<acme:form-submit test="${command == 'create'}" code="manager.task.form.button.create" action="/manager/task/create"/>

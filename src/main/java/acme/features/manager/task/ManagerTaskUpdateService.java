@@ -62,7 +62,7 @@ public void unbind(final Request<Task> request, final Task entity, final Model m
 	assert entity != null;
 	assert model != null;
 	
-	request.unbind(entity, model, "title", "initialMoment","endMoment", "executionPeriod", "workload", "description", "visibility");
+	request.unbind(entity, model, "title", "initialMoment","endMoment", "workload", "description", "visibility", "isFinished", "executionPeriod");
 }
 
 @Override
@@ -89,12 +89,6 @@ public void validate(final Request<Task> request, final Task entity, final Error
 	
 	spamList = this.spamService.findAllSpamWord();
 	umbral = this.spamService.umbral();
-	
-			if(!errors.hasErrors("initialMoment")) {
-				final Date now = new Date();
-				final boolean res = entity.getInitialMoment().after(now);
-				errors.state(request, res, "initialMoment", "manager.task.form.error.initialMoment");
-			}
 	
 			if(!errors.hasErrors("endMoment")) {
 				final boolean res = entity.getInitialMoment().after(entity.getEndMoment());
@@ -139,8 +133,11 @@ public void update(final Request<Task> request, final Task entity) {
 	final long diff = endMoment-initialMoment;
 	final double horas = (Math.abs(diff)*1.0)/3600000;
 	
+	final Date currentMoment = new Date(System.currentTimeMillis()-1);
+	final boolean isFinished = currentMoment.after(entity.getEndMoment());
+	
+	request.getModel().setAttribute("isFinished", isFinished);;
 	entity.setExecutionPeriod(horas);
-	entity.setWorkload(0.0);
 
 	this.repository.save(entity);
 }
