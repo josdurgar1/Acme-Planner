@@ -340,5 +340,31 @@
 	
 	<!-- WorkPlan-->
 	
+		<bean id="workplan01" class="acme.entities.workplan.Workplan">
+			<property name="isPublic" value="true"/>
+			<property name="isPublished" value="true"/>
+			<property name="executionPeriod" value="4.0"/>
+			<property name="workload" value="2.0"/>
+			<property name="init" value="2021/01/01 00:00"/>
+			<property name="end" value="2021/12/31 23:59"/>
+		</bean>
+		
+		<bean id="workplan02" class="acme.entities.workplan.Workplan">
+			<property name="isPublic" value="true"/>
+			<property name="isPublished" value="true"/>
+			<property name="executionPeriod" value="4.0"/>
+			<property name="workload" value="2.0"/>
+			<property name="init" value="2021/01/01 00:00"/>
+			<property name="end" value="2021/12/31 23:59"/>
+		</bean>
+		
+		<bean id="workplan03" class="acme.entities.workplan.Workplan">
+			<property name="isPublic" value="true"/>
+			<property name="isPublished" value="false"/>
+			<property name="executionPeriod" value="4.0"/>
+			<property name="workload" value="2.0"/>
+			<property name="init" value="2021/01/01 00:00"/>
+			<property name="end" value="2021/12/31 23:59"/>
+		</bean>
 	
 </beans>

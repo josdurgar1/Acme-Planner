@@ -19,5 +19,6 @@ authenticated.task.form.label.endMoment = Momento de Finalización:
 authenticated.task.form.label.executionPeriod = Periodo de Ejecución (Días):
 authenticated.task.form.label.workload = Carga de Trabajo (Horas):
 authenticated.task.form.label.description = Descripción:
+authenticated.task.form.label.isPublic = Es público:
 authenticated.task.form.label.link = Link:
 authenticated.task.form.button.return = Volver
