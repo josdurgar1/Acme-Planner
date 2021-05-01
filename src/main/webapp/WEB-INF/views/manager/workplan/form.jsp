@@ -35,52 +35,88 @@
 		<acme:form-option code="manager.workplan.form.label.false" value="false" selected="${isPublished == 'false'}"/>
 		<acme:form-option code="manager.workplan.form.label.true" value="true" selected="${isPublished == 'true'}"/>
 	</acme:form-select>
-
+<jstl:if test="${command != 'create'}" >
 <h2><acme:message code="manager.workplan.form.label.task.assigned"/></h2>
 	<table id="taskTable" class="table table-striped">
 		<thead>
 			<tr>
-				<th style="width: 35%;"><acme:message code="manager.workplan.form.label.title"/></th>
-				<th style="width: 35%;"><acme:message code="manager.workplan.form.label.workload"/></th>
+				<th style="width: 15%;"><acme:message code="manager.workplan.form.label.title"/></th>
+				<th style="width: 15%;"><acme:message code="manager.workplan.form.label.workload"/></th>
+				<th style="width: 20%;"><acme:message code="manager.workplan.form.label.init"/></th>
+				<th style="width: 20%;"><acme:message code="manager.workplan.form.label.end"/></th>
+				<th style="width: 15%;"><acme:message code="manager.workplan.form.label.isPublic"/></th>
 				<jstl:if test="${isPublished=='false'}" >
-				<th style="width: 30%;"><acme:message code="manager.workplan.form.label.link.unnassign"/></th>
+				<th style="width: 15%;"><acme:message code="manager.workplan.form.label.link.unnassign"/></th>
 		 		</jstl:if>
 			</tr>
 		</thead>
 		<tbody>
 			<jstl:forEach var="task" items="${tasks}">
 				<tr>
-					<td>${task.title}</td>
+					<td><acme:print value="${task.title}"/></td>
 					<td><acme:print value="${task.workload }"/></td>
-					<jstl:if test="${isPublished=='false'}" >
+					
 					<td>
-                	
-            <acme:form-submit test="${command == 'show' && isPublished == 'false'}" code="manager.workplan.form.label.link.unnassign" action="/manager/workplan/unnassign?tId=${aTasks.id}&wId=${id}"/>
+					<acme:print value="${task.initialMoment}"/>
+					
+					</td>
+					<td>
+					<acme:print value="${task.endMoment}"/>
+					</td>
+					<td>
+					<jstl:if test="${task.isPublic}" >
+					<acme:message code="manager.workplan.form.label.public"/>
+					</jstl:if>
+					<jstl:if test="${!task.isPublic}" >
+					<acme:message code="manager.workplan.form.label.nopublic"/>
+					</jstl:if>
+					</td>
+					<jstl:if test="${isPublished=='false'}" >
+                	<td>
+            <acme:form-submit test="${command == 'show' && isPublished == 'false'}" code="manager.workplan.form.label.link.unnassign" action="/manager/workplan/unnassign?tId=${task.id}&wId=${id}"/>
                 </td>
                 </jstl:if>
 				</tr>
 			</jstl:forEach>
 		</tbody>
 	</table>
-
+<jstl:if test="${isPublished=='false'}" >
  <h2><acme:message code="manager.workplan.form.label.task.unassigned"/></h2>
 	<table id="taskTable" class="table table-striped">
 		<thead>
 			<tr>
-				<th style="width: 35%;"><acme:message code="manager.workplan.form.label.title"/></th>
-				<th style="width: 35%;"><acme:message code="manager.workplan.form.label.workload"/></th>
+				<th style="width: 15%;"><acme:message code="manager.workplan.form.label.title"/></th>
+				<th style="width: 15%;"><acme:message code="manager.workplan.form.label.workload"/></th>
+				<th style="width: 20%;"><acme:message code="manager.workplan.form.label.init"/></th>
+				<th style="width: 20%;"><acme:message code="manager.workplan.form.label.end"/></th>
+				<th style="width: 15%;"><acme:message code="manager.workplan.form.label.isPublic"/></th>
 				<jstl:if test="${isPublished=='false'}" >
-				<th style="width: 30%;"><acme:message code="manager.workplan.form.label.link.assign"/></th>
+				<th style="width: 15%;"><acme:message code="manager.workplan.form.label.link.assign"/></th>
 		 		</jstl:if>
 			</tr>
 		</thead>
 		<tbody>
 			<jstl:forEach var="aTasks" items="${unnasignedTask}">
 				<tr>
-					<td>${aTasks.title}</td>
+					<td><acme:print value="${aTasks.title}"/></td>
 					<td><acme:print value="${aTasks.workload }"/></td>
-					<jstl:if test="${isPublished=='false'}" >
+					
 					<td>
+					<acme:print value="${aTasks.initialMoment}"/>
+					</td>
+					<td>
+					<acme:print value="${aTasks.endMoment}"/>
+					</td>
+					<td>
+					<jstl:if test="${aTasks.isPublic}" >
+					<acme:message code="manager.workplan.form.label.public"/>
+					</jstl:if>
+					<jstl:if test="${!aTasks.isPublic}" >
+					<acme:message code="manager.workplan.form.label.nopublic"/>
+					</jstl:if>
+					</td>
+                	<jstl:if test="${isPublished=='false'}" >
+                	<td>
                 	<!-- <a href="manager/workplan/assign?tId=${aTasks.id}&wId=${id}"><acme:message code="manager.workplan.form.label.link.assign"/></a> -->
            			 <acme:form-submit test="${command == 'show' && isPublished == 'false'}" code="manager.workplan.form.label.link.assign" action="/manager/workplan/assign?tId=${aTasks.id}&wId=${id}"/>
                 </td>
@@ -89,8 +125,8 @@
 			</jstl:forEach>
 		</tbody>
 	</table>
-	
-	
+	</jstl:if>
+	</jstl:if>
 
 	<acme:form-submit test="${command == 'show' && isPublished == 'false'}" code="manager.workplan.form.button.update" action="/manager/workplan/update"/>
 	<acme:form-submit test="${command == 'show' && isPublished == 'false'}" code="manager.workplan.form.button.delete" action="/manager/workplan/delete"/>

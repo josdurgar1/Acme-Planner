@@ -95,17 +95,36 @@ public class ManagerWorkplanAssignService implements AbstractUpdateService<Manag
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		Double workloadS = 0.0;
-		for (final Task t : entity.getTasks()) {
-			workloadS += t.getWorkload();
-		}
 		int id;
 
 		id = request.getModel().getInteger("tId");
 		final Task task = this.repository.findOneTaskById(id);
-		workloadS = workloadS + task.getWorkload();
-		final boolean res = workloadS > entity.getExecutionPeriod();
-		errors.state(request, !res, "tasks", "manager.workplan.form.error.init");
+		
+		if(!errors.hasErrors("isPublic")) {
+		final boolean res= !(entity.getIsPublic()) && !(task.isPublic);
+			errors.state(request, !res, "isPublic", "manager.workplan.form.error.private");
+		}
+		
+		if (!errors.hasErrors("workload")) {
+			Double workloadS = 0.0;
+			for (final Task t : entity.getTasks()) {
+				workloadS += t.getWorkload();
+			}
+			
+			workloadS = workloadS + task.getWorkload();
+			final boolean res = workloadS > entity.getExecutionPeriod();
+			errors.state(request, !res, "tasks", "manager.workplan.form.error.workload");
+		}
+		if(!errors.hasErrors("isPublished")) {
+			errors.state(request, !entity.getIsPublished(), "isPublished", "manager.workplan.form.error.isPublished");
+		}
+		
+		if(!errors.hasErrors("init")) {
+			errors.state(request, !entity.getInit().after(task.initialMoment), "init", "manager.workplan.form.error.init2");
+		}
+		if(!errors.hasErrors("end")) {
+			errors.state(request, !entity.getEnd().before(task.endMoment), "init", "manager.workplan.form.error.end2");
+		}
 
 	}
 
@@ -121,7 +140,11 @@ public class ManagerWorkplanAssignService implements AbstractUpdateService<Manag
 		t = entity.getTasks();
 		t.add(task);
 		entity.setTasks(t);
-
+		Double w = 0.0;
+		for (final Task ta : entity.getTasks()) {
+			w += ta.getWorkload();
+		}
+		entity.setWorkload(w);
 		this.repository.save(entity);
 
 	}
