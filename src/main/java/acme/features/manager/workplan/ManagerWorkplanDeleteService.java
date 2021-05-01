@@ -1,9 +1,12 @@
 package acme.features.manager.workplan;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
+import acme.entities.tasks.Task;
 import acme.entities.workplan.Workplan;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -55,7 +58,18 @@ public class ManagerWorkplanDeleteService implements AbstractDeleteService<Manag
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "title", "isPublic", "init","end","workload","isPublished","executionPeriod");
+		
+		Collection<Task> tasks;
+
+		if (entity.getIsPublic()) {
+			tasks = this.repository.findAllTaskByManagerId(entity.getManager().getId());
+		} else {
+			tasks = this.repository.findAllTaskPrivateByManagerId(entity.getManager().getId());
+		}
+		tasks.removeAll(entity.getTasks());
+
+		model.setAttribute("unnasignedTask", tasks);
+		request.unbind(entity, model, "title", "isPublic", "init","end","workload","isPublished","executionPeriod","tasks");
 	}
 
 	@Override
@@ -77,6 +91,9 @@ public class ManagerWorkplanDeleteService implements AbstractDeleteService<Manag
 		assert entity != null;
 		assert errors != null;
 		
+		if(!errors.hasErrors("isPublished")) {
+			errors.state(request, !entity.getIsPublished(), "isPublished", "manager.workplan.form.error.isPublished");
+		}
 	}
 
 	@Override

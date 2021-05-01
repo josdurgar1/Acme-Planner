@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
+import acme.entities.tasks.Task;
 import acme.entities.workplan.Workplan;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -33,8 +34,17 @@ public class ManagerWorkplanListService implements AbstractListService<Manager, 
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		Collection<Task> tasks;
 
-		request.unbind(entity, model, "title", "isPublic", "init","end","workload","isPublished","executionPeriod");
+		if (entity.getIsPublic()) {
+			tasks = this.repository.findAllTaskByManagerId(entity.getManager().getId());
+		} else {
+			tasks = this.repository.findAllTaskPrivateByManagerId(entity.getManager().getId());
+		}
+		tasks.removeAll(entity.getTasks());
+
+		model.setAttribute("unnasignedTask", tasks);
+		request.unbind(entity, model, "title", "isPublic", "init","end","workload","isPublished","executionPeriod","tasks");
 		
 	}
 

@@ -31,7 +31,7 @@ public class ManagerWorkplanUnnassignService implements AbstractUpdateService<Ma
 	@Override
 	public boolean authorise(final Request<Workplan> request) {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
@@ -81,7 +81,9 @@ public class ManagerWorkplanUnnassignService implements AbstractUpdateService<Ma
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
+		if(!errors.hasErrors("isPublished")) {
+			errors.state(request, !entity.getIsPublished(), "isPublished", "manager.workplan.form.error.isPublished");
+		}
 	}
 
 	@Override
@@ -96,7 +98,11 @@ public class ManagerWorkplanUnnassignService implements AbstractUpdateService<Ma
 		t = entity.getTasks();
 		t.remove(task);
 		entity.setTasks(t);
-
+		Double w = 0.0;
+		for(final Task ta:entity.getTasks()) {
+			w+=ta.getWorkload();
+		}
+		entity.setWorkload(w);
 		this.repository.save(entity);
 
 	}

@@ -1,5 +1,6 @@
 package acme.features.manager.workplan;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -57,7 +58,7 @@ public class ManagerWorkplanPublishService implements AbstractUpdateService<Mana
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors);
+		request.bind(entity, errors, "title", "isPublic", "init","end","workload","isPublished","executionPeriod","tasks");
 		
 	}
 
@@ -66,8 +67,17 @@ public class ManagerWorkplanPublishService implements AbstractUpdateService<Mana
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		Collection<Task> tasks;
 
-		request.unbind(entity, model, "title", "isPublic", "init","end","workload","isPublished","executionPeriod");
+		if (entity.getIsPublic()) {
+			tasks = this.repository.findAllTaskByManagerId(entity.getManager().getId());
+		} else {
+			tasks = this.repository.findAllTaskPrivateByManagerId(entity.getManager().getId());
+		}
+		tasks.removeAll(entity.getTasks());
+
+		model.setAttribute("unnasignedTask", tasks);
+		request.unbind(entity, model);
 		
 	}
 
