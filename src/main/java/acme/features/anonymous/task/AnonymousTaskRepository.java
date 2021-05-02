@@ -11,7 +11,7 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AnonymousTaskRepository extends AbstractRepository{
 	
-	@Query("select t from Task t where t.endMoment > current_timestamp() and t.isPublic=true order by t.initialMoment DESC")
+	@Query("select t from Task t where t.endMoment > current_timestamp() and t.visibility=0 order by t.initialMoment DESC")
 	Collection<Task> findMany();
 	
 	@Query("select t from Task t where t.id = ?1 and t.endMoment > current_timestamp()")

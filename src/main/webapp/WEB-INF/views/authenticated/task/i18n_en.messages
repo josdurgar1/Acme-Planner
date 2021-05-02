@@ -22,3 +22,5 @@ authenticated.task.form.label.description = Description:
 authenticated.task.form.label.isPublic = Is public:
 authenticated.task.form.label.link = Link:
 authenticated.task.form.button.return = Return
+authenticated.task.form.label.false	= Private
+authenticated.task.form.label.true	= Public
