@@ -1,6 +1,5 @@
 package acme.features.manager.task;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,7 +61,11 @@ public void unbind(final Request<Task> request, final Task entity, final Model m
 	assert entity != null;
 	assert model != null;
 	
-	request.unbind(entity, model, "title", "initialMoment","endMoment", "workload", "description", "visibility", "isFinished", "executionPeriod");
+	final boolean isPrincipal = entity.getManager().getId() == request.getPrincipal().getAccountId();
+	
+	model.setAttribute("checkP", isPrincipal);
+	
+	request.unbind(entity, model, "title", "initialMoment","endMoment", "workload", "description", "visibility", "finished", "executionPeriod");
 }
 
 @Override
@@ -133,10 +136,6 @@ public void update(final Request<Task> request, final Task entity) {
 	final long diff = endMoment-initialMoment;
 	final double horas = (Math.abs(diff)*1.0)/3600000;
 	
-	final Date currentMoment = new Date(System.currentTimeMillis()-1);
-	final boolean isFinished = currentMoment.after(entity.getEndMoment());
-	
-	request.getModel().setAttribute("isFinished", isFinished);;
 	entity.setExecutionPeriod(horas);
 
 	this.repository.save(entity);
