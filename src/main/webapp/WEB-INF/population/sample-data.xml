@@ -172,7 +172,7 @@
 		<property name="executionPeriod" value="20"></property>
 		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
-		<property name="Finished" value="false"></property>
+		<property name="finished" value="false"></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 	
@@ -185,7 +185,7 @@
 		<property name="executionPeriod" value="22"></property>
 		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
-		<property name="Finished" value="true"></property>
+		<property name="finished" value="true"></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 	
@@ -198,7 +198,7 @@
 		<property name="executionPeriod" value="30"></property>
 		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
-		<property name="Finished" value="false"></property>
+		<property name="finished" value="false"></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 	
@@ -211,7 +211,7 @@
 		<property name="executionPeriod" value="30"></property>
 		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
-		<property name="Finished" value="true"></property>
+		<property name="finished" value="true"></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 	
@@ -224,7 +224,7 @@
 		<property name="executionPeriod" value="10"></property>
 		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
-		<property name="Finished" value="true"></property>
+		<property name="finished" value="true"></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 	
@@ -237,7 +237,7 @@
 		<property name="executionPeriod" value="30"></property>
 		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
-		<property name="Finished" value="true"></property>
+		<property name="finished" value="true"></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 
@@ -250,7 +250,7 @@
 		<property name="executionPeriod" value="30"></property>
 		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
-		<property name="Finished" value="false"></property>
+		<property name="finished" value="false"></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 
@@ -263,7 +263,7 @@
 		<property name="executionPeriod" value="30"></property>
 		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
-		<property name="Finished" value="true"></property>
+		<property name="finished" value="true"></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 
@@ -276,7 +276,7 @@
 		<property name="executionPeriod" value="30"></property>
 		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
-		<property name="Finished" value="false"></property>
+		<property name="finished" value="false"></property>
 		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 
@@ -289,8 +289,9 @@
 		<property name="executionPeriod" value="30"></property>
 		<property name="visibility" value="PRIVATE"></property>
 		<property name="link"><null/></property>
-		<property name="Finished" value="true"></property>
-		<property name="manager" ref="manager1Manager"></property>
+		<property name="finished" value="true"></property>
+		<property name="manager" ref="managerManagerEx"></property>
+
 	</bean>
 	
 	
@@ -367,7 +368,8 @@
 	<!-- WorkPlan-->
 	
 		<bean id="workplan01" class="acme.entities.workplan.Workplan">
-			<property name="title" value="workplannNuevo"/>
+
+			<property name="title" value="Workplan1"/>
 			<property name="isPublic" value="true"/>
 			<property name="isPublished" value="false"/>
 			<property name="executionPeriod" value="4.0"/>
@@ -378,19 +380,22 @@
 		</bean>
 		
 		<bean id="workplan02" class="acme.entities.workplan.Workplan">
-			<property name="title" value="workplannNuevo"/>
+
+			<property name="title" value="Workplan2"/>
+
 			<property name="isPublic" value="true"/>
 			<property name="isPublished" value="true"/>
 			<property name="executionPeriod" value="4.0"/>
-			<property name="workload" value="2.0"/>
+			<property name="workload" value="3.0"/>
 			<property name="init" value="2021/01/01 00:00"/>
 			<property name="end" value="2021/12/31 23:59"/>
 			<property name="manager" ref="manager1Manager"/>
 		</bean>
 		
 		<bean id="workplan03" class="acme.entities.workplan.Workplan">
-			<property name="title" value="workplannNuevo"/>
-			<property name="isPublic" value="true"/>
+
+			<property name="title" value="Workplan3"/>
+			<property name="isPublic" value="false"/>
 			<property name="isPublished" value="false"/>
 			<property name="executionPeriod" value="4.0"/>
 			<property name="workload" value="2.0"/>
@@ -398,5 +403,33 @@
 			<property name="end" value="2021/12/31 23:59"/>
 			<property name="manager" ref="manager1Manager"/>
 		</bean>
+		
+		<!-- Managers user -->
+	
+	<bean name="manager1UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="manager1" />
+		<property name="password" value="manager1" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Manager" />
+				<property name="surname" value="Planner" />
+				<property name="email" value="manager@planner.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="manager1Authenticated" />
+				<ref bean="manager1Manager" />
+			</list>
+		</property>
+	</bean>
+	<bean name="manager1Manager" class="acme.entities.roles.Manager">
+		<property name="name" value="Manager" />
+		<property name="userAccount" ref="manager1UserAccount" />
+	</bean>
+	<bean name="manager1Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="manager1UserAccount" />
+	</bean>
 	
 </beans>

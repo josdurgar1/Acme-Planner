@@ -57,8 +57,10 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		final boolean isPrincipal = entity.getManager().getId() == request.getPrincipal().getAccountId();		
+		model.setAttribute("checkP", isPrincipal);
 		
-		request.unbind(entity, model, "title", "initialMoment","endMoment", "workload", "description","visibility", "Finished", "executionPeriod");
+
 	}
 
 	@Override
@@ -80,7 +82,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		initialMoment = new Date();
 		initialCalendar = Calendar.getInstance();
 		initialCalendar.setTime(initialMoment);
-		initialCalendar.add(Calendar.SECOND, 0);
+		initialCalendar.add(Calendar.SECOND, 600);
 		initialMoment = initialCalendar.getTime();
 		
 		endMoment = new Date();
@@ -101,6 +103,8 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		result.setVisibility(TaskVisibility.PUBLIC);
 		result.setManager(manager);
 		request.getModel().setAttribute("isFinished", false);
+		
+		
 				
 		return result;
 	}
@@ -160,10 +164,9 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		final long diff = endMoment-initialMoment;
 		final double horas = (Math.abs(diff)*1.0)/3600000;
 		
-		final Date currentMoment = new Date(System.currentTimeMillis()-1);
-		final boolean isFinished = currentMoment.after(entity.getEndMoment());
+		final boolean isPrincipal = entity.getManager().getId() == request.getPrincipal().getAccountId();
 		
-		request.getModel().setAttribute("isFinished", isFinished);;
+		request.getModel().setAttribute("isPrincipal", isPrincipal);
 		entity.setExecutionPeriod(horas);
 		
 		this.repository.save(entity);
