@@ -10,10 +10,10 @@ import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.entities.tasks.TaskVisibility;
 import acme.entities.workplan.Workplan;
-import acme.features.authenticated.task.AuthenticatedTaskRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractUpdateService;
 
 @Service
@@ -24,29 +24,26 @@ public class ManagerWorkplanAssignService implements AbstractUpdateService<Manag
 	@Autowired
 	protected ManagerWorkplanRepository		repository;
 
-	// Other Services--------------------
-	@Autowired
-	protected AuthenticatedTaskRepository	taskRepository;
+
 
 
 	@Override
 	public boolean authorise(final Request<Workplan> request) {
 		assert request != null;
 
-		//			boolean result;
-		//			int taskId;
-		//			final Task task;
-		//			final Manager manager;
-		//			Principal principal;
-		//
-		//			taskId = request.getModel().getInteger("tId");
-		//			task = this.taskRepository.findOneTaskById(taskId);
-		//			manager = task.getManager();
-		//			principal = request.getPrincipal();
-		//			result = manager.getUserAccount().getId() == principal.getAccountId();
-		//
-		//			return result;
-		return true;
+		boolean result;
+		int taskId;
+		final Task task;
+		final Manager manager;
+		Principal principal;
+
+		taskId = request.getModel().getInteger("tId");
+		task = this.repository.findOneTaskById(taskId);
+		manager = task.getManager();
+		principal = request.getPrincipal();
+		result = manager.getUserAccount().getId() == principal.getAccountId();
+
+		return result;
 	}
 
 	@Override
@@ -74,7 +71,7 @@ public class ManagerWorkplanAssignService implements AbstractUpdateService<Manag
 		tasks.removeAll(entity.getTasks());
 
 		model.setAttribute("unnasignedTask", tasks);
-		request.unbind(entity, model, "title", "isPublic", "init", "end", "workload", "isPublished", "executionPeriod", "tasks");
+		request.unbind(entity, model, "title", "isPublic", "init", "end", "workload", "executionPeriod", "tasks");
 
 	}
 
@@ -100,30 +97,30 @@ public class ManagerWorkplanAssignService implements AbstractUpdateService<Manag
 
 		id = request.getModel().getInteger("tId");
 		final Task task = this.repository.findOneTaskById(id);
-		
-		if(!errors.hasErrors("isPublic")) {
-		final boolean res= !(entity.getIsPublic()) && !(task.getVisibility()==TaskVisibility.PRIVATE);
+
+		if (!errors.hasErrors("isPublic")) {
+			final boolean res = !(entity.getIsPublic()) && !(task.getVisibility() == TaskVisibility.PRIVATE);
 			errors.state(request, !res, "isPublic", "manager.workplan.form.error.private");
 		}
-		
+
 		if (!errors.hasErrors("workload")) {
 			Double workloadS = 0.0;
 			for (final Task t : entity.getTasks()) {
 				workloadS += t.getWorkload();
 			}
-			
+
 			workloadS = workloadS + task.getWorkload();
 			final boolean res = workloadS > entity.getExecutionPeriod();
-			errors.state(request, !res, "tasks", "manager.workplan.form.error.workload");
+			errors.state(request, !res, "workload", "manager.workplan.form.error.workload");
 		}
-		if(!errors.hasErrors("isPublished")) {
+		if (!errors.hasErrors("isPublished")) {
 			errors.state(request, !entity.getIsPublished(), "isPublished", "manager.workplan.form.error.isPublished");
 		}
-		
-		if(!errors.hasErrors("init")) {
+
+		if (!errors.hasErrors("init")) {
 			errors.state(request, !entity.getInit().after(task.getInitialMoment()), "init", "manager.workplan.form.error.init2");
 		}
-		if(!errors.hasErrors("end")) {
+		if (!errors.hasErrors("end")) {
 			errors.state(request, !entity.getEnd().before(task.getEndMoment()), "init", "manager.workplan.form.error.end2");
 		}
 

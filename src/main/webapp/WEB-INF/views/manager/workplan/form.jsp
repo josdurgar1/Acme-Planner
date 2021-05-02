@@ -31,7 +31,7 @@
 		<acme:form-option code="manager.workplan.form.label.true" value="true" selected="${isPublic == 'true'}"/>
 		<acme:form-option code="manager.workplan.form.label.false" value="false" selected="${isPublic == 'false'}"/>
 	</acme:form-select>
-	<acme:form-select code="manager.workplan.form.label.isPublished" path="isPublished">
+	<acme:form-select readonly="true" code="manager.workplan.form.label.isPublished" path="isPublished">
 		<acme:form-option code="manager.workplan.form.label.false" value="false" selected="${isPublished == 'false'}"/>
 		<acme:form-option code="manager.workplan.form.label.true" value="true" selected="${isPublished == 'true'}"/>
 	</acme:form-select>

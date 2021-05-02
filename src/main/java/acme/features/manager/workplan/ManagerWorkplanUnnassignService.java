@@ -13,6 +13,7 @@ import acme.features.authenticated.task.AuthenticatedTaskRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractUpdateService;
 
 @Service
@@ -30,8 +31,19 @@ public class ManagerWorkplanUnnassignService implements AbstractUpdateService<Ma
 
 	@Override
 	public boolean authorise(final Request<Workplan> request) {
-		// TODO Auto-generated method stub
-		return true;
+		boolean result;
+		int taskId;
+		final Task task;
+		final Manager manager;
+		Principal principal;
+
+		taskId = request.getModel().getInteger("tId");
+		task = this.repository.findOneTaskById(taskId);
+		manager = task.getManager();
+		principal = request.getPrincipal();
+		result = manager.getUserAccount().getId() == principal.getAccountId();
+
+		return result;
 	}
 
 	@Override
@@ -59,7 +71,7 @@ public class ManagerWorkplanUnnassignService implements AbstractUpdateService<Ma
 		tasks.removeAll(entity.getTasks());
 
 		model.setAttribute("unnasignedTask", tasks);
-		request.unbind(entity, model, "title", "isPublic", "init", "end", "workload", "isPublished", "executionPeriod", "tasks");
+		request.unbind(entity, model, "title", "isPublic", "init", "end", "workload", "executionPeriod", "tasks");
 
 	}
 
