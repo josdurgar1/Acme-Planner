@@ -403,33 +403,5 @@
 			<property name="end" value="2021/12/31 23:59"/>
 			<property name="manager" ref="manager1Manager"/>
 		</bean>
-		
-		<!-- Managers user -->
-	
-	<bean name="manager1UserAccount" class="acme.framework.entities.UserAccount">
-		<property name="username" value="manager1" />
-		<property name="password" value="manager1" />
-		<property name="enabled" value="true" />
-		<property name="identity">
-			<bean class="acme.datatypes.UserIdentity">
-				<property name="name" value="Manager" />
-				<property name="surname" value="Planner" />
-				<property name="email" value="manager@planner.com" />
-			</bean>
-		</property>
-		<property name="roles">
-			<list>
-				<ref bean="manager1Authenticated" />
-				<ref bean="manager1Manager" />
-			</list>
-		</property>
-	</bean>
-	<bean name="manager1Manager" class="acme.entities.roles.Manager">
-		<property name="name" value="Manager" />
-		<property name="userAccount" ref="manager1UserAccount" />
-	</bean>
-	<bean name="manager1Authenticated" class="acme.framework.entities.Authenticated">
-		<property name="userAccount" ref="manager1UserAccount" />
-	</bean>
 	
 </beans>

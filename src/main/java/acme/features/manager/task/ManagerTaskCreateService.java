@@ -59,7 +59,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert model != null;
 		final boolean isPrincipal = entity.getManager().getId() == request.getPrincipal().getAccountId();		
 		model.setAttribute("checkP", isPrincipal);
-		
+		request.unbind(entity, model, "title", "initialMoment","endMoment", "workload", "description", "visibility", "finished", "executionPeriod");
 
 	}
 
