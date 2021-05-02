@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
+import acme.entities.tasks.TaskVisibility;
 import acme.entities.workplan.Workplan;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -72,7 +73,7 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 
 		model.setAttribute("unnasignedTask", tasks);
 
-		request.unbind(entity, model, "title", "isPublic","init","end","isPublished","tasks");
+		request.unbind(entity, model, "title", "isPublic","init","end","tasks");
 		
 		
 	}
@@ -140,6 +141,16 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 					}
 				}
 				errors.state(request, !res, "init", "manager.workplan.form.error.init3");
+			}
+			
+			if(!errors.hasErrors("isPublic")) {
+				boolean res=false;
+				for(final Task t:entity.getTasks()) {
+					if(t.getVisibility()==TaskVisibility.PUBLIC && !(entity.getIsPublic())) {
+						res=true;
+					}
+				}
+				errors.state(request, !res, "isPublic", "manager.workplan.form.error.public2");
 			}
 			
 		

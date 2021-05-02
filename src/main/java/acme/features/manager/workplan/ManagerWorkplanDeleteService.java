@@ -69,7 +69,7 @@ public class ManagerWorkplanDeleteService implements AbstractDeleteService<Manag
 		tasks.removeAll(entity.getTasks());
 
 		model.setAttribute("unnasignedTask", tasks);
-		request.unbind(entity, model, "title", "isPublic", "init","end","workload","isPublished","executionPeriod","tasks");
+		request.unbind(entity, model, "title", "isPublic", "init","end","workload","executionPeriod","tasks");
 	}
 
 	@Override
