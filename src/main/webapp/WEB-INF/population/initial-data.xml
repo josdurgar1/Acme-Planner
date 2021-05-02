@@ -96,7 +96,7 @@
 
 	<bean name="managerManager" class="acme.entities.roles.Manager">
 		<property name="userAccount" ref="managerUserAccount" />
-		<property name="name" value="Javier"/>
+		<property name="name" value="Daniel" />
 	</bean>
 	
 	<bean name="managerAuthenticated" class="acme.framework.entities.Authenticated">
