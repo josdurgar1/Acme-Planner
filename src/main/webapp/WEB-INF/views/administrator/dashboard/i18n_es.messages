@@ -51,5 +51,5 @@ administrator.dashboard.form.label.maxworkplanWorkload = Carga de trabajo máxim
 administrator.dashboard.form.label.minworkplanWorkload = Carga de trabajo mínima (Horas)
 administrator.dashboard.form.label.averageNumberOfworkplanWorkloads = Media de carga de trabajo
 administrator.dashboard.form.label.stdDevworkplanWorkloads = Desviación de la carga de trabajo total
-
+administrator.dashboard.form.title.application-statuses = Gráfica de Workplans:
 
