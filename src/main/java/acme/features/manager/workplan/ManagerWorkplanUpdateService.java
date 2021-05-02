@@ -125,7 +125,7 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 			if(!errors.hasErrors("end")) {
 				boolean res=false;
 				for(final Task t:entity.getTasks()) {
-					if(entity.getEnd().before(t.endMoment)) {
+					if(entity.getEnd().before(t.getEndMoment())) {
 						res=true;
 					}
 				}
@@ -135,7 +135,7 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 			if(!errors.hasErrors("init")) {
 				boolean res=false;
 				for(final Task t:entity.getTasks()) {
-					if(entity.getInit().after(t.initialMoment)) {
+					if(entity.getInit().after(t.getInitialMoment())) {
 						res=true;
 					}
 				}

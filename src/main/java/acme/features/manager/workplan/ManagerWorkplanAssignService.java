@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
+import acme.entities.tasks.TaskVisibility;
 import acme.entities.workplan.Workplan;
 import acme.features.authenticated.task.AuthenticatedTaskRepository;
 import acme.framework.components.Errors;
@@ -101,7 +102,7 @@ public class ManagerWorkplanAssignService implements AbstractUpdateService<Manag
 		final Task task = this.repository.findOneTaskById(id);
 		
 		if(!errors.hasErrors("isPublic")) {
-		final boolean res= !(entity.getIsPublic()) && !(task.isPublic);
+		final boolean res= !(entity.getIsPublic()) && !(task.getVisibility()==TaskVisibility.PRIVATE);
 			errors.state(request, !res, "isPublic", "manager.workplan.form.error.private");
 		}
 		
@@ -120,10 +121,10 @@ public class ManagerWorkplanAssignService implements AbstractUpdateService<Manag
 		}
 		
 		if(!errors.hasErrors("init")) {
-			errors.state(request, !entity.getInit().after(task.initialMoment), "init", "manager.workplan.form.error.init2");
+			errors.state(request, !entity.getInit().after(task.getInitialMoment()), "init", "manager.workplan.form.error.init2");
 		}
 		if(!errors.hasErrors("end")) {
-			errors.state(request, !entity.getEnd().before(task.endMoment), "init", "manager.workplan.form.error.end2");
+			errors.state(request, !entity.getEnd().before(task.getEndMoment()), "init", "manager.workplan.form.error.end2");
 		}
 
 	}

@@ -19,7 +19,7 @@
 <acme:form>
 	
 	<acme:form-textbox code="manager.workplan.form.label.title" path="title"/>
-	<jstl:if test="${command == 'show'}" >
+	<jstl:if test="${command == 'show' || command == 'assign' || command == 'unnassign'}" >
 	<acme:form-double readonly="true" code="manager.workplan.form.label.workload" path="workload"/>	
 	</jstl:if>
 	<acme:form-moment code="manager.workplan.form.label.init" path="init"/>
@@ -64,10 +64,10 @@
 					<acme:print value="${task.endMoment}"/>
 					</td>
 					<td>
-					<jstl:if test="${task.isPublic}" >
+					<jstl:if test="${task.visibility=='PUBLIC'}" >
 					<acme:message code="manager.workplan.form.label.public"/>
 					</jstl:if>
-					<jstl:if test="${!task.isPublic}" >
+					<jstl:if test="${task.visibility=='PRIVATE'}" >
 					<acme:message code="manager.workplan.form.label.nopublic"/>
 					</jstl:if>
 					</td>
@@ -108,10 +108,10 @@
 					<acme:print value="${aTasks.endMoment}"/>
 					</td>
 					<td>
-					<jstl:if test="${aTasks.isPublic}" >
+					<jstl:if test="${atask.visibility=='PUBLIC'}" >
 					<acme:message code="manager.workplan.form.label.public"/>
 					</jstl:if>
-					<jstl:if test="${!aTasks.isPublic}" >
+					<jstl:if test="${atask.visibility=='PRIVATE'}" >
 					<acme:message code="manager.workplan.form.label.nopublic"/>
 					</jstl:if>
 					</td>

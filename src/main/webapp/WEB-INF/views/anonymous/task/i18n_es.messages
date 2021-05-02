@@ -23,3 +23,5 @@ anonymous.task.form.label.description = Descripcion:
 anonymous.task.form.label.isPublic = Es público:
 anonymous.task.form.label.link = Link:
 anonymous.task.form.button.return = Volver
+manager.workplan.form.label.false	= Privada
+manager.workplan.form.label.true	= Pública

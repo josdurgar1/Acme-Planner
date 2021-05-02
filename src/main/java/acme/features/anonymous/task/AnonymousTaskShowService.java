@@ -33,7 +33,7 @@ public class AnonymousTaskShowService implements AbstractShowService<Anonymous, 
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "initialMoment","endMoment", "executionPeriod", "workload", "description", "isPublic");
+		request.unbind(entity, model, "title", "initialMoment","endMoment", "executionPeriod", "workload", "description","visibility");
 	}
 
 	@Override

@@ -27,13 +27,13 @@ public interface ManagerWorkplanRepository extends AbstractRepository {
 	
 	
 	//Falta realizar el where con el managerId ya que task aún no tiene un authenticado asociado.
-	@Query("select t from Task t where t.isPublic=0")
+	@Query("select t from Task t where t.visibility=0 and t.manager.id=?1")
 	Collection<Task> findAllTaskPrivateByManagerId(int managerId);
 
-	@Query("select t from Task t where t.isPublic=1")
+	@Query("select t from Task t where t.visibility=1 and t.manager.id=?1")
 	Collection<Task> findAllTaskPublicByManagerId(int managerId);
 	
-	@Query("select t from Task t")
+	@Query("select t from Task t where t.manager.id=?1")
 	Collection<Task> findAllTaskByManagerId(int managerId);
 
 	@Query("select t from Task t where t.id = ?1")
