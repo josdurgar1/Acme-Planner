@@ -1,4 +1,4 @@
-# i18n_es.messages
+# i18n_en.messages
 #
 # Copyright (C) 2012-2021 Rafael Corchuelo.
 #
@@ -8,9 +8,11 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-manager.task.list.label.title = Título
-manager.task.list.label.initialMoment = Momento de Inicio
-manager.task.list.label.endMoment = Momento de Finalización
-manager.task.list.label.executionPeriod = Periodo de Ejecución
-manager.task.list.label.workload = Carga de Trabajo
-manager.task.list.label.description = Descripción
+authenticated.manager.form.title.create = Become a manager
+authenticated.manager.form.title.update = Update your manager data
+
+authenticated.manager.form.label.name = Name
+
+authenticated.manager.form.button.create = Register
+authenticated.manager.form.button.update = Update
+authenticated.manager.form.button.return = Return

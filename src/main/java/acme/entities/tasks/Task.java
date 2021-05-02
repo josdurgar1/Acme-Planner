@@ -1,11 +1,14 @@
 
+
 package acme.entities.tasks;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -13,6 +16,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.entities.roles.Manager;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -38,8 +42,9 @@ public class Task extends DomainEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date					endMoment;
 	
+	@NotNull
 	@Digits(integer = 3, fraction = 2)
-	protected Double workload;
+	protected Double 				workload;
 
 	@NotEmpty
 	@Length(max = 500)
@@ -48,20 +53,20 @@ public class Task extends DomainEntity {
 	@URL
 	protected String				link;
 	
-	protected boolean isFinished() {
-		boolean result;
-		Date now;
-
-		now = new Date();
-		result = now.after(this.endMoment);
-
-		return result;
-	}
-	
 	@NotNull
-	protected Double executionPeriod;
+	protected TaskVisibility 		visibility;
+	// Derived attributes ----------------------------------------------------
 	
+	protected boolean 				isFinished;
+
+	
+	protected Double 				executionPeriod;
+	
+	// Relationships -----------------------------------------------------------
+	
+	@Valid
 	@NotNull
-	protected Boolean isPublic;
+	@ManyToOne(optional=false)
+	protected Manager manager;
 
 }
