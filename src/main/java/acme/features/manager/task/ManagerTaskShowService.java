@@ -21,19 +21,23 @@ public class ManagerTaskShowService implements AbstractShowService<Manager, Task
 		@Override
 		public boolean authorise(final Request<Task> request) {
 			assert request != null;
-			
+
 			return true;
 		}
 
-		// AbstractShowService<Anonymous, Task> interface --------------------------
+		// AbstractShowService<Manager, Task> interface --------------------------
 
 		@Override
 		public void unbind(final Request<Task> request, final Task entity, final Model model) {
 			assert request != null;
 			assert entity != null;
 			assert model != null;
+			
+			final boolean isPrincipal = entity.getManager().getId() == request.getPrincipal().getActiveRoleId();
+			
+			model.setAttribute("checkP", isPrincipal);
 
-			request.unbind(entity, model, "title", "initialMoment","endMoment", "executionPeriod", "workload", "description", "visibility");
+			request.unbind(entity, model, "title", "initialMoment","endMoment", "workload", "description", "visibility","finished", "executionPeriod");
 		}
 
 		@Override

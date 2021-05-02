@@ -54,7 +54,11 @@ public void unbind(final Request<Task> request, final Task entity, final Model m
 	assert entity != null;
 	assert model != null;
 	
-	request.unbind(entity, model, "title", "initialMoment","endMoment", "workload", "description", "visibility", "isFinished", "executionPeriod");
+	final boolean isPrincipal = entity.getManager().getId() == request.getPrincipal().getAccountId();
+	
+	model.setAttribute("checkP", isPrincipal);
+	
+	request.unbind(entity, model, "title", "initialMoment","endMoment", "workload", "description", "visibility", "finished", "executionPeriod");
 }
 
 @Override
@@ -76,12 +80,6 @@ public void validate(final Request<Task> request, final Task entity, final Error
 	assert entity != null;
 	assert errors != null;
 	
-	if(!errors.hasErrors("manager")) {
-		final boolean res;
-		
-		res = entity.getManager().getId() != request.getPrincipal().getAccountId();
-		errors.state(request, res, "manager", "manager.task.form.error.manager");
-	}
 	
 }
 
@@ -89,7 +87,7 @@ public void validate(final Request<Task> request, final Task entity, final Error
 public void delete(final Request<Task> request, final Task entity) {
 	assert request != null;
 	assert entity != null;
-
+	
 	this.repository.delete(entity);
 }
 
