@@ -48,6 +48,8 @@
 			<acme:menu-suboption code="master.menu.administrator.dashboard"
 				action="/administrator/dashboard/show" />
 			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.addSpamWord"
+				action="/administrator/spam-word/create"/>
 			<acme:menu-suboption code="master.menu.administrator.spamList"
 				action="/administrator/spam-word/list"/>
 			<acme:menu-separator/>
