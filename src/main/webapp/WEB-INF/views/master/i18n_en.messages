@@ -33,6 +33,7 @@ master.menu.anonymous.favourite-link = Favourite link
 master.menu.anonymous.shout = Shout
 master.menu.anonymous.shoutList = Shout List
 master.menu.anonymous.taskList = Task List
+master.menu.anonymous.workplanList = Workplan List
 
 # master.menu.administrator ###################################################
 

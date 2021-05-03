@@ -58,7 +58,7 @@ public class ManagerWorkplanPublishService implements AbstractUpdateService<Mana
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "title", "isPublic", "init","end","workload","isPublished","executionPeriod","tasks");
+		request.bind(entity, errors, "title", "isPublic", "init","end","workload","executionPeriod","tasks");
 		
 	}
 

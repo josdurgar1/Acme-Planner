@@ -44,7 +44,7 @@ public class ManagerWorkplanListService implements AbstractListService<Manager, 
 		tasks.removeAll(entity.getTasks());
 
 		model.setAttribute("unnasignedTask", tasks);
-		request.unbind(entity, model, "title", "isPublic", "init","end","workload","isPublished","executionPeriod","tasks");
+		request.unbind(entity, model, "title", "isPublic", "init","end","workload","executionPeriod","tasks");
 		
 	}
 

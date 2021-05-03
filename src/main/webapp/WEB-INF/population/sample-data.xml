@@ -403,6 +403,7 @@
 			<property name="end" value="2021/12/31 23:59"/>
 			<property name="manager" ref="manager1Manager"/>
 		</bean>
+
 		
 		<!-- Managers user 
 	
@@ -431,5 +432,6 @@
 	<bean name="manager1Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="manager1UserAccount" />
 	</bean> -->
+
 	
 </beans>
