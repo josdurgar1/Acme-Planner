@@ -139,7 +139,7 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 
 			res = workload > 0.0;
 
-			errors.state(request, !res, "workload", "manager.task.form.error.negativeworkload");
+			errors.state(request, res, "workload", "manager.task.form.error.negativeworkload");
 
 		}
 
