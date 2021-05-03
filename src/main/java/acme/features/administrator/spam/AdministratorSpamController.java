@@ -18,11 +18,19 @@ public class AdministratorSpamController extends AbstractController<Administrato
 	@Autowired
 	protected AdministratorSpamListService listService;
 	
+	@Autowired
+	protected AdministratorSpamShowService showService;
+	
+	@Autowired
+	protected AdministratorSpamUpdateService updateService;
+	
 	
 	@PostConstruct
 	protected void initialise() {
 		
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
+		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 	}
 
 }

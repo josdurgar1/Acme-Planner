@@ -50,6 +50,9 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.spamList"
 				action="/administrator/spam-word/list"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.spamShow"
+				action="/administrator/spam/show"/>
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.administrator.shutdown"
 				action="/master/shutdown" />
