@@ -24,11 +24,15 @@
 	</jstl:if>
 	<acme:form-moment code="manager.workplan.form.label.init" path="init"/>
 	<jstl:if test="${suggestionInit!=null }">
+	<div id="suggestion" class="text-info">
 	<acme:message code="manager.workplan.form.label.suggestionInit"/><acme:print value="${suggestionInit}"/>
+	</div>
 	</jstl:if>
 	<acme:form-moment code="manager.workplan.form.label.end" path="end"/>
 	<jstl:if test="${suggestionEnd!=null }">
+	<div id="suggestion" class="text-info">
 	<acme:message code="manager.workplan.form.label.suggestionEnd"/><acme:print value="${suggestionEnd}"/>
+	</div>
 	</jstl:if>
 	<jstl:if test="${command == 'show'}" >
 	<acme:form-double readonly="true" code="manager.workplan.form.label.executionPeriod" path="executionPeriod"/>	
