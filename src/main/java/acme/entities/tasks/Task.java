@@ -35,14 +35,13 @@ public class Task extends DomainEntity {
 	@NotEmpty
 	@Length(max = 80)
 	protected String				title;
-
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date					initialMoment;
-
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date					endMoment;
 	
-	@NotNull
 	@Digits(integer = 3, fraction = 2)
 	protected Double 				workload;
 
@@ -58,8 +57,6 @@ public class Task extends DomainEntity {
 	protected TaskVisibility 		visibility;
 	// Derived attributes ----------------------------------------------------
 	
-	protected boolean 				finished;
-
 	
 	protected Double 				executionPeriod;
 	

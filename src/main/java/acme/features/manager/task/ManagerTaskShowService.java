@@ -1,5 +1,7 @@
 package acme.features.manager.task;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,10 +36,14 @@ public class ManagerTaskShowService implements AbstractShowService<Manager, Task
 			assert model != null;
 			
 			final boolean isPrincipal = entity.getManager().getId() == request.getPrincipal().getActiveRoleId();
-			
-			model.setAttribute("checkP", isPrincipal);
+			final Date now = new Date();
+			final boolean isFinished = entity.getEndMoment().before(now);
 
-			request.unbind(entity, model, "title", "initialMoment","endMoment", "workload", "description", "visibility","finished", "executionPeriod");
+			model.setAttribute("checkP", isPrincipal);
+			model.setAttribute("checkF", isFinished);
+
+			
+			request.unbind(entity, model, "title", "initialMoment","endMoment", "workload", "description", "visibility", "executionPeriod");
 		}
 
 		@Override
