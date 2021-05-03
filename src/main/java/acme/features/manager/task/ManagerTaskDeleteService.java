@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
-import acme.features.authenticated.task.AuthenticatedTaskRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -18,7 +17,7 @@ public class ManagerTaskDeleteService implements AbstractDeleteService<Manager, 
 	// Internal state ---------------------------------------------------------
 	
 	@Autowired
-	protected AuthenticatedTaskRepository repository;
+	protected ManagerTaskRepository repository;
 	
 
 @Override

@@ -51,3 +51,4 @@ administrator.dashboard.form.label.maxworkplanWorkload = Maximum workload (Hours
 administrator.dashboard.form.label.minworkplanWorkload = Minimun workload (Hours)
 administrator.dashboard.form.label.averageNumberOfworkplanWorkloads = Average of workloads 
 administrator.dashboard.form.label.stdDevworkplanWorkloads = Total deviation of workloads
+administrator.dashboard.form.title.application-statuses = Chart of Workplans:

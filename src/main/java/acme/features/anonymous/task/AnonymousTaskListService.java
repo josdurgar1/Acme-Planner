@@ -22,7 +22,7 @@ public class AnonymousTaskListService implements AbstractListService<Anonymous, 
 	protected AnonymousTaskRepository repository;
 	
 	public Double getWorkload(final Request<Task> request,  final Task entity, final Model model){
-		return (double) (entity.endMoment.getTime() - entity.initialMoment.getTime()) / 3600000;
+		return (double) (entity.getEndMoment().getTime() - entity.getInitialMoment().getTime()) / 3600000;
 	}
 		
 	@Override

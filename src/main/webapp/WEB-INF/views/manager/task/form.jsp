@@ -12,11 +12,11 @@
 	<acme:form-textarea code ="manager.task.form.label.description" path="description"/>
 	<acme:form-url code ="manager.task.form.label.link" path="link"/>
 	<jstl:if test="${command == 'show'}" >
-	<acme:form-double code ="manager.task.form.label.executionPeriod" path="executionPeriod"/>
+	<acme:form-double code ="manager.task.form.label.executionPeriod" path="executionPeriod" readonly='true'/>
 	</jstl:if>
 	<acme:form-select path="visibility" code ="manager.task.form.label.visibility" >
-		<acme:form-option code="PUBLIC" value="PUBLIC" selected="true"/>
-		<acme:form-option code="PRIVATE" value="PRIVATE"/>
+		<acme:form-option code="PUBLIC" value="PUBLIC" selected="${visibility=='PUBLIC'}"/>
+		<acme:form-option code="PRIVATE" value="PRIVATE" selected="${visibility=='PRIVATE'}"/>
 	</acme:form-select>
 	
 	<acme:form-submit test="${command == 'show' && checkP == 'true'}" code="manager.task.form.button.update" action="/manager/task/update"/>

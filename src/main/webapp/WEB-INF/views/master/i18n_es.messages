@@ -33,6 +33,7 @@ master.menu.anonymous.favourite-link = Enlace favorito
 master.menu.anonymous.shout = Gritar
 master.menu.anonymous.shoutList = Lista de Gritos
 master.menu.anonymous.taskList = Lista de Tareas
+master.menu.anonymous.workplanList = Lista de Workplan
 
 # master.menu.administrator ###################################################
 
@@ -43,8 +44,10 @@ master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shutdown = Parar el sistema
 
-# master.menu.manager #########################################################
+# master.menu.authenticated #########################################################
 
+master.menu.authenticated = Autenticado
+master.menu.authenticated.task.list = Lista de tareas
 master.menu.manager = Manager
 master.menu.manager.task.taskList = Lista de tareas
 master.menu.manager.task.my-task = Mis tareas
@@ -52,10 +55,11 @@ master.menu.manager.task.taskCreate = Crear tarea
 
 master.menu.authenticated.manager.taskList = Lista de tareas
 
-# master.menu.provider ########################################################
+# master.menu.manager ########################################################
 
-master.menu.provider = Proveedor
-master.menu.provider.favourite-link = Enlace favorito
+master.menu.manager = Gerente
+master.menu.manager.workplan.create = Crear Plan de Trabajo
+master.menu.manager.workplan.list =  Mis planes de trabajo
 
 # master.menu.consumer ##########################################################
 
