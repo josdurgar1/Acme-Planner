@@ -145,11 +145,26 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 					errors.state(request, !res, "workload", "manager.task.form.error.workload");
 					
 				}
+				if(!errors.hasErrors("workload")) {
+					final double workload = entity.getWorkload();
+					final boolean res;
+					
+					res = workload>0.0;
+					
+					errors.state(request, !res, "workload", "manager.task.form.error.negativeworkload");
+					
+				}
 				if(!errors.hasErrors("description")) {
 					boolean res;
 					
 					res = SpamRead.isSpam(umbral, entity.getDescription(), spamList);
 					errors.state(request, !res, "description", "manager.task.form.error.description");
+				}
+				if(!errors.hasErrors("title")) {
+					boolean res;
+					
+					res = SpamRead.isSpam(umbral, entity.getTitle(), spamList);
+					errors.state(request, !res, "title", "manager.task.form.error.title");
 				}
 		
 	}
