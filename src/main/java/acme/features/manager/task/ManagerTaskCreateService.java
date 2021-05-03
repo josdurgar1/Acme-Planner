@@ -11,8 +11,6 @@ import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.entities.tasks.TaskVisibility;
 import acme.features.administrator.spam.AdministratorSpamListService;
-import acme.features.authenticated.manager.AuthenticatedManagerRepository;
-import acme.features.authenticated.task.AuthenticatedTaskRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -24,15 +22,13 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 	// Internal state ----------------------------------------------------
 	
 	@Autowired
-	protected AuthenticatedTaskRepository repository;
+	protected ManagerTaskRepository repository;
 	
 	// Other Services----------------
 	
 	@Autowired
 	protected AdministratorSpamListService spamService;
 	
-	@Autowired
-	protected AuthenticatedManagerRepository managerService;
 	
 
 	@Override
@@ -77,7 +73,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		
 		/*initialMoment = new Date(System.currentTimeMillis() -1);
 		endMoment = new Date(System.currentTimeMillis() + 10000000);*/
-		manager = this.managerService.findOneManagerByUserAccountId(request.getPrincipal().getAccountId());
+		manager = this.repository.findOneManagerByUserAccountId(request.getPrincipal().getAccountId());
 		
 		initialMoment = new Date();
 		initialCalendar = Calendar.getInstance();
