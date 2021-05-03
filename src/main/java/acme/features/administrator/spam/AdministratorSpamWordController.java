@@ -15,6 +15,8 @@ import acme.framework.entities.Administrator;
 @RequestMapping("administrator/spam-word/")
 public class AdministratorSpamWordController extends AbstractController<Administrator, SpamWord>{
 
+	@Autowired
+	protected AdministratorSpamWordCreateService createService;
 	
 	@Autowired
 	protected AdministratorSpamWordListService listService;
@@ -23,8 +25,12 @@ public class AdministratorSpamWordController extends AbstractController<Administ
 	protected AdministratorSpamWordShowService showService;
 	
 	
+	
+	
 	@PostConstruct
 	protected void initialise() {
+		
+		super.addBasicCommand(BasicCommand.CREATE, this.createService);
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 
