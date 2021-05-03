@@ -68,11 +68,8 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 		System.out.println(suggestionEnd);
 		if(suggestionEnd!=null) {
 			suggestionEnd.setHours(17);
-			System.out.println(suggestionEnd);
 			suggestionEnd.setMinutes(0);
-			System.out.println(suggestionEnd);
 			suggestionEnd.setDate(suggestionEnd.getDate()+1);
-			System.out.println(suggestionEnd);
 		}
 		model.setAttribute("suggestionInit", suggestionInit);
 		model.setAttribute("suggestionEnd", suggestionEnd);
