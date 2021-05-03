@@ -64,9 +64,9 @@ public class ManagerWorkplanUnnassignService implements AbstractUpdateService<Ma
 		Collection<Task> tasks;
 
 		if (entity.getIsPublic()) {
-			tasks = this.repository.findAllTaskByManagerId(entity.getManager().getId());
+			tasks = this.repository.findAllTaskByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
 		} else {
-			tasks = this.repository.findAllTaskPrivateByManagerId(entity.getManager().getId());
+			tasks = this.repository.findAllTaskPrivateByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
 		}
 		tasks.removeAll(entity.getTasks());
 
