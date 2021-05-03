@@ -65,7 +65,6 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 			suggestionInit.setDate(suggestionInit.getDate()-1);
 		}
 		final Date suggestionEnd=this.repository.findMaxEndWorkplanTask(entity.getId());
-		System.out.println(suggestionEnd);
 		if(suggestionEnd!=null) {
 			suggestionEnd.setHours(17);
 			suggestionEnd.setMinutes(0);
