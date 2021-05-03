@@ -11,14 +11,14 @@ import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Administrator;
-import acme.framework.services.AbstractCreateService;
+import acme.framework.services.AbstractDeleteService;
 
 @Service
-public class AdministratorSpamWordCreateService implements AbstractCreateService<Administrator, SpamWord>{
-
+public class AdministratorSpamWordDeleteService implements AbstractDeleteService<Administrator, SpamWord>{
+	
 	@Autowired
 	protected AdministratorSpamRepository repository;
-	
+
 	@Override
 	public boolean authorise(final Request<SpamWord> request) {
 		assert request != null;
@@ -30,8 +30,9 @@ public class AdministratorSpamWordCreateService implements AbstractCreateService
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
+
 		request.bind(entity, errors);
+		
 	}
 
 	@Override
@@ -44,15 +45,14 @@ public class AdministratorSpamWordCreateService implements AbstractCreateService
 	}
 
 	@Override
-	public SpamWord instantiate(final Request<SpamWord> request) {
+	public SpamWord findOne(final Request<SpamWord> request) {
 		assert request != null;
+		final int spamWordId;
 		
-		SpamWord result;
+		spamWordId = request.getModel().getInteger("id");
+	
 		
-		result = new SpamWord();
-		result.setWord("spamword");
-		
-		return result;
+		return this.repository.findOne(spamWordId);
 	}
 
 	@Override
@@ -63,15 +63,14 @@ public class AdministratorSpamWordCreateService implements AbstractCreateService
 	}
 
 	@Override
-	public void create(final Request<SpamWord> request, final SpamWord entity) {
+	public void delete(final Request<SpamWord> request, final SpamWord entity) {
 		assert request != null;
 		assert entity != null;
 		final Spam s = this.repository.findSpam();
 		final Collection<SpamWord> csw = s.getSpamWords();
-		csw.add(entity);
+		csw.remove(entity);
+		this.repository.delete(entity);
 		
-		this.repository.save(entity);
-
 	}
 
 }

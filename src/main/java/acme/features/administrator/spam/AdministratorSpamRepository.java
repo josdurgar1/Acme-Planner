@@ -31,4 +31,5 @@ public interface AdministratorSpamRepository extends AbstractRepository {
 	@Query("select s from SpamWord s where s.id = ?1")
 	SpamWord findOne(int id);
 	
+	
 }

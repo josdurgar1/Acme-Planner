@@ -24,6 +24,9 @@ public class AdministratorSpamWordController extends AbstractController<Administ
 	@Autowired
 	protected AdministratorSpamWordShowService showService;
 	
+	@Autowired
+	protected AdministratorSpamWordDeleteService deleteService;
+	
 	
 	
 	
@@ -33,6 +36,7 @@ public class AdministratorSpamWordController extends AbstractController<Administ
 		super.addBasicCommand(BasicCommand.CREATE, this.createService);
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
 
 	}
 }
