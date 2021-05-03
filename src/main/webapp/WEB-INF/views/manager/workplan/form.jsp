@@ -23,7 +23,13 @@
 	<acme:form-double readonly="true" code="manager.workplan.form.label.workload" path="workload"/>	
 	</jstl:if>
 	<acme:form-moment code="manager.workplan.form.label.init" path="init"/>
+	<jstl:if test="${suggestionInit!=null }">
+	<acme:message code="manager.workplan.form.label.suggestionInit"/><acme:print value="${suggestionInit}"/>
+	</jstl:if>
 	<acme:form-moment code="manager.workplan.form.label.end" path="end"/>
+	<jstl:if test="${suggestionEnd!=null }">
+	<acme:message code="manager.workplan.form.label.suggestionEnd"/><acme:print value="${suggestionEnd}"/>
+	</jstl:if>
 	<jstl:if test="${command == 'show'}" >
 	<acme:form-double readonly="true" code="manager.workplan.form.label.executionPeriod" path="executionPeriod"/>	
 	</jstl:if>
@@ -31,10 +37,11 @@
 		<acme:form-option code="manager.workplan.form.label.true" value="true" selected="${isPublic == 'true'}"/>
 		<acme:form-option code="manager.workplan.form.label.false" value="false" selected="${isPublic == 'false'}"/>
 	</acme:form-select>
-	<acme:form-select readonly="true" code="manager.workplan.form.label.isPublished" path="isPublished">
+	<acme:form-selectwo code="manager.workplan.form.label.isPublished" path="isPublished">
 		<acme:form-option code="manager.workplan.form.label.false" value="false" selected="${isPublished == 'false'}"/>
 		<acme:form-option code="manager.workplan.form.label.true" value="true" selected="${isPublished == 'true'}"/>
-	</acme:form-select>
+	</acme:form-selectwo>
+	
 <jstl:if test="${command != 'create'}" >
 <h2><acme:message code="manager.workplan.form.label.task.assigned"/></h2>
 	<table id="taskTable" class="table table-striped">
@@ -108,10 +115,10 @@
 					<acme:print value="${aTasks.endMoment}"/>
 					</td>
 					<td>
-					<jstl:if test="${atask.visibility=='PUBLIC'}" >
+					<jstl:if test="${aTasks.visibility=='PUBLIC'}" >
 					<acme:message code="manager.workplan.form.label.public"/>
 					</jstl:if>
-					<jstl:if test="${atask.visibility=='PRIVATE'}" >
+					<jstl:if test="${aTasks.visibility=='PRIVATE'}" >
 					<acme:message code="manager.workplan.form.label.nopublic"/>
 					</jstl:if>
 					</td>

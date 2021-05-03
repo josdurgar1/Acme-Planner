@@ -62,7 +62,7 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 				final boolean res=entity.getInit().after(now);
 				errors.state(request, res, "init", "manager.workplan.form.error.init");
 			}
-			if(!errors.hasErrors("workload")) {
+			if(!errors.hasErrors("workload")&&!errors.hasErrors("init")&&!errors.hasErrors("end")) {
 				final long end=entity.getEnd().getTime();
 				final long init=entity.getInit().getTime();
 				
