@@ -34,7 +34,7 @@ public boolean authorise(final Request<Task> request) {
 	manager = task.getManager();
 	principal = request.getPrincipal();
 	
-	result = !task.isFinished() && manager.getUserAccount().getId() == principal.getAccountId();
+	result = manager.getUserAccount().getId() == principal.getAccountId();
 	return result;
 }
 
@@ -53,11 +53,7 @@ public void unbind(final Request<Task> request, final Task entity, final Model m
 	assert entity != null;
 	assert model != null;
 	
-	final boolean isPrincipal = entity.getManager().getId() == request.getPrincipal().getAccountId();
-	
-	model.setAttribute("checkP", isPrincipal);
-	
-	request.unbind(entity, model, "title", "initialMoment","endMoment", "workload", "description", "visibility", "finished", "executionPeriod");
+	request.unbind(entity, model, "title", "initialMoment","endMoment", "workload", "description", "visibility", "executionPeriod");
 }
 
 @Override
