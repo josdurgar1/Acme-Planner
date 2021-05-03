@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.entities.workplan.Workplan;
-import acme.features.administrator.spam.AdministratorSpamListService;
+import acme.features.administrator.spam.AdministratorSpamWordListService;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -29,7 +29,7 @@ public class ManagerWorkplanPublishService implements AbstractUpdateService<Mana
 	
 	// Other Services--------------------
 		@Autowired
-		protected AdministratorSpamListService spamService;
+		protected AdministratorSpamWordListService spamService;
 
 	// AbstractListService<Employer, Job> interface ---------------------------
 	

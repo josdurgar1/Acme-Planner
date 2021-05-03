@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.entities.tasks.TaskVisibility;
-import acme.features.administrator.spam.AdministratorSpamListService;
+import acme.features.administrator.spam.AdministratorSpamWordListService;
 import acme.features.authenticated.manager.AuthenticatedManagerRepository;
 import acme.features.authenticated.task.AuthenticatedTaskRepository;
 import acme.framework.components.Errors;
@@ -29,7 +29,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 	// Other Services----------------
 	
 	@Autowired
-	protected AdministratorSpamListService spamService;
+	protected AdministratorSpamWordListService spamService;
 	
 	@Autowired
 	protected AuthenticatedManagerRepository managerService;

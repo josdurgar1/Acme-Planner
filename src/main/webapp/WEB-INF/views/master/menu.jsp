@@ -49,7 +49,7 @@
 				action="/administrator/dashboard/show" />
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.spamList"
-				action="/administrator/spam/list"/>
+				action="/administrator/spam-word/list"/>
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.administrator.shutdown"
 				action="/master/shutdown" />

@@ -12,12 +12,12 @@ import acme.framework.controllers.AbstractController;
 import acme.framework.entities.Administrator;
 
 @Controller
-@RequestMapping("administrator/spam/")
+@RequestMapping("administrator/spam-word/")
 public class AdministratorSpamWordController extends AbstractController<Administrator, SpamWord>{
 
 	
 	@Autowired
-	protected AdministratorSpamListService listService;
+	protected AdministratorSpamWordListService listService;
 	
 	
 	@PostConstruct
