@@ -13,3 +13,6 @@ administrator.spam-word.list.title.show = Spam
 
 administrator.spam-word.list.label.spamWords = Words
 administrator.spam-word.list.title.spamListing = List of Words Recognised as Spam
+
+administrator.spam-word.form.button.return = Return
+administrator.spam-word.form.label.word = Word

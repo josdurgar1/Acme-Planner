@@ -25,4 +25,7 @@ public interface AdministratorSpamRepository extends AbstractRepository {
 	@Query("select spam from Spam spam JOIN FETCH spam.spamWords")
 	List<Spam> findAllSpam();
 	
+	@Query("select s from SpamWord s where s.id = ?1")
+	SpamWord findOne(int id);
+	
 }
