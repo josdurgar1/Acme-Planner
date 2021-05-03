@@ -404,7 +404,7 @@
 			<property name="manager" ref="manager1Manager"/>
 		</bean>
 		
-		<!-- Managers user -->
+		<!-- Managers user 
 	
 	<bean name="manager1UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="manager1" />
@@ -430,6 +430,6 @@
 	</bean>
 	<bean name="manager1Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="manager1UserAccount" />
-	</bean>
+	</bean> -->
 	
 </beans>
