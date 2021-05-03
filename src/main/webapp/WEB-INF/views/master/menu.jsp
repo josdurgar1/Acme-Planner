@@ -33,6 +33,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.workplanList" action="/anonymous/workplan/list"/>
 		</acme:menu-option>
 
+
 		<acme:menu-option code="master.menu.administrator"
 			access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts"
@@ -46,6 +47,14 @@
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.administrator.dashboard"
 				action="/administrator/dashboard/show" />
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.addSpamWord"
+				action="/administrator/spam-word/create"/>
+			<acme:menu-suboption code="master.menu.administrator.spamList"
+				action="/administrator/spam-word/list"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.spamShow"
+				action="/administrator/spam/show"/>
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.administrator.shutdown"
 				action="/master/shutdown" />

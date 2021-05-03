@@ -23,5 +23,6 @@ public class SpamWord extends DomainEntity{
 	@NotNull
 	@NotBlank
 	protected String word;
+	
 
 }

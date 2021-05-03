@@ -6842,3 +6842,634 @@ INFO [acme.framework.utilities.DatabasePopulator] > Persisting spamWord13 = acme
 INFO [acme.framework.utilities.DatabasePopulator] > Persisting spamWord14 = acme.entities.spam.SpamWord{id=42, version=0}
 INFO [acme.framework.utilities.DatabasePopulator] > Persisting spam = acme.entities.spam.Spam{id=43, version=0}
 INFO [acme.framework.configuration.ShutdownConfiguration] The system is shutting down...
+INFO [acme.Launcher] Starting Launcher using Java 1.8.0_281 on DESKTOP-BALNCBG with PID 3592 (C:\Users\siadan\Workspace-21.1\Projects\Acme-Planner\target\classes started by siadan in C:\Users\siadan\Workspace-21.1\Projects\Acme-Planner)
+INFO [acme.Launcher] The following profiles are active: development,populator
+INFO [acme.Launcher] Started Launcher in 9.683 seconds (JVM running for 10.252)
+INFO [acme.framework.utilities.DatabasePopulator] Populating initial data
+INFO [acme.framework.utilities.DatabasePopulator] Recreating schema
+INFO [acme.framework.utilities.DatabasePopulator] Populating entities from classpath:/WEB-INF/population/initial-data.xml
+INFO [acme.framework.utilities.DatabasePopulator] Validating your entities.
+INFO [acme.framework.utilities.DatabasePopulator] Validating anonymousUserAccount ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating anonymousAnonymous ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating administratorUserAccount ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating administratorAdministrator ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating administratorAuthenticated ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating managerUserAccount ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating managerManager ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating managerAuthenticated ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Sorting your entities topologically.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 0 for anonymousUserAccount.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 1 for anonymousAnonymous.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 2 for administratorUserAccount.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 3 for administratorAdministrator.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 4 for administratorAuthenticated.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 5 for managerUserAccount.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 6 for managerManager.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 7 for managerAuthenticated.
+INFO [acme.framework.utilities.DatabasePopulator] Persiting your entities.
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting anonymousUserAccount = acme.framework.entities.UserAccount{id=1, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting anonymousAnonymous = acme.framework.entities.Anonymous{id=2, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorUserAccount = acme.framework.entities.UserAccount{id=3, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorAdministrator = acme.framework.entities.Administrator{id=4, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorAuthenticated = acme.framework.entities.Authenticated{id=5, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting managerUserAccount = acme.framework.entities.UserAccount{id=6, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting managerManager = acme.entities.roles.Manager{id=7, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting managerAuthenticated = acme.framework.entities.Authenticated{id=8, version=0}
+INFO [acme.framework.configuration.ShutdownConfiguration] The system is shutting down...
+WARN [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+ERROR [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter] ***************************
+APPLICATION FAILED TO START
+***************************
+Description:
+Web server failed to start. Port 8080 was already in use.
+Action:
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.beans.factory.parsing.FailFastProblemReporter.error(FailFastProblemReporter.java:72): Configuration problem: Bean name 'manager1UserAccount' is already used in this <beans> element
+Offending resource: class path resource [WEB-INF/population/sample-data.xml]
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:229): Null return value from advice does not match primitive return type for: public abstract double acme.features.administrator.spam.AdministratorSpamRepository.umbral()
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:229): Null return value from advice does not match primitive return type for: public abstract double acme.features.administrator.spam.AdministratorSpamRepository.umbral()
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:229): Null return value from advice does not match primitive return type for: public abstract double acme.features.administrator.spam.AdministratorSpamRepository.umbral()
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+WARN [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'administratorSpamController': Unsatisfied dependency expressed through field 'listService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'administratorSpamListService': Unsatisfied dependency expressed through field 'repository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'administratorSpamRepository' defined in acme.features.administrator.spam.AdministratorSpamRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpam()!
+ERROR [org.springframework.boot.SpringApplication] at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643): Error creating bean with name 'administratorSpamController': Unsatisfied dependency expressed through field 'listService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'administratorSpamListService': Unsatisfied dependency expressed through field 'repository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'administratorSpamRepository' defined in acme.features.administrator.spam.AdministratorSpamRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpam()!
+at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643): Error creating bean with name 'administratorSpamListService': Unsatisfied dependency expressed through field 'repository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'administratorSpamRepository' defined in acme.features.administrator.spam.AdministratorSpamRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpam()!
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788): Error creating bean with name 'administratorSpamRepository' defined in acme.features.administrator.spam.AdministratorSpamRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpam()!
+at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:93): Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpam()!
+at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:138): org.hibernate.QueryException: No data type for node: org.hibernate.hql.internal.ast.tree.IdentNode 
+\-[IDENT] IdentNode: 'spam' {originalText=spam}
+[SELECT spam FROM acme.entities.spam.Spam s]
+at org.hibernate.QueryException.generateQueryException(QueryException.java:120): No data type for node: org.hibernate.hql.internal.ast.tree.IdentNode 
+\-[IDENT] IdentNode: 'spam' {originalText=spam}
+[SELECT spam FROM acme.entities.spam.Spam s]
+at org.hibernate.hql.internal.ast.tree.SelectClause.initializeExplicitSelectClause(SelectClause.java:161): No data type for node: org.hibernate.hql.internal.ast.tree.IdentNode 
+\-[IDENT] IdentNode: 'spam' {originalText=spam}
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.beans.factory.parsing.FailFastProblemReporter.error(FailFastProblemReporter.java:72): Configuration problem: Bean name 'manager1UserAccount' is already used in this <beans> element
+Offending resource: class path resource [WEB-INF/population/sample-data.xml]
+INFO [acme.Launcher] Starting Launcher using Java 1.8.0_281 on DESKTOP-BALNCBG with PID 1680 (C:\Users\siadan\Workspace-21.1\Projects\Acme-Planner\target\classes started by siadan in C:\Users\siadan\Workspace-21.1\Projects\Acme-Planner)
+INFO [acme.Launcher] The following profiles are active: development,populator
+INFO [acme.Launcher] Started Launcher in 7.149 seconds (JVM running for 7.766)
+INFO [acme.framework.utilities.DatabasePopulator] Populating initial data
+INFO [acme.framework.utilities.DatabasePopulator] Recreating schema
+INFO [acme.framework.utilities.DatabasePopulator] Populating entities from classpath:/WEB-INF/population/initial-data.xml
+INFO [acme.framework.utilities.DatabasePopulator] Validating your entities.
+INFO [acme.framework.utilities.DatabasePopulator] Validating anonymousUserAccount ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating anonymousAnonymous ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating administratorUserAccount ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating administratorAdministrator ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating administratorAuthenticated ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating managerUserAccount ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating managerManager ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating managerAuthenticated ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Sorting your entities topologically.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 0 for anonymousUserAccount.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 1 for anonymousAnonymous.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 2 for administratorUserAccount.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 3 for administratorAdministrator.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 4 for administratorAuthenticated.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 5 for managerUserAccount.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 6 for managerManager.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 7 for managerAuthenticated.
+INFO [acme.framework.utilities.DatabasePopulator] Persiting your entities.
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting anonymousUserAccount = acme.framework.entities.UserAccount{id=1, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting anonymousAnonymous = acme.framework.entities.Anonymous{id=2, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorUserAccount = acme.framework.entities.UserAccount{id=3, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorAdministrator = acme.framework.entities.Administrator{id=4, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorAuthenticated = acme.framework.entities.Authenticated{id=5, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting managerUserAccount = acme.framework.entities.UserAccount{id=6, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting managerManager = acme.entities.roles.Manager{id=7, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting managerAuthenticated = acme.framework.entities.Authenticated{id=8, version=0}
+INFO [acme.framework.configuration.ShutdownConfiguration] The system is shutting down...
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/master/panic HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014): Request processing failed; nested exception is org.apache.tiles.request.render.CannotRenderException: ServletException including path '/WEB-INF/views/framework/page.jsp'.
+org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost]] at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014): Request processing failed; nested exception is org.apache.tiles.request.render.CannotRenderException: ServletException including path '/WEB-INF/views/framework/page.jsp'.
+at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+at org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/master/panic HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014): Request processing failed; nested exception is org.apache.tiles.request.render.CannotRenderException: ServletException including path '/WEB-INF/views/framework/page.jsp'.
+org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost]] at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014): Request processing failed; nested exception is org.apache.tiles.request.render.CannotRenderException: ServletException including path '/WEB-INF/views/framework/page.jsp'.
+at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+at org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.loader.MultipleBagFetchException: cannot simultaneously fetch multiple bags: [acme.entities.spam.Spam.spamWords, acme.entities.workplan.Workplan.tasks]
+WARN [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.loader.MultipleBagFetchException: cannot simultaneously fetch multiple bags: [acme.entities.spam.Spam.spamWords, acme.entities.workplan.Workplan.tasks]
+ERROR [org.springframework.boot.SpringApplication] at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788): Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.loader.MultipleBagFetchException: cannot simultaneously fetch multiple bags: [acme.entities.spam.Spam.spamWords, acme.entities.workplan.Workplan.tasks]
+at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421): [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.loader.MultipleBagFetchException: cannot simultaneously fetch multiple bags: [acme.entities.spam.Spam.spamWords, acme.entities.workplan.Workplan.tasks]
+at org.hibernate.loader.plan.exec.internal.AbstractLoadQueryDetails.generate(AbstractLoadQueryDetails.java:193): cannot simultaneously fetch multiple bags: [acme.entities.spam.Spam.spamWords, acme.entities.workplan.Workplan.tasks]
+ERROR [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.loader.MultipleBagFetchException: cannot simultaneously fetch multiple bags: [acme.entities.workplan.Workplan.tasks, acme.entities.spam.Spam.spamWords]
+WARN [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.loader.MultipleBagFetchException: cannot simultaneously fetch multiple bags: [acme.entities.workplan.Workplan.tasks, acme.entities.spam.Spam.spamWords]
+ERROR [org.springframework.boot.SpringApplication] at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788): Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.loader.MultipleBagFetchException: cannot simultaneously fetch multiple bags: [acme.entities.workplan.Workplan.tasks, acme.entities.spam.Spam.spamWords]
+at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421): [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.loader.MultipleBagFetchException: cannot simultaneously fetch multiple bags: [acme.entities.workplan.Workplan.tasks, acme.entities.spam.Spam.spamWords]
+at org.hibernate.loader.plan.exec.internal.AbstractLoadQueryDetails.generate(AbstractLoadQueryDetails.java:193): cannot simultaneously fetch multiple bags: [acme.entities.workplan.Workplan.tasks, acme.entities.spam.Spam.spamWords]
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/master/panic HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014): Request processing failed; nested exception is org.apache.tiles.request.render.CannotRenderException: ServletException including path '/WEB-INF/views/framework/page.jsp'.
+org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost]] at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014): Request processing failed; nested exception is org.apache.tiles.request.render.CannotRenderException: ServletException including path '/WEB-INF/views/framework/page.jsp'.
+at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+at org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+WARN [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+ERROR [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter] ***************************
+APPLICATION FAILED TO START
+***************************
+Description:
+Web server failed to start. Port 8080 was already in use.
+Action:
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): End-point not available
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): JSPException including path '../administrator/spam/list.jsp'.
+at org.apache.jasper.el.JspValueExpression.getValue(JspValueExpression.java:123): /WEB-INF/tags/list.tag(77,6) '${JspHelper.computeDataText(requestScope[index_path], format)}' org.springframework.core.convert.ConversionFailedException: Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[acme.entities.spam.SpamWord{id=35, version=0}, acme.entities.spam.SpamWord{id=36, version=0}, acme.entities.spam.SpamWord{id=37, version=0}, acme.entities.spam.SpamWord{id=38, version=0}, acme.entities.spam.SpamWord{id=39, version=0}, acme.entities.spam.SpamWord{id=40, version=0}, acme.entities.spam.SpamWord{id=41, version=0}, acme.entities.spam.SpamWord{id=42, version=0}, acme.entities.spam.SpamWord{id=43, version=0}, acme.entities.spam.SpamWord{id=44, version=0}, acme.entities.spam.SpamWord{id=45, version=0}, acme.entities.spam.SpamWord{id=46, version=0}, acme.entities.spam.SpamWord{id=47, version=0}, acme.entities.spam.SpamWord{id=48, version=0}]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+at org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:47): Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[acme.entities.spam.SpamWord{id=35, version=0}, acme.entities.spam.SpamWord{id=36, version=0}, acme.entities.spam.SpamWord{id=37, version=0}, acme.entities.spam.SpamWord{id=38, version=0}, acme.entities.spam.SpamWord{id=39, version=0}, acme.entities.spam.SpamWord{id=40, version=0}, acme.entities.spam.SpamWord{id=41, version=0}, acme.entities.spam.SpamWord{id=42, version=0}, acme.entities.spam.SpamWord{id=43, version=0}, acme.entities.spam.SpamWord{id=44, version=0}, acme.entities.spam.SpamWord{id=45, version=0}, acme.entities.spam.SpamWord{id=46, version=0}, acme.entities.spam.SpamWord{id=47, version=0}, acme.entities.spam.SpamWord{id=48, version=0}]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/master/panic HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014): Request processing failed; nested exception is org.apache.tiles.request.render.CannotRenderException: JSPException including path '../administrator/spam/list.jsp'.
+org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): JSPException including path '../administrator/spam/list.jsp'.
+org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): JSPException including path '../administrator/spam/list.jsp'.
+org.apache.jasper.el.JspValueExpression.getValue(JspValueExpression.java:123): /WEB-INF/tags/list.tag(77,6) '${JspHelper.computeDataText(requestScope[index_path], format)}' org.springframework.core.convert.ConversionFailedException: Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[acme.entities.spam.SpamWord{id=35, version=0}, acme.entities.spam.SpamWord{id=36, version=0}, acme.entities.spam.SpamWord{id=37, version=0}, acme.entities.spam.SpamWord{id=38, version=0}, acme.entities.spam.SpamWord{id=39, version=0}, acme.entities.spam.SpamWord{id=40, version=0}, acme.entities.spam.SpamWord{id=41, version=0}, acme.entities.spam.SpamWord{id=42, version=0}, acme.entities.spam.SpamWord{id=43, version=0}, acme.entities.spam.SpamWord{id=44, version=0}, acme.entities.spam.SpamWord{id=45, version=0}, acme.entities.spam.SpamWord{id=46, version=0}, acme.entities.spam.SpamWord{id=47, version=0}, acme.entities.spam.SpamWord{id=48, version=0}]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:47): Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[acme.entities.spam.SpamWord{id=35, version=0}, acme.entities.spam.SpamWord{id=36, version=0}, acme.entities.spam.SpamWord{id=37, version=0}, acme.entities.spam.SpamWord{id=38, version=0}, acme.entities.spam.SpamWord{id=39, version=0}, acme.entities.spam.SpamWord{id=40, version=0}, acme.entities.spam.SpamWord{id=41, version=0}, acme.entities.spam.SpamWord{id=42, version=0}, acme.entities.spam.SpamWord{id=43, version=0}, acme.entities.spam.SpamWord{id=44, version=0}, acme.entities.spam.SpamWord{id=45, version=0}, acme.entities.spam.SpamWord{id=46, version=0}, acme.entities.spam.SpamWord{id=47, version=0}, acme.entities.spam.SpamWord{id=48, version=0}]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): Access is not authorised
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): End-point not available
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): JSPException including path '../administrator/spam/list.jsp'.
+at org.apache.jasper.el.JspValueExpression.getValue(JspValueExpression.java:123): /WEB-INF/tags/list.tag(77,6) '${JspHelper.computeDataText(requestScope[index_path], format)}' org.springframework.core.convert.ConversionFailedException: Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[acme.entities.spam.SpamWord{id=35, version=0}, acme.entities.spam.SpamWord{id=36, version=0}, acme.entities.spam.SpamWord{id=37, version=0}, acme.entities.spam.SpamWord{id=38, version=0}, acme.entities.spam.SpamWord{id=39, version=0}, acme.entities.spam.SpamWord{id=40, version=0}, acme.entities.spam.SpamWord{id=41, version=0}, acme.entities.spam.SpamWord{id=42, version=0}, acme.entities.spam.SpamWord{id=43, version=0}, acme.entities.spam.SpamWord{id=44, version=0}, acme.entities.spam.SpamWord{id=45, version=0}, acme.entities.spam.SpamWord{id=46, version=0}, acme.entities.spam.SpamWord{id=47, version=0}, acme.entities.spam.SpamWord{id=48, version=0}]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+at org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:47): Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[acme.entities.spam.SpamWord{id=35, version=0}, acme.entities.spam.SpamWord{id=36, version=0}, acme.entities.spam.SpamWord{id=37, version=0}, acme.entities.spam.SpamWord{id=38, version=0}, acme.entities.spam.SpamWord{id=39, version=0}, acme.entities.spam.SpamWord{id=40, version=0}, acme.entities.spam.SpamWord{id=41, version=0}, acme.entities.spam.SpamWord{id=42, version=0}, acme.entities.spam.SpamWord{id=43, version=0}, acme.entities.spam.SpamWord{id=44, version=0}, acme.entities.spam.SpamWord{id=45, version=0}, acme.entities.spam.SpamWord{id=46, version=0}, acme.entities.spam.SpamWord{id=47, version=0}, acme.entities.spam.SpamWord{id=48, version=0}]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/master/panic HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014): Request processing failed; nested exception is org.apache.tiles.request.render.CannotRenderException: JSPException including path '../administrator/spam/list.jsp'.
+org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): JSPException including path '../administrator/spam/list.jsp'.
+org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): JSPException including path '../administrator/spam/list.jsp'.
+org.apache.jasper.el.JspValueExpression.getValue(JspValueExpression.java:123): /WEB-INF/tags/list.tag(77,6) '${JspHelper.computeDataText(requestScope[index_path], format)}' org.springframework.core.convert.ConversionFailedException: Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[acme.entities.spam.SpamWord{id=35, version=0}, acme.entities.spam.SpamWord{id=36, version=0}, acme.entities.spam.SpamWord{id=37, version=0}, acme.entities.spam.SpamWord{id=38, version=0}, acme.entities.spam.SpamWord{id=39, version=0}, acme.entities.spam.SpamWord{id=40, version=0}, acme.entities.spam.SpamWord{id=41, version=0}, acme.entities.spam.SpamWord{id=42, version=0}, acme.entities.spam.SpamWord{id=43, version=0}, acme.entities.spam.SpamWord{id=44, version=0}, acme.entities.spam.SpamWord{id=45, version=0}, acme.entities.spam.SpamWord{id=46, version=0}, acme.entities.spam.SpamWord{id=47, version=0}, acme.entities.spam.SpamWord{id=48, version=0}]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:47): Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[acme.entities.spam.SpamWord{id=35, version=0}, acme.entities.spam.SpamWord{id=36, version=0}, acme.entities.spam.SpamWord{id=37, version=0}, acme.entities.spam.SpamWord{id=38, version=0}, acme.entities.spam.SpamWord{id=39, version=0}, acme.entities.spam.SpamWord{id=40, version=0}, acme.entities.spam.SpamWord{id=41, version=0}, acme.entities.spam.SpamWord{id=42, version=0}, acme.entities.spam.SpamWord{id=43, version=0}, acme.entities.spam.SpamWord{id=44, version=0}, acme.entities.spam.SpamWord{id=45, version=0}, acme.entities.spam.SpamWord{id=46, version=0}, acme.entities.spam.SpamWord{id=47, version=0}, acme.entities.spam.SpamWord{id=48, version=0}]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): End-point not available
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): JSPException including path '../administrator/spam/list.jsp'.
+at org.apache.jasper.el.JspValueExpression.getValue(JspValueExpression.java:123): /WEB-INF/tags/list.tag(77,6) '${JspHelper.computeDataText(requestScope[index_path], format)}' org.springframework.core.convert.ConversionFailedException: Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[acme.entities.spam.SpamWord{id=35, version=0}, acme.entities.spam.SpamWord{id=36, version=0}, acme.entities.spam.SpamWord{id=37, version=0}, acme.entities.spam.SpamWord{id=38, version=0}, acme.entities.spam.SpamWord{id=39, version=0}, acme.entities.spam.SpamWord{id=40, version=0}, acme.entities.spam.SpamWord{id=41, version=0}, acme.entities.spam.SpamWord{id=42, version=0}, acme.entities.spam.SpamWord{id=43, version=0}, acme.entities.spam.SpamWord{id=44, version=0}, acme.entities.spam.SpamWord{id=45, version=0}, acme.entities.spam.SpamWord{id=46, version=0}, acme.entities.spam.SpamWord{id=47, version=0}, acme.entities.spam.SpamWord{id=48, version=0}]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+at org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:47): Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[acme.entities.spam.SpamWord{id=35, version=0}, acme.entities.spam.SpamWord{id=36, version=0}, acme.entities.spam.SpamWord{id=37, version=0}, acme.entities.spam.SpamWord{id=38, version=0}, acme.entities.spam.SpamWord{id=39, version=0}, acme.entities.spam.SpamWord{id=40, version=0}, acme.entities.spam.SpamWord{id=41, version=0}, acme.entities.spam.SpamWord{id=42, version=0}, acme.entities.spam.SpamWord{id=43, version=0}, acme.entities.spam.SpamWord{id=44, version=0}, acme.entities.spam.SpamWord{id=45, version=0}, acme.entities.spam.SpamWord{id=46, version=0}, acme.entities.spam.SpamWord{id=47, version=0}, acme.entities.spam.SpamWord{id=48, version=0}]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/master/panic HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014): Request processing failed; nested exception is org.apache.tiles.request.render.CannotRenderException: JSPException including path '../administrator/spam/list.jsp'.
+org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): JSPException including path '../administrator/spam/list.jsp'.
+org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): JSPException including path '../administrator/spam/list.jsp'.
+org.apache.jasper.el.JspValueExpression.getValue(JspValueExpression.java:123): /WEB-INF/tags/list.tag(77,6) '${JspHelper.computeDataText(requestScope[index_path], format)}' org.springframework.core.convert.ConversionFailedException: Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[acme.entities.spam.SpamWord{id=35, version=0}, acme.entities.spam.SpamWord{id=36, version=0}, acme.entities.spam.SpamWord{id=37, version=0}, acme.entities.spam.SpamWord{id=38, version=0}, acme.entities.spam.SpamWord{id=39, version=0}, acme.entities.spam.SpamWord{id=40, version=0}, acme.entities.spam.SpamWord{id=41, version=0}, acme.entities.spam.SpamWord{id=42, version=0}, acme.entities.spam.SpamWord{id=43, version=0}, acme.entities.spam.SpamWord{id=44, version=0}, acme.entities.spam.SpamWord{id=45, version=0}, acme.entities.spam.SpamWord{id=46, version=0}, acme.entities.spam.SpamWord{id=47, version=0}, acme.entities.spam.SpamWord{id=48, version=0}]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:47): Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[acme.entities.spam.SpamWord{id=35, version=0}, acme.entities.spam.SpamWord{id=36, version=0}, acme.entities.spam.SpamWord{id=37, version=0}, acme.entities.spam.SpamWord{id=38, version=0}, acme.entities.spam.SpamWord{id=39, version=0}, acme.entities.spam.SpamWord{id=40, version=0}, acme.entities.spam.SpamWord{id=41, version=0}, acme.entities.spam.SpamWord{id=42, version=0}, acme.entities.spam.SpamWord{id=43, version=0}, acme.entities.spam.SpamWord{id=44, version=0}, acme.entities.spam.SpamWord{id=45, version=0}, acme.entities.spam.SpamWord{id=46, version=0}, acme.entities.spam.SpamWord{id=47, version=0}, acme.entities.spam.SpamWord{id=48, version=0}]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): End-point not available
+WARN [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'administratorSpamController': Unsatisfied dependency expressed through field 'listService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'administratorSpamListService': Unsatisfied dependency expressed through field 'repository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'administratorSpamRepository' defined in acme.features.administrator.spam.AdministratorSpamRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpam()!
+ERROR [org.springframework.boot.SpringApplication] at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643): Error creating bean with name 'administratorSpamController': Unsatisfied dependency expressed through field 'listService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'administratorSpamListService': Unsatisfied dependency expressed through field 'repository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'administratorSpamRepository' defined in acme.features.administrator.spam.AdministratorSpamRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpam()!
+at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643): Error creating bean with name 'administratorSpamListService': Unsatisfied dependency expressed through field 'repository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'administratorSpamRepository' defined in acme.features.administrator.spam.AdministratorSpamRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpam()!
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788): Error creating bean with name 'administratorSpamRepository' defined in acme.features.administrator.spam.AdministratorSpamRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpam()!
+at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:93): Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpam()!
+at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:138): org.hibernate.QueryException: could not resolve property: words of: acme.entities.spam.SpamWord [SELECT spam FROM acme.entities.spam.Spam spam JOIN FETCH spam.spamWords.words]
+at org.hibernate.QueryException.generateQueryException(QueryException.java:120): could not resolve property: words of: acme.entities.spam.SpamWord [SELECT spam FROM acme.entities.spam.Spam spam JOIN FETCH spam.spamWords.words]
+at org.hibernate.persister.entity.AbstractPropertyMapping.propertyException(AbstractPropertyMapping.java:77): could not resolve property: words of: acme.entities.spam.SpamWord
+WARN [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'administratorSpamController': Unsatisfied dependency expressed through field 'listService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'administratorSpamListService': Unsatisfied dependency expressed through field 'repository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'administratorSpamRepository' defined in acme.features.administrator.spam.AdministratorSpamRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpam()!
+ERROR [org.springframework.boot.SpringApplication] at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643): Error creating bean with name 'administratorSpamController': Unsatisfied dependency expressed through field 'listService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'administratorSpamListService': Unsatisfied dependency expressed through field 'repository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'administratorSpamRepository' defined in acme.features.administrator.spam.AdministratorSpamRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpam()!
+at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643): Error creating bean with name 'administratorSpamListService': Unsatisfied dependency expressed through field 'repository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'administratorSpamRepository' defined in acme.features.administrator.spam.AdministratorSpamRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpam()!
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788): Error creating bean with name 'administratorSpamRepository' defined in acme.features.administrator.spam.AdministratorSpamRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpam()!
+at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:93): Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpam()!
+at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:138): org.hibernate.QueryException: illegal attempt to dereference collection [spam0_.id.spamWords] with element property reference [word] [SELECT spam FROM acme.entities.spam.Spam spam JOIN FETCH spam.spamWords.word]
+at org.hibernate.QueryException.generateQueryException(QueryException.java:120): illegal attempt to dereference collection [spam0_.id.spamWords] with element property reference [word] [SELECT spam FROM acme.entities.spam.Spam spam JOIN FETCH spam.spamWords.word]
+at org.hibernate.hql.internal.ast.tree.DotNode$1.buildIllegalCollectionDereferenceException(DotNode.java:60): illegal attempt to dereference collection [spam0_.id.spamWords] with element property reference [word]
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): JSPException including path '../administrator/spam/list.jsp'.
+at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/master/panic HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014): Request processing failed; nested exception is org.apache.tiles.request.render.CannotRenderException: JSPException including path '../administrator/spam/list.jsp'.
+org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): JSPException including path '../administrator/spam/list.jsp'.
+org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): JSPException including path '../administrator/spam/list.jsp'.
+org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost]] at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014): Request processing failed; nested exception is org.apache.tiles.request.render.CannotRenderException: ServletException including path '/WEB-INF/views/framework/page.jsp'.
+at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+at org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): JSPException including path '../administrator/spam/list.jsp'.
+at org.apache.jasper.el.JspValueExpression.getValue(JspValueExpression.java:123): /WEB-INF/tags/list.tag(77,6) '${JspHelper.computeDataText(requestScope[index_path], format)}' org.springframework.core.convert.ConversionFailedException: Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[acme.entities.spam.SpamWord{id=35, version=0}, acme.entities.spam.SpamWord{id=36, version=0}, acme.entities.spam.SpamWord{id=37, version=0}, acme.entities.spam.SpamWord{id=38, version=0}, acme.entities.spam.SpamWord{id=39, version=0}, acme.entities.spam.SpamWord{id=40, version=0}, acme.entities.spam.SpamWord{id=41, version=0}, acme.entities.spam.SpamWord{id=42, version=0}, acme.entities.spam.SpamWord{id=43, version=0}, acme.entities.spam.SpamWord{id=44, version=0}, acme.entities.spam.SpamWord{id=45, version=0}, acme.entities.spam.SpamWord{id=46, version=0}, acme.entities.spam.SpamWord{id=47, version=0}, acme.entities.spam.SpamWord{id=48, version=0}]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+at org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:47): Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[acme.entities.spam.SpamWord{id=35, version=0}, acme.entities.spam.SpamWord{id=36, version=0}, acme.entities.spam.SpamWord{id=37, version=0}, acme.entities.spam.SpamWord{id=38, version=0}, acme.entities.spam.SpamWord{id=39, version=0}, acme.entities.spam.SpamWord{id=40, version=0}, acme.entities.spam.SpamWord{id=41, version=0}, acme.entities.spam.SpamWord{id=42, version=0}, acme.entities.spam.SpamWord{id=43, version=0}, acme.entities.spam.SpamWord{id=44, version=0}, acme.entities.spam.SpamWord{id=45, version=0}, acme.entities.spam.SpamWord{id=46, version=0}, acme.entities.spam.SpamWord{id=47, version=0}, acme.entities.spam.SpamWord{id=48, version=0}]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/master/panic HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014): Request processing failed; nested exception is org.apache.tiles.request.render.CannotRenderException: JSPException including path '../administrator/spam/list.jsp'.
+org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): JSPException including path '../administrator/spam/list.jsp'.
+org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): JSPException including path '../administrator/spam/list.jsp'.
+org.apache.jasper.el.JspValueExpression.getValue(JspValueExpression.java:123): /WEB-INF/tags/list.tag(77,6) '${JspHelper.computeDataText(requestScope[index_path], format)}' org.springframework.core.convert.ConversionFailedException: Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[acme.entities.spam.SpamWord{id=35, version=0}, acme.entities.spam.SpamWord{id=36, version=0}, acme.entities.spam.SpamWord{id=37, version=0}, acme.entities.spam.SpamWord{id=38, version=0}, acme.entities.spam.SpamWord{id=39, version=0}, acme.entities.spam.SpamWord{id=40, version=0}, acme.entities.spam.SpamWord{id=41, version=0}, acme.entities.spam.SpamWord{id=42, version=0}, acme.entities.spam.SpamWord{id=43, version=0}, acme.entities.spam.SpamWord{id=44, version=0}, acme.entities.spam.SpamWord{id=45, version=0}, acme.entities.spam.SpamWord{id=46, version=0}, acme.entities.spam.SpamWord{id=47, version=0}, acme.entities.spam.SpamWord{id=48, version=0}]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:47): Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[acme.entities.spam.SpamWord{id=35, version=0}, acme.entities.spam.SpamWord{id=36, version=0}, acme.entities.spam.SpamWord{id=37, version=0}, acme.entities.spam.SpamWord{id=38, version=0}, acme.entities.spam.SpamWord{id=39, version=0}, acme.entities.spam.SpamWord{id=40, version=0}, acme.entities.spam.SpamWord{id=41, version=0}, acme.entities.spam.SpamWord{id=42, version=0}, acme.entities.spam.SpamWord{id=43, version=0}, acme.entities.spam.SpamWord{id=44, version=0}, acme.entities.spam.SpamWord{id=45, version=0}, acme.entities.spam.SpamWord{id=46, version=0}, acme.entities.spam.SpamWord{id=47, version=0}, acme.entities.spam.SpamWord{id=48, version=0}]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): JSPException including path '../administrator/spam/list.jsp'.
+at org.apache.jasper.el.JspValueExpression.getValue(JspValueExpression.java:123): /WEB-INF/tags/list.tag(77,6) '${JspHelper.computeDataText(requestScope[index_path], format)}' org.springframework.core.convert.ConversionFailedException: Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[sex, hard core, viagra, cialis, nigeria, you’ve won, million dollar, sexo, núcleo duro, viagra, cialis, Nigeria, has ganado, un millón de dólares]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+at org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:47): Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[sex, hard core, viagra, cialis, nigeria, you’ve won, million dollar, sexo, núcleo duro, viagra, cialis, Nigeria, has ganado, un millón de dólares]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/master/panic HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014): Request processing failed; nested exception is org.apache.tiles.request.render.CannotRenderException: JSPException including path '../administrator/spam/list.jsp'.
+org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): JSPException including path '../administrator/spam/list.jsp'.
+org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): JSPException including path '../administrator/spam/list.jsp'.
+org.apache.jasper.el.JspValueExpression.getValue(JspValueExpression.java:123): /WEB-INF/tags/list.tag(77,6) '${JspHelper.computeDataText(requestScope[index_path], format)}' org.springframework.core.convert.ConversionFailedException: Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[sex, hard core, viagra, cialis, nigeria, you’ve won, million dollar, sexo, núcleo duro, viagra, cialis, Nigeria, has ganado, un millón de dólares]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:47): Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[sex, hard core, viagra, cialis, nigeria, you’ve won, million dollar, sexo, núcleo duro, viagra, cialis, Nigeria, has ganado, un millón de dólares]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): End-point not available
+WARN [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'administratorSpamController': Unsatisfied dependency expressed through field 'listService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'administratorSpamListService': Unsatisfied dependency expressed through field 'repository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'administratorSpamRepository' defined in acme.features.administrator.spam.AdministratorSpamRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpam()!
+ERROR [org.springframework.boot.SpringApplication] at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643): Error creating bean with name 'administratorSpamController': Unsatisfied dependency expressed through field 'listService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'administratorSpamListService': Unsatisfied dependency expressed through field 'repository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'administratorSpamRepository' defined in acme.features.administrator.spam.AdministratorSpamRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpam()!
+at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643): Error creating bean with name 'administratorSpamListService': Unsatisfied dependency expressed through field 'repository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'administratorSpamRepository' defined in acme.features.administrator.spam.AdministratorSpamRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpam()!
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788): Error creating bean with name 'administratorSpamRepository' defined in acme.features.administrator.spam.AdministratorSpamRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpam()!
+at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:93): Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpam()!
+at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:138): org.hibernate.QueryException: query specified join fetching, but the owner of the fetched association was not present in the select list [FromElement{explicit,not a collection join,fetch join,fetch non-lazy properties,classAlias=null,role=acme.entities.spam.Spam.spamWords,tableName=spam_word,tableAlias=spamword2_,origin=spam spam0_,columns={spam0_.id,className=acme.entities.spam.SpamWord}}] [SELECT spam.umbral, spam.spamWords FROM acme.entities.spam.Spam spam JOIN FETCH spam.spamWords]
+at org.hibernate.QueryException.generateQueryException(QueryException.java:120): query specified join fetching, but the owner of the fetched association was not present in the select list [FromElement{explicit,not a collection join,fetch join,fetch non-lazy properties,classAlias=null,role=acme.entities.spam.Spam.spamWords,tableName=spam_word,tableAlias=spamword2_,origin=spam spam0_,columns={spam0_.id,className=acme.entities.spam.SpamWord}}] [SELECT spam.umbral, spam.spamWords FROM acme.entities.spam.Spam spam JOIN FETCH spam.spamWords]
+at org.hibernate.hql.internal.ast.tree.SelectClause.initializeExplicitSelectClause(SelectClause.java:215): query specified join fetching, but the owner of the fetched association was not present in the select list [FromElement{explicit,not a collection join,fetch join,fetch non-lazy properties,classAlias=null,role=acme.entities.spam.Spam.spamWords,tableName=spam_word,tableAlias=spamword2_,origin=spam spam0_,columns={spam0_.id,className=acme.entities.spam.SpamWord}}]
+WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] SQL Error: 1064, SQLState: 42000
+ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as col_1_0_, spamword2_.id as id1_4_, spamword2_.version as version2_4_, spamwor' at line 1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:259): could not extract ResultSet; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:63): could not extract ResultSet
+com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as col_1_0_, spamword2_.id as id1_4_, spamword2_.version as version2_4_, spamwor' at line 1
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): JSPException including path '../administrator/spam/list.jsp'.
+at org.apache.jasper.el.JspValueExpression.getValue(JspValueExpression.java:123): /WEB-INF/tags/list.tag(77,6) '${JspHelper.computeDataText(requestScope[index_path], format)}' org.springframework.core.convert.ConversionFailedException: Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[acme.entities.spam.SpamWord{id=35, version=0}, acme.entities.spam.SpamWord{id=36, version=0}, acme.entities.spam.SpamWord{id=37, version=0}, acme.entities.spam.SpamWord{id=38, version=0}, acme.entities.spam.SpamWord{id=39, version=0}, acme.entities.spam.SpamWord{id=40, version=0}, acme.entities.spam.SpamWord{id=41, version=0}, acme.entities.spam.SpamWord{id=42, version=0}, acme.entities.spam.SpamWord{id=43, version=0}, acme.entities.spam.SpamWord{id=44, version=0}, acme.entities.spam.SpamWord{id=45, version=0}, acme.entities.spam.SpamWord{id=46, version=0}, acme.entities.spam.SpamWord{id=47, version=0}, acme.entities.spam.SpamWord{id=48, version=0}]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+at org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:47): Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[acme.entities.spam.SpamWord{id=35, version=0}, acme.entities.spam.SpamWord{id=36, version=0}, acme.entities.spam.SpamWord{id=37, version=0}, acme.entities.spam.SpamWord{id=38, version=0}, acme.entities.spam.SpamWord{id=39, version=0}, acme.entities.spam.SpamWord{id=40, version=0}, acme.entities.spam.SpamWord{id=41, version=0}, acme.entities.spam.SpamWord{id=42, version=0}, acme.entities.spam.SpamWord{id=43, version=0}, acme.entities.spam.SpamWord{id=44, version=0}, acme.entities.spam.SpamWord{id=45, version=0}, acme.entities.spam.SpamWord{id=46, version=0}, acme.entities.spam.SpamWord{id=47, version=0}, acme.entities.spam.SpamWord{id=48, version=0}]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/master/panic HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014): Request processing failed; nested exception is org.apache.tiles.request.render.CannotRenderException: JSPException including path '../administrator/spam/list.jsp'.
+org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): JSPException including path '../administrator/spam/list.jsp'.
+org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): JSPException including path '../administrator/spam/list.jsp'.
+org.apache.jasper.el.JspValueExpression.getValue(JspValueExpression.java:123): /WEB-INF/tags/list.tag(77,6) '${JspHelper.computeDataText(requestScope[index_path], format)}' org.springframework.core.convert.ConversionFailedException: Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[acme.entities.spam.SpamWord{id=35, version=0}, acme.entities.spam.SpamWord{id=36, version=0}, acme.entities.spam.SpamWord{id=37, version=0}, acme.entities.spam.SpamWord{id=38, version=0}, acme.entities.spam.SpamWord{id=39, version=0}, acme.entities.spam.SpamWord{id=40, version=0}, acme.entities.spam.SpamWord{id=41, version=0}, acme.entities.spam.SpamWord{id=42, version=0}, acme.entities.spam.SpamWord{id=43, version=0}, acme.entities.spam.SpamWord{id=44, version=0}, acme.entities.spam.SpamWord{id=45, version=0}, acme.entities.spam.SpamWord{id=46, version=0}, acme.entities.spam.SpamWord{id=47, version=0}, acme.entities.spam.SpamWord{id=48, version=0}]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:47): Failed to convert from type [org.hibernate.collection.internal.PersistentBag] to type [java.lang.String] for value '[acme.entities.spam.SpamWord{id=35, version=0}, acme.entities.spam.SpamWord{id=36, version=0}, acme.entities.spam.SpamWord{id=37, version=0}, acme.entities.spam.SpamWord{id=38, version=0}, acme.entities.spam.SpamWord{id=39, version=0}, acme.entities.spam.SpamWord{id=40, version=0}, acme.entities.spam.SpamWord{id=41, version=0}, acme.entities.spam.SpamWord{id=42, version=0}, acme.entities.spam.SpamWord{id=43, version=0}, acme.entities.spam.SpamWord{id=44, version=0}, acme.entities.spam.SpamWord{id=45, version=0}, acme.entities.spam.SpamWord{id=46, version=0}, acme.entities.spam.SpamWord{id=47, version=0}, acme.entities.spam.SpamWord{id=48, version=0}]'; nested exception is org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(GenericConversionService.java:322): No converter found capable of converting from type [acme.entities.spam.SpamWord] to type [java.lang.String]
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+INFO [acme.Launcher] Starting Launcher using Java 1.8.0_281 on DESKTOP-139NAB1 with PID 7808 (C:\Users\javie_5cni0ld\Desktop\DP-2\Workspace-21.1\Projects\Acme-Planner\target\classes started by javie in C:\Users\javie_5cni0ld\Desktop\DP-2\Workspace-21.1\Projects\Acme-Planner)
+INFO [acme.Launcher] The following profiles are active: development,populator
+INFO [acme.Launcher] Started Launcher in 9.444 seconds (JVM running for 10.244)
+INFO [acme.framework.utilities.DatabasePopulator] Populating initial data
+INFO [acme.framework.utilities.DatabasePopulator] Recreating schema
+INFO [acme.framework.utilities.DatabasePopulator] Populating entities from classpath:/WEB-INF/population/initial-data.xml
+INFO [acme.framework.utilities.DatabasePopulator] Validating your entities.
+INFO [acme.framework.utilities.DatabasePopulator] Validating anonymousUserAccount ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating anonymousAnonymous ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating administratorUserAccount ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating administratorAdministrator ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating administratorAuthenticated ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating managerUserAccount ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating managerManager ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating managerAuthenticated ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Sorting your entities topologically.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 0 for anonymousUserAccount.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 1 for anonymousAnonymous.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 2 for administratorUserAccount.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 3 for administratorAdministrator.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 4 for administratorAuthenticated.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 5 for managerUserAccount.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 6 for managerManager.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 7 for managerAuthenticated.
+INFO [acme.framework.utilities.DatabasePopulator] Persiting your entities.
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting anonymousUserAccount = acme.framework.entities.UserAccount{id=1, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting anonymousAnonymous = acme.framework.entities.Anonymous{id=2, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorUserAccount = acme.framework.entities.UserAccount{id=3, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorAdministrator = acme.framework.entities.Administrator{id=4, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorAuthenticated = acme.framework.entities.Authenticated{id=5, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting managerUserAccount = acme.framework.entities.UserAccount{id=6, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting managerManager = acme.entities.roles.Manager{id=7, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting managerAuthenticated = acme.framework.entities.Authenticated{id=8, version=0}
+INFO [acme.framework.configuration.ShutdownConfiguration] The system is shutting down...
+INFO [acme.Launcher] Starting Launcher using Java 1.8.0_281 on DESKTOP-139NAB1 with PID 9008 (C:\Users\javie_5cni0ld\Desktop\DP-2\Workspace-21.1\Projects\Acme-Planner\target\classes started by javie in C:\Users\javie_5cni0ld\Desktop\DP-2\Workspace-21.1\Projects\Acme-Planner)
+INFO [acme.Launcher] The following profiles are active: development,populator
+INFO [acme.Launcher] Started Launcher in 9.432 seconds (JVM running for 10.158)
+INFO [acme.framework.utilities.DatabasePopulator] Populating sample data
+INFO [acme.framework.utilities.DatabasePopulator] Recreating schema
+INFO [acme.framework.utilities.DatabasePopulator] Populating entities from classpath:/WEB-INF/population/initial-data.xml
+INFO [acme.framework.utilities.DatabasePopulator] Validating your entities.
+INFO [acme.framework.utilities.DatabasePopulator] Validating anonymousUserAccount ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating anonymousAnonymous ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating administratorUserAccount ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating administratorAdministrator ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating administratorAuthenticated ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating managerUserAccount ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating managerManager ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating managerAuthenticated ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Sorting your entities topologically.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 0 for anonymousUserAccount.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 1 for anonymousAnonymous.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 2 for administratorUserAccount.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 3 for administratorAdministrator.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 4 for administratorAuthenticated.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 5 for managerUserAccount.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 6 for managerManager.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 7 for managerAuthenticated.
+INFO [acme.framework.utilities.DatabasePopulator] Persiting your entities.
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting anonymousUserAccount = acme.framework.entities.UserAccount{id=1, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting anonymousAnonymous = acme.framework.entities.Anonymous{id=2, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorUserAccount = acme.framework.entities.UserAccount{id=3, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorAdministrator = acme.framework.entities.Administrator{id=4, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorAuthenticated = acme.framework.entities.Authenticated{id=5, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting managerUserAccount = acme.framework.entities.UserAccount{id=6, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting managerManager = acme.entities.roles.Manager{id=7, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting managerAuthenticated = acme.framework.entities.Authenticated{id=8, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] Populating entities from classpath:/WEB-INF/population/sample-data.xml
+INFO [acme.framework.utilities.DatabasePopulator] Validating your entities.
+INFO [acme.framework.utilities.DatabasePopulator] Validating managerUserAccountEx ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating managerManagerEx ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating managerAuthenticatedEx ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating manager1UserAccount ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating manager1Manager ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating manager1Authenticated ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating shout01 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating shout02 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating shout03 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating shout04 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating shout05 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating shout06 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating shout07 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating shout08 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating shout09 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating shout10 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating task01 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating task02 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating task03 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating task04 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating task05 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating task06 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating task07 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating task08 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating task09 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating task10 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating spamWord01 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating spamWord02 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating spamWord03 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating spamWord04 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating spamWord05 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating spamWord06 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating spamWord07 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating spamWord08 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating spamWord09 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating spamWord10 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating spamWord11 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating spamWord12 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating spamWord13 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating spamWord14 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating spam ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating workplan01 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating workplan02 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating workplan03 ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Sorting your entities topologically.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 0 for managerUserAccountEx.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 1 for managerManagerEx.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 2 for managerAuthenticatedEx.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 3 for manager1UserAccount.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 4 for manager1Manager.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 5 for manager1Authenticated.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 6 for shout01.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 7 for shout02.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 8 for shout03.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 9 for shout04.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 10 for shout05.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 11 for shout06.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 12 for shout07.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 13 for shout08.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 14 for shout09.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 15 for shout10.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 16 for task01.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 17 for task02.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 18 for task03.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 19 for task04.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 20 for task05.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 21 for task06.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 22 for task07.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 23 for task08.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 24 for task09.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 25 for task10.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 26 for spamWord01.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 27 for spamWord02.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 28 for spamWord03.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 29 for spamWord04.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 30 for spamWord05.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 31 for spamWord06.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 32 for spamWord07.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 33 for spamWord08.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 34 for spamWord09.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 35 for spamWord10.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 36 for spamWord11.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 37 for spamWord12.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 38 for spamWord13.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 39 for spamWord14.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 40 for spam.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 41 for workplan01.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 42 for workplan02.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 43 for workplan03.
+INFO [acme.framework.utilities.DatabasePopulator] Persiting your entities.
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting managerUserAccountEx = acme.framework.entities.UserAccount{id=9, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting managerManagerEx = acme.entities.roles.Manager{id=10, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting managerAuthenticatedEx = acme.framework.entities.Authenticated{id=11, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting manager1UserAccount = acme.framework.entities.UserAccount{id=12, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting manager1Manager = acme.entities.roles.Manager{id=13, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting manager1Authenticated = acme.framework.entities.Authenticated{id=14, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting shout01 = acme.entities.shouts.Shout{id=15, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting shout02 = acme.entities.shouts.Shout{id=16, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting shout03 = acme.entities.shouts.Shout{id=17, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting shout04 = acme.entities.shouts.Shout{id=18, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting shout05 = acme.entities.shouts.Shout{id=19, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting shout06 = acme.entities.shouts.Shout{id=20, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting shout07 = acme.entities.shouts.Shout{id=21, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting shout08 = acme.entities.shouts.Shout{id=22, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting shout09 = acme.entities.shouts.Shout{id=23, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting shout10 = acme.entities.shouts.Shout{id=24, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting task01 = acme.entities.tasks.Task{id=25, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting task02 = acme.entities.tasks.Task{id=26, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting task03 = acme.entities.tasks.Task{id=27, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting task04 = acme.entities.tasks.Task{id=28, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting task05 = acme.entities.tasks.Task{id=29, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting task06 = acme.entities.tasks.Task{id=30, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting task07 = acme.entities.tasks.Task{id=31, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting task08 = acme.entities.tasks.Task{id=32, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting task09 = acme.entities.tasks.Task{id=33, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting task10 = acme.entities.tasks.Task{id=34, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting spamWord01 = acme.entities.spam.SpamWord{id=35, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting spamWord02 = acme.entities.spam.SpamWord{id=36, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting spamWord03 = acme.entities.spam.SpamWord{id=37, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting spamWord04 = acme.entities.spam.SpamWord{id=38, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting spamWord05 = acme.entities.spam.SpamWord{id=39, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting spamWord06 = acme.entities.spam.SpamWord{id=40, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting spamWord07 = acme.entities.spam.SpamWord{id=41, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting spamWord08 = acme.entities.spam.SpamWord{id=42, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting spamWord09 = acme.entities.spam.SpamWord{id=43, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting spamWord10 = acme.entities.spam.SpamWord{id=44, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting spamWord11 = acme.entities.spam.SpamWord{id=45, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting spamWord12 = acme.entities.spam.SpamWord{id=46, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting spamWord13 = acme.entities.spam.SpamWord{id=47, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting spamWord14 = acme.entities.spam.SpamWord{id=48, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting spam = acme.entities.spam.Spam{id=49, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting workplan01 = acme.entities.workplan.Workplan{id=50, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting workplan02 = acme.entities.workplan.Workplan{id=51, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting workplan03 = acme.entities.workplan.Workplan{id=52, version=0}
+INFO [acme.framework.configuration.ShutdownConfiguration] The system is shutting down...
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): Access is not authorised
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): End-point not available
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): End-point not available
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): End-point not available
+WARN [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'administratorSpamWordController': Unsatisfied dependency expressed through field 'showService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'acme.features.administrator.spam.AdministratorSpamWordShowService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+ERROR [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter] ***************************
+APPLICATION FAILED TO START
+***************************
+Description:
+Field showService in acme.features.administrator.spam.AdministratorSpamWordController required a bean of type 'acme.features.administrator.spam.AdministratorSpamWordShowService' that could not be found.
+The injection point has the following annotations:
+- @org.springframework.beans.factory.annotation.Autowired(required=true)
+Action:
+Consider defining a bean of type 'acme.features.administrator.spam.AdministratorSpamWordShowService' in your configuration.
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.orm.jpa.EntityManagerFactoryUtils.convertJpaAccessExceptionIfPossible(EntityManagerFactoryUtils.java:374): At least 1 parameter(s) provided but only 0 parameter(s) present in query.; nested exception is java.lang.IllegalArgumentException: At least 1 parameter(s) provided but only 0 parameter(s) present in query.
+org.springframework.util.Assert.isTrue(Assert.java:139): At least 1 parameter(s) provided but only 0 parameter(s) present in query.
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at acme.framework.utilities.RememberMeLogoutHandler.logout(RememberMeLogoutHandler.java:31): java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:200): Filter execution threw an exception
+java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+<<<<<<< HEAD
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): Access is not authorised
+=======
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+>>>>>>> branch 'Tarea-015' of https://github.com/josdurgar1/Acme-Planner.git

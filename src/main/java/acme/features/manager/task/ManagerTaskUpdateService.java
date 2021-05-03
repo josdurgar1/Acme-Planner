@@ -8,7 +8,12 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
+
+import acme.features.administrator.spam.AdministratorSpamWordListService;
+import acme.features.authenticated.task.AuthenticatedTaskRepository;
+
 import acme.features.administrator.spam.AdministratorSpamListService;
+
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -25,8 +30,26 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 	// Other Services----------------
 
 	@Autowired
-	protected AdministratorSpamListService	spamService;
 
+	protected AdministratorSpamWordListService spamService;
+@Override
+public boolean authorise(final Request<Task> request) {
+	assert request != null;
+	
+	boolean result;
+	final int taskId;
+	final Task task;
+	final Manager manager;
+	final Principal principal;
+	
+	taskId = request.getModel().getInteger("id");
+	task = this.repository.findOneTaskById(taskId);
+	manager = task.getManager();
+	principal = request.getPrincipal();
+	
+	result = !task.isFinished() && manager.getUserAccount().getId() == principal.getAccountId();
+	return result;
+}
 
 	@Override
 	public boolean authorise(final Request<Task> request) {
