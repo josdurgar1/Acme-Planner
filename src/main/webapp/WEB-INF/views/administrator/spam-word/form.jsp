@@ -19,6 +19,7 @@
 	<acme:form-textbox code ="administrator.spam-word.form.label.word" path="word"/>
 	
 	<acme:form-submit test="${command == 'create'}" code="administrator.spam-word.form.button.create" action="/administrator/spam-word/create"/>
+	<acme:form-submit test="${command == 'show'}" code="administrator.spam-word.form.button.update" action="/administrator/spam-word/update"/>
 	<acme:form-submit test="${command == 'show'}" code="administrator.spam-word.form.button.delete" action="/administrator/spam-word/delete"/>
 	<acme:form-return code="administrator.spam-word.form.button.return"/>
 	
