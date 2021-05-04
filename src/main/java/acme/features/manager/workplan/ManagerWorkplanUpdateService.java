@@ -27,10 +27,10 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected ManagerWorkplanRepository repository;
+	protected ManagerWorkplanRepository			repository;
 
 	// AbstractUpdateService<Manager, Workplan> interface ---------------------------
-	
+
 	@Autowired
 	protected AdministratorSpamWordListService	spamService;
 
@@ -118,7 +118,7 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		final List<Task> formulario = entity.getTasks();
 		final List<Task> newTasks = new ArrayList<Task>();
 
-		if (!formulario.isEmpty()) {
+		if (!formulario.isEmpty() && !formulario.getClass().getTypeName().contains("PersistentBag")) {
 			for (int i = 0; i < formulario.size(); i++) {
 				final Object ob = formulario.get(i);
 				final String id = ob.toString();
