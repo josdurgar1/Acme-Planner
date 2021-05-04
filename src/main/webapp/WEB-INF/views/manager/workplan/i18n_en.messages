@@ -43,4 +43,7 @@ manager.workplan.form.error.end3			= The end date of the task cannot be later th
 manager.workplan.form.error.public2			= You cannot switch to private by having public tasks
 manager.workplan.form.label.suggestionInit 	= It is suggested that the start date be: 
 manager.workplan.form.label.suggestionEnd	= It is suggested that the end date be:
+manager.workplan.form.label.task			= Task: 
+manager.workplan.form.label.noTask			= -------------No Task-------------
+
 

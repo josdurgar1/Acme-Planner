@@ -1,7 +1,9 @@
 package acme.features.manager.workplan;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -96,7 +98,19 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-			if(!errors.hasErrors("init")){
+		final List<Task> formulario = entity.getTasks();
+		final List<Task> newTasks = new ArrayList<Task>();
+
+		for (int i = 0; i < formulario.size(); i++) {
+			final Object ob=formulario.get(i);
+			final String id= ob.toString();
+			final Task task = this.repository.findOneTaskById(Integer.parseInt(id));
+				newTasks.add(task);
+			
+		}
+		entity.setTasks(newTasks);	
+		
+		if(!errors.hasErrors("init")){
 				final Date now= new Date();
 				final boolean res=entity.getInit().after(now);
 				errors.state(request, res, "init", "manager.workplan.form.error.init");
