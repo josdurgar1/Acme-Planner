@@ -18,4 +18,3 @@ GitHub release - https://github.com/josdurgar1/Acme-Planner/releases/tag/V1.0
 
 CleverCloud access data: 
 - email: javpermar4@alum.us.es
-- password: javierperez4US
