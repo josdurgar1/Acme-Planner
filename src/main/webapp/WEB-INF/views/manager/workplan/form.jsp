@@ -102,12 +102,12 @@
 	</jstl:if>
 
 
-	<acme:form-submit test="${command == 'show' && isPublished == 'false'}" code="manager.workplan.form.button.update" action="/manager/workplan/update"/>
-	<acme:form-submit test="${command == 'show' && isPublished == 'false'}" code="manager.workplan.form.button.delete" action="/manager/workplan/delete"/>
-	<acme:form-submit test="${command == 'show' && isPublished == 'false'}" code="manager.workplan.form.button.publish" action="/manager/workplan/publish"/>
-	<acme:form-submit test="${command == 'create'}" code="manager.workplan.form.button.create" action="/manager/workplan/create"/>
-	<acme:form-submit test="${command == 'publish'}" code="manager.workplan.form.button.publish" action="/manager/workplan/publish"/>
-	<acme:form-submit test="${command == 'delete'}" code="manager.workplan.form.button.delete" action="/manager/workplan/delete"/>		
+	<acme:form-submit test="${command == 'show' && isPublished == 'false'}" code="manager.workplan.form.button.update" action="/management/workplan/update"/>
+	<acme:form-submit test="${command == 'show' && isPublished == 'false'}" code="manager.workplan.form.button.delete" action="/management/workplan/delete"/>
+	<acme:form-submit test="${command == 'show' && isPublished == 'false'}" code="manager.workplan.form.button.publish" action="/management/workplan/publish"/>
+	<acme:form-submit test="${command == 'create'}" code="manager.workplan.form.button.create" action="/management/workplan/create"/>
+	<acme:form-submit test="${command == 'publish'}" code="manager.workplan.form.button.publish" action="/management/workplan/publish"/>
+	<acme:form-submit test="${command == 'delete'}" code="manager.workplan.form.button.delete" action="/management/workplan/delete"/>		
 	<acme:form-return code="manager.workplan.form.button.return"/>	
 </acme:form>
 

@@ -13,7 +13,7 @@ import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 
 @Controller
-@RequestMapping("/manager/task/")
+@RequestMapping("/management/task/")
 public class ManagerTaskController extends AbstractController<Manager, Task>{
 	// Internal state ---------------------------------------------------------
 

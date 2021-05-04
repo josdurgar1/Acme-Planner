@@ -69,15 +69,15 @@
 		<acme:menu-option code="master.menu.manager"
 			access="hasRole('Manager')">
 			<acme:menu-suboption code="master.menu.manager.task.taskList"
-				action="/manager/task/list" />
+				action="/management/task/list" />
 			<acme:menu-suboption code="master.menu.manager.task.my-task"
-				action="/manager/task/list-mine" />
+				action="/management/task/list-mine" />
 			<acme:menu-suboption code="master.menu.manager.task.taskCreate"
-				action="/manager/task/create" />
+				action="/management/task/create" />
 			<acme:menu-suboption code="master.menu.manager.workplan.create"
-				action="/manager/workplan/create" />
+				action="/management/workplan/create" />
 			<acme:menu-suboption code="master.menu.manager.workplan.list"
-				action="/manager/workplan/list" />
+				action="/management/workplan/list" />
 		</acme:menu-option>
 
 	</acme:menu-left>
@@ -97,9 +97,9 @@
 			<acme:menu-suboption code="master.menu.user-account.become-consumer" action="/authenticated/consumer/create" access="!hasRole('Consumer')"/>
 			<acme:menu-suboption code="master.menu.user-account.consumer" action="/authenticated/consumer/update" access="hasRole('Consumer')"/> -->
 			<acme:menu-suboption code="master.menu.user-account.become-manager"
-				action="/authenticated/manager/create" access="!hasRole('Manager')" />
+				action="/authenticated/management/create" access="!hasRole('Manager')" />
 			<acme:menu-suboption code="master.menu.user-account.manager"
-				action="/authenticated/manager/update" access="hasRole('Manager')" />
+				action="/authenticated/management/update" access="hasRole('Manager')" />
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out"

@@ -19,13 +19,13 @@
 		<acme:form-option code="PRIVATE" value="PRIVATE" selected="${visibility=='PRIVATE'}"/>
 	</acme:form-select>
 	
-	<acme:form-submit test="${command == 'show' && checkP == 'true' && checkF == 'false'}" code="manager.task.form.button.update" action="/manager/task/update"/>
-	<acme:form-submit test="${command == 'show' && checkP == 'true' && checkF == 'false'}" code="manager.task.form.button.delete" action="/manager/task/delete"/>
+	<acme:form-submit test="${command == 'show' && checkP == 'true' && checkF == 'false'}" code="manager.task.form.button.update" action="/management/task/update"/>
+	<acme:form-submit test="${command == 'show' && checkP == 'true' && checkF == 'false'}" code="manager.task.form.button.delete" action="/management/task/delete"/>
 	
 	
-	<acme:form-submit test="${command == 'create'}" code="manager.task.form.button.create" action="/manager/task/create"/>
-	<acme:form-submit test="${command == 'delete'}" code="manager.task.form.button.delete" action="/manager/task/delete"/>
-	<acme:form-submit test="${command == 'update'}" code="manager.task.form.button.update" action="/manager/task/update"/>
+	<acme:form-submit test="${command == 'create'}" code="manager.task.form.button.create" action="/management/task/create"/>
+	<acme:form-submit test="${command == 'delete'}" code="manager.task.form.button.delete" action="/management/task/delete"/>
+	<acme:form-submit test="${command == 'update'}" code="manager.task.form.button.update" action="/management/task/update"/>
 	<acme:form-return code="manager.task.form.button.return"/>
 	
 </acme:form>
