@@ -15,3 +15,7 @@ projects.
 
 GitHub repository - https://github.com/josdurgar1/Acme-Planner
 GitHub release - 
+
+CleverCloud access data: 
+- email: javpermar4@alum.us.es
+- password: javierperez4US
