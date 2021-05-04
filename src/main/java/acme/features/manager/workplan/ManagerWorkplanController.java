@@ -13,7 +13,7 @@ import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 
 @Controller
-@RequestMapping("/manager/workplan/")
+@RequestMapping("/management/workplan/")
 public class ManagerWorkplanController extends AbstractController<Manager, Workplan>{
 	
 	// Internal state ---------------------------------------------------------
