@@ -69,15 +69,15 @@
 		<acme:menu-option code="master.menu.manager"
 			access="hasRole('Manager')">
 			<acme:menu-suboption code="master.menu.manager.task.taskList"
-				action="/management/task/list" />
+				action="/manager/task/list" />
 			<acme:menu-suboption code="master.menu.manager.task.my-task"
-				action="/management/task/list-mine" />
+				action="/manager/task/list-mine" />
 			<acme:menu-suboption code="master.menu.manager.task.taskCreate"
-				action="/management/task/create" />
+				action="/manager/task/create" />
 			<acme:menu-suboption code="master.menu.manager.workplan.create"
-				action="/management/workplan/create" />
+				action="/manager/workplan/create" />
 			<acme:menu-suboption code="master.menu.manager.workplan.list"
-				action="/management/workplan/list" />
+				action="/manager/workplan/list" />
 		</acme:menu-option>
 
 	</acme:menu-left>
