@@ -2,6 +2,7 @@
 package acme.features.manager.workplan;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -64,9 +65,9 @@ public class ManagerWorkplanUnnassignService implements AbstractUpdateService<Ma
 		Collection<Task> tasks;
 
 		if (entity.getIsPublic()) {
-			tasks = this.repository.findAllTaskByManagerId(entity.getManager().getId());
+			tasks = this.repository.findAllTaskByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
 		} else {
-			tasks = this.repository.findAllTaskPrivateByManagerId(entity.getManager().getId());
+			tasks = this.repository.findAllTaskPrivateByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
 		}
 		tasks.removeAll(entity.getTasks());
 
@@ -109,7 +110,7 @@ public class ManagerWorkplanUnnassignService implements AbstractUpdateService<Ma
 		final Task task = this.repository.findOneTaskById(id);
 		t = entity.getTasks();
 		t.remove(task);
-		entity.setTasks(t);
+		entity.setTasks((List<Task>) t);
 		Double w = 0.0;
 		for(final Task ta:entity.getTasks()) {
 			w+=ta.getWorkload();

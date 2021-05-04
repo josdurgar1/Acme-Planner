@@ -43,7 +43,6 @@
 
 	<bean name="managerManagerEx" class="acme.entities.roles.Manager">
 		<property name="userAccount" ref="managerUserAccountEx" />
-		<property name="name" value="Javier"/>
 	</bean>
 	
 	<bean name="managerAuthenticatedEx" class="acme.framework.entities.Authenticated">
@@ -71,7 +70,6 @@
 	</bean>
 
 	<bean name="manager1Manager" class="acme.entities.roles.Manager">
-		<property name="name" value="Manager" />
 		<property name="userAccount" ref="manager1UserAccount" />
 	</bean>
 	
@@ -283,78 +281,7 @@
 		<property name="manager" ref="managerManagerEx"></property>
 
 	</bean>
-	
-	
-	<!-- SpamWords-->
-	
-	<bean id="spamWord01" class="acme.entities.spam.SpamWord">
-	<property name="word" value="sex"/>
-	</bean>
-	
-	<bean id="spamWord02" class="acme.entities.spam.SpamWord">
-	<property name="word" value="hard core"/>
-	</bean>
-	<bean id="spamWord03" class="acme.entities.spam.SpamWord">
-	<property name="word" value="viagra"/>
-	</bean>
-	<bean id="spamWord04" class="acme.entities.spam.SpamWord">
-	<property name="word" value="cialis"/>
-	</bean>
-	<bean id="spamWord05" class="acme.entities.spam.SpamWord">
-	<property name="word" value="nigeria"/>
-	</bean>
-	<bean id="spamWord06" class="acme.entities.spam.SpamWord">
-	<property name="word" value="you’ve won"/>
-	</bean>
-	<bean id="spamWord07" class="acme.entities.spam.SpamWord">
-	<property name="word" value="million dollar"/>
-	</bean>
-	<bean id="spamWord08" class="acme.entities.spam.SpamWord">
-	<property name="word" value="sexo"/>
-	</bean>
-	<bean id="spamWord09" class="acme.entities.spam.SpamWord">
-	<property name="word" value="núcleo duro"/>
-	</bean>
-	<bean id="spamWord10" class="acme.entities.spam.SpamWord">
-	<property name="word" value="viagra"/>
-	</bean>
-	<bean id="spamWord11" class="acme.entities.spam.SpamWord">
-	<property name="word" value="cialis"/>
-	</bean>
-	<bean id="spamWord12" class="acme.entities.spam.SpamWord">
-	<property name="word" value="Nigeria"/>
-	</bean>
-	<bean id="spamWord13" class="acme.entities.spam.SpamWord">
-	<property name="word" value="has ganado"/>
-	</bean>
-	<bean id="spamWord14" class="acme.entities.spam.SpamWord">
-	<property name="word" value="un millón de dólares"/>
-	</bean>
 
-	<!-- Spam-->
-	
-	<bean id="spam" class="acme.entities.spam.Spam">
-	<property name="umbral" value="10.00"/>
-	<property name="spamWords">
-			<list>
-				<ref bean="spamWord01"/>
-				<ref bean="spamWord02"/>
-				<ref bean="spamWord03"/>
-				<ref bean="spamWord04"/>
-				<ref bean="spamWord05"/>
-				<ref bean="spamWord06"/>
-				<ref bean="spamWord07"/>
-				<ref bean="spamWord08"/>
-				<ref bean="spamWord09"/>
-				<ref bean="spamWord10"/>
-				<ref bean="spamWord11"/>
-				<ref bean="spamWord12"/>
-				<ref bean="spamWord13"/>
-				<ref bean="spamWord14"/>
-			</list>
-	</property>
-	</bean>
-	
 	<!-- WorkPlan-->
 	
 		<bean id="workplan01" class="acme.entities.workplan.Workplan">

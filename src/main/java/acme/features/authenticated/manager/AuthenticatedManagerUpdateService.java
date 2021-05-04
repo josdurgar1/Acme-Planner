@@ -47,7 +47,7 @@ public class AuthenticatedManagerUpdateService implements AbstractUpdateService<
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "name");
+		request.unbind(entity, model);
 	}
 
 	@Override

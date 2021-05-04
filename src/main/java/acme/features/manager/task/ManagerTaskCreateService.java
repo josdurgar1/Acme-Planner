@@ -12,9 +12,6 @@ import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.entities.tasks.TaskVisibility;
 import acme.features.administrator.spam.AdministratorSpamWordListService;
-import acme.features.authenticated.manager.AuthenticatedManagerRepository;
-import acme.features.authenticated.task.AuthenticatedTaskRepository;
-import acme.features.administrator.spam.AdministratorSpamListService;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -81,13 +78,13 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		initialMoment = new Date();
 		initialCalendar = Calendar.getInstance();
 		initialCalendar.setTime(initialMoment);
-		initialCalendar.add(Calendar.SECOND, 600);
+		initialCalendar.add(Calendar.SECOND, 60);
 		initialMoment = initialCalendar.getTime();
 
 		endMoment = new Date();
 		endCalendar = Calendar.getInstance();
 		endCalendar.setTime(endMoment);
-		endCalendar.add(Calendar.SECOND, 3600);
+		endCalendar.add(Calendar.HOUR, 24);
 		endMoment = endCalendar.getTime();
 
 		result = new Task();
@@ -96,7 +93,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		result.setEndMoment(endMoment);
 		result.setDescription("This is a description");
 		result.setLink("This is a link");
-		result.setWorkload(0.0);
+		result.setWorkload(8.0);
 		result.setVisibility(TaskVisibility.PUBLIC);
 		result.setManager(manager);
 

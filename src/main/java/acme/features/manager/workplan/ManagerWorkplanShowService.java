@@ -1,6 +1,7 @@
 package acme.features.manager.workplan;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,13 +35,14 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 		Workplan workplan;
 		Manager manager;
 		Principal principal;
-
+		
 		workplanId = request.getModel().getInteger("id");
 		workplan = this.repository.findOneWorkplanById(workplanId);
 		manager = workplan.getManager();
 		principal = request.getPrincipal();
+		
 		result = workplan.getIsPublished() || !workplan.getIsPublished() && manager.getUserAccount().getId() == principal.getAccountId();
-
+		
 		return result;
 	}
 
@@ -52,13 +54,26 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 		Collection<Task>tasks;
 		
 		if(entity.getIsPublic()) {
-		tasks=this.repository.findAllTaskByManagerId(entity.getManager().getId());
+		tasks=this.repository.findAllTaskByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
 		}else {
-			tasks=this.repository.findAllTaskPrivateByManagerId(entity.getManager().getId());
+			tasks=this.repository.findAllTaskPrivateByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
 		}
-		tasks.removeAll(entity.getTasks());
-		
-		model.setAttribute("unnasignedTask", tasks);
+		//tasks.removeAll(entity.getTasks());
+		final Date suggestionInit=this.repository.findMinInitWorkplanTask(entity.getId());
+		if(suggestionInit!=null) {
+			suggestionInit.setHours(8);
+			suggestionInit.setMinutes(0);
+			suggestionInit.setDate(suggestionInit.getDate()-1);
+		}
+		final Date suggestionEnd=this.repository.findMaxEndWorkplanTask(entity.getId());
+		if(suggestionEnd!=null) {
+			suggestionEnd.setHours(17);
+			suggestionEnd.setMinutes(0);
+			suggestionEnd.setDate(suggestionEnd.getDate()+1);
+		}
+		model.setAttribute("suggestionInit", suggestionInit);
+		model.setAttribute("suggestionEnd", suggestionEnd);
+		model.setAttribute("allTask", tasks);
 		request.unbind(entity, model, "title", "isPublic", "init","end","workload","isPublished","executionPeriod","tasks");
 		
 	}
