@@ -46,7 +46,7 @@
 		<acme:form-option code="manager.workplan.form.label.true" value="true" selected="${isPublished == 'true'}"/>
 	</acme:form-selectwo>
 	
-	<jstl:if test="${command == 'show'}">
+	<jstl:if test="${command == 'show' && isPublished=='false'}">
 		<acme:form-selectM code="manager.workplan.form.label.task"
 			path="tasks">
 			<acme:form-option code="manager.workplan.form.label.noTask" value=""/>
