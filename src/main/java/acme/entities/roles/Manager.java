@@ -1,7 +1,6 @@
 package acme.entities.roles;
 
 import javax.persistence.Entity;
-import javax.validation.constraints.NotBlank;
 
 import acme.framework.entities.UserRole;
 import lombok.Getter;
@@ -17,8 +16,6 @@ public class Manager extends UserRole {
 
 		// Attributes -------------------------------------------------------------
 
-		@NotBlank
-		protected String			name;
 
 
 		// Derived attributes -----------------------------------------------------
