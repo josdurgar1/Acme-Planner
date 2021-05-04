@@ -35,13 +35,14 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 		Workplan workplan;
 		Manager manager;
 		Principal principal;
-
+		
 		workplanId = request.getModel().getInteger("id");
 		workplan = this.repository.findOneWorkplanById(workplanId);
 		manager = workplan.getManager();
 		principal = request.getPrincipal();
+		
 		result = workplan.getIsPublished() || !workplan.getIsPublished() && manager.getUserAccount().getId() == principal.getAccountId();
-
+		
 		return result;
 	}
 
@@ -57,7 +58,7 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 		}else {
 			tasks=this.repository.findAllTaskPrivateByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
 		}
-		tasks.removeAll(entity.getTasks());
+		//tasks.removeAll(entity.getTasks());
 		final Date suggestionInit=this.repository.findMinInitWorkplanTask(entity.getId());
 		if(suggestionInit!=null) {
 			suggestionInit.setHours(8);
@@ -72,7 +73,7 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 		}
 		model.setAttribute("suggestionInit", suggestionInit);
 		model.setAttribute("suggestionEnd", suggestionEnd);
-		model.setAttribute("unnasignedTask", tasks);
+		model.setAttribute("allTask", tasks);
 		request.unbind(entity, model, "title", "isPublic", "init","end","workload","isPublished","executionPeriod","tasks");
 		
 	}

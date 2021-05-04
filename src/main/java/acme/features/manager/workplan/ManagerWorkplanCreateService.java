@@ -48,7 +48,7 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model,"title", "isPublic","init","end","isPublished");
+		request.unbind(entity, model,"title", "isPublic","init","end","tasks");
 		
 	}
 
@@ -57,6 +57,7 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		//request.getModel().setAttribute("tasks", this.repository.findAllTask2ByManagerId(request.getPrincipal().getActiveRoleId()));
 			if(!errors.hasErrors("init")){
 				final Date now= new Date();
 				final boolean res=entity.getInit().after(now);
@@ -94,6 +95,9 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		result = new Workplan();
 		result.setManager(manager);
 		result.setWorkload(0.0);
+		//final Collection<Task> tasks = this.repository.findAllTask2ByManagerId(request.getPrincipal().getActiveRoleId());
+		//result.setTasks(tasks);
+		result.setIsPublished(false);
 		return result;
 	}
 
@@ -110,6 +114,7 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		
 		entity.setExecutionPeriod(horas);
 		entity.setWorkload(0.0);
+		entity.setIsPublished(false);
 		this.repository.save(entity);
 		
 	}

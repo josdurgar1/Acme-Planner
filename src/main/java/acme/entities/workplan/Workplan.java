@@ -1,7 +1,7 @@
 package acme.entities.workplan;
 
-import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -57,7 +57,7 @@ public class Workplan extends DomainEntity {
 	
 	@Valid
 	@ManyToMany(fetch = FetchType.EAGER)
-	protected Collection<Task> tasks;
+	protected List<Task> tasks;
 	
 	@NotNull
 	@ManyToOne(optional=false)

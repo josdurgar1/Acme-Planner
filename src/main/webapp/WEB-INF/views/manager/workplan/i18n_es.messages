@@ -43,4 +43,9 @@ manager.workplan.form.error.end3			= La fecha de fin de la tarea no puede ser po
 manager.workplan.form.error.public2			= No puede cambiar a privado teniendo tareas públicas
 manager.workplan.form.label.suggestionInit	= Se sugiere que la fecha de inicio sea: 
 manager.workplan.form.label.suggestionEnd	= Se sugiere que la fecha de finalización sea: 
+manager.workplan.form.label.task			= Tareas: 
+manager.workplan.form.label.noTask			= -------------Ninguna Tarea-------------
+
+
+
 
