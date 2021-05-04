@@ -15,6 +15,7 @@ administrator.spam-word.list.label.spamWords = Words
 administrator.spam-word.list.title.spamListing = List of Words Recognised as Spam
 
 administrator.spam-word.form.button.create = Add
+administrator.spam-word.form.button.update = Update
 administrator.spam-word.form.button.delete = Delete
 administrator.spam-word.form.button.return = Return
 administrator.spam-word.form.label.word = Word
