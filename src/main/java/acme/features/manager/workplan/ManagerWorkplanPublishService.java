@@ -47,7 +47,7 @@ public class ManagerWorkplanPublishService implements AbstractUpdateService<Mana
 		workplan = this.repository.findOneWorkplanById(workplanId);
 		manager = workplan.getManager();
 		principal = request.getPrincipal();
-		result = workplan.getIsPublic()!=false && manager.getUserAccount().getId() == principal.getAccountId();
+		result =manager.getUserAccount().getId() == principal.getAccountId();
 
 		return result;
 	}
@@ -70,11 +70,11 @@ public class ManagerWorkplanPublishService implements AbstractUpdateService<Mana
 		Collection<Task> tasks;
 
 		if (entity.getIsPublic()) {
-			tasks = this.repository.findAllTaskByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
+			tasks = this.repository.findAllTaskPublicByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
 		} else {
-			tasks = this.repository.findAllTaskPrivateByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
+			tasks = this.repository.findAllTaskByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
 		}
-		tasks.removeAll(entity.getTasks());
+		//tasks.removeAll(entity.getTasks());
 
 		model.setAttribute("unnasignedTask", tasks);
 		request.unbind(entity, model);

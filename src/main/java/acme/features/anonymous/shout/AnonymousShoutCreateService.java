@@ -92,16 +92,16 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 			errors.state(request, !res, "text", "anonymous.shout.form.error.spam");
 			}
 		
-//		if (!errors.hasErrors("author")){
-//			final boolean res=SpamRead.isSpam(umbral, entity.getAuthor(), spamList);
-//			
-//			errors.state(request, !res, "author", "anonymous.shout.form.error.spam");
-//			}
-//		if (!errors.hasErrors("info")){
-//			final boolean res=SpamRead.isSpam(umbral, entity.getInfo(), spamList);
-//			
-//			errors.state(request, !res, "info", "anonymous.shout.form.error.spam");
-//			}
+		if (!errors.hasErrors("author")){
+			final boolean res=SpamRead.isSpam(umbral, entity.getAuthor(), spamList);
+			
+			errors.state(request, !res, "author", "anonymous.shout.form.error.spam");
+			}
+		if (!errors.hasErrors("info")){
+			final boolean res=SpamRead.isSpam(umbral, entity.getInfo(), spamList);
+			
+			errors.state(request, !res, "info", "anonymous.shout.form.error.spam");
+			}
 		
 	}
 

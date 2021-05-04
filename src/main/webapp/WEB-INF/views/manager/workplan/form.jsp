@@ -49,7 +49,7 @@
 	<jstl:if test="${command == 'show' && isPublished=='false'}">
 		<acme:form-selectM code="manager.workplan.form.label.task"
 			path="tasks">
-			<acme:form-option code="manager.workplan.form.label.noTask" value=""/>
+			<acme:form-option code="manager.workplan.form.label.noTask" value="" selected="true"/>
 			<jstl:forEach items="${allTask}" var="task">
 				<acme:form-option
 					code="${task.title} - Workload: ${task.workload} - Init: ${task.initialMoment} - End: ${task.endMoment} - ${task.visibility}"
@@ -73,23 +73,23 @@
 			</tr>
 		</thead>
 		<tbody>
-			<jstl:forEach var="task" items="${tasks}">
+			<jstl:forEach var="task1" items="${tasks}">
 				<tr>
-					<td><acme:print value="${task.title}"/></td>
-					<td><acme:print value="${task.workload }"/></td>
+					<td><acme:print value="${task1.title}"/></td>
+					<td><acme:print value="${task1.workload }"/></td>
 					
 					<td>
-					<acme:print value="${task.initialMoment}"/>
+					<acme:print value="${task1.initialMoment}"/>
 					
 					</td>
 					<td>
-					<acme:print value="${task.endMoment}"/>
+					<acme:print value="${task1.endMoment}"/>
 					</td>
 					<td>
-					<jstl:if test="${task.visibility=='PUBLIC'}" >
+					<jstl:if test="${task1.visibility=='PUBLIC'}" >
 					<acme:message code="manager.workplan.form.label.public"/>
 					</jstl:if>
-					<jstl:if test="${task.visibility=='PRIVATE'}" >
+					<jstl:if test="${task1.visibility=='PRIVATE'}" >
 					<acme:message code="manager.workplan.form.label.nopublic"/>
 					</jstl:if>
 					</td>
@@ -106,7 +106,6 @@
 	<acme:form-submit test="${command == 'show' && isPublished == 'false'}" code="manager.workplan.form.button.delete" action="/manager/workplan/delete"/>
 	<acme:form-submit test="${command == 'show' && isPublished == 'false'}" code="manager.workplan.form.button.publish" action="/manager/workplan/publish"/>
 	<acme:form-submit test="${command == 'create'}" code="manager.workplan.form.button.create" action="/manager/workplan/create"/>
-	<acme:form-submit test="${command == 'update'}" code="manager.workplan.form.button.update" action="/manager/workplan/update"/>
 	<acme:form-submit test="${command == 'publish'}" code="manager.workplan.form.button.publish" action="/manager/workplan/publish"/>
 	<acme:form-submit test="${command == 'delete'}" code="manager.workplan.form.button.delete" action="/manager/workplan/delete"/>		
 	<acme:form-return code="manager.workplan.form.button.return"/>	

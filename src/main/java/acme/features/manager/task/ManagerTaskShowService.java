@@ -7,8 +7,10 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
+import acme.entities.tasks.TaskVisibility;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -24,7 +26,19 @@ public class ManagerTaskShowService implements AbstractShowService<Manager, Task
 		public boolean authorise(final Request<Task> request) {
 			assert request != null;
 
-			return true;
+			boolean result;
+			final int taskId;
+			final Task task;
+			final Manager manager;
+			final Principal principal;
+
+			taskId = request.getModel().getInteger("id");
+			task = this.repository.findOneTaskById(taskId);
+			manager = task.getManager();
+			principal = request.getPrincipal();
+
+			result = manager.getUserAccount().getId() == principal.getAccountId() || task.getVisibility()==TaskVisibility.PUBLIC;
+			return result;
 		}
 
 		// AbstractShowService<Manager, Task> interface --------------------------

@@ -40,11 +40,11 @@ manager.workplan.form.error.init2			= La fecha de inicio de la tarea no puede se
 manager.workplan.form.error.end2			= La fecha de fin de la tarea no puede ser posterior a la del workplan
 manager.workplan.form.error.init3			= La fecha de inicio de la tarea no puede ser anterior a la del workplan
 manager.workplan.form.error.end3			= La fecha de fin de la tarea no puede ser posterior a la del workplan
-manager.workplan.form.error.public2			= No puede cambiar a privado teniendo tareas públicas
+manager.workplan.form.error.public2			= No puede cambiar a publico teniendo tareas privadas
 manager.workplan.form.label.suggestionInit	= Se sugiere que la fecha de inicio sea: 
 manager.workplan.form.label.suggestionEnd	= Se sugiere que la fecha de finalización sea: 
 manager.workplan.form.label.task			= Tareas: 
-manager.workplan.form.label.noTask			= -------------Ninguna Tarea-------------
+manager.workplan.form.label.noTask			= -------------Sin modificaciones de tareas-------------
 
 
 

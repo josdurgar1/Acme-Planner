@@ -2,6 +2,7 @@ package acme.features.manager.workplan;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -50,5 +51,9 @@ public interface ManagerWorkplanRepository extends AbstractRepository {
 	Date findMinInitWorkplanTask(int id);
 	@Query("select max(t.endMoment) from Workplan w join w.tasks t where w.id=?1")
 	Date findMaxEndWorkplanTask(int id);
+
+	
+	@Query("select w.tasks from Workplan w where w.id=?1")
+	List<Task> findTaskByWorkplan(int id);
 	
 }
