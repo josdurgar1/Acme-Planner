@@ -14,7 +14,7 @@ University of Sevilla.  This project helps them start working on their new infor
 projects.
 
 GitHub repository - https://github.com/josdurgar1/Acme-Planner
-GitHub release - 
+GitHub release - https://github.com/josdurgar1/Acme-Planner/releases/tag/V1.0
 
 CleverCloud access data: 
 - email: javpermar4@alum.us.es
