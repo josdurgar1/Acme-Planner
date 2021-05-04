@@ -1,6 +1,7 @@
 
 package acme.features.manager.task;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -119,6 +120,11 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 			final boolean res = entity.getInitialMoment().after(entity.getEndMoment());
 			errors.state(request, !res, "endMoment", "manager.task.form.error.endMoment");
 
+		}
+		if (!errors.hasErrors("initialMoment")) {
+			final Date now = new Date();
+			final boolean res = entity.getInitialMoment().after(now);
+			errors.state(request, res, "initialMoment", "manager.task.form.error.initialMoment");
 		}
 
 		if (!errors.hasErrors("workload")) {
