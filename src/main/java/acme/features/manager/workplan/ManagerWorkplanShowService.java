@@ -58,7 +58,7 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 		}else {
 			tasks=this.repository.findAllTaskByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
 		}
-		tasks.removeAll(entity.getTasks());
+		//tasks.removeAll(entity.getTasks());
 		final Date suggestionInit=this.repository.findMinInitWorkplanTask(entity.getId());
 		if(suggestionInit!=null) {
 			suggestionInit.setHours(8);
