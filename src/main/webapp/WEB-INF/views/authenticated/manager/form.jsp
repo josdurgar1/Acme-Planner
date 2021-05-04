@@ -16,7 +16,6 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="authenticated.manager.form.label.name" path="name"/>
 	
 	<acme:form-submit test="${command == 'create'}" code="authenticated.manager.form.button.create" action="/authenticated/manager/create"/>
 	<acme:form-submit test="${command == 'update'}" code="authenticated.manager.form.button.update" action="/authenticated/manager/update"/>

@@ -94,6 +94,7 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		result = new Workplan();
 		result.setManager(manager);
 		result.setWorkload(0.0);
+		result.setIsPublished(false);
 		return result;
 	}
 

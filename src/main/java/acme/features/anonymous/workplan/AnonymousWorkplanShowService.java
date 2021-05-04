@@ -32,7 +32,7 @@ public class AnonymousWorkplanShowService implements AbstractShowService<Anonymo
 			assert entity != null;
 			assert model != null;
 
-			request.unbind(entity, model, "title", "isPublic", "isPublished","executionPeriod", "workload", "init", "end", "tasks", "manager.name");
+			request.unbind(entity, model, "title", "isPublic", "isPublished","executionPeriod", "workload", "init", "end", "tasks");
 		}
 
 		@Override
