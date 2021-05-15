@@ -1,7 +1,7 @@
 package acme.entities.workplan;
 
-import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -39,23 +39,25 @@ public class Workplan extends DomainEntity {
 	@NotNull
 	protected Boolean isPublished;
 	
-	@NotNull
 	protected Double executionPeriod;
 	
 	@Digits(integer = 3, fraction = 2)
+	@NotNull
 	protected Double workload;
 	
 	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
 	protected Date					init;
 
 	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
 	protected Date					end;
 	
 	// Relationship -----------------------------------------------------------
 	
 	@Valid
 	@ManyToMany(fetch = FetchType.EAGER)
-	protected Collection<Task> tasks;
+	protected List<Task> tasks;
 	
 	@NotNull
 	@ManyToOne(optional=false)

@@ -17,7 +17,40 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<import resource="classpath:/WEB-INF/population/conversion-service.xml"/>	
+	<import resource="classpath:/WEB-INF/population/conversion-service.xml"/>
+	
+<!-- Manager -->	
+
+
+<bean name="managerUserAccountEx" class="acme.framework.entities.UserAccount">
+		<property name="username" value="managerEx" />
+		<property name="password" value="managerEx" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Javier" />
+				<property name="surname" value="Perez" />
+				<property name="email" value="javpermar4@alum.us.es" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="managerManagerEx" />
+				<ref bean="managerAuthenticatedEx" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="managerManagerEx" class="acme.entities.roles.Manager">
+		<property name="userAccount" ref="managerUserAccountEx" />
+	</bean>
+	
+	<bean name="managerAuthenticatedEx" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="managerUserAccountEx" />
+	</bean>
+	
+
+	
 <!-- Shouts -->
 
 	
@@ -37,7 +70,6 @@
 		<property name="info" value="http://example.org"/>		
 	</bean>
 
-	
 
 	<bean id="shout03" class="acme.entities.shouts.Shout">
 		<property name="moment" value="2021/04/07 00:00"/>
@@ -110,31 +142,34 @@
 		<property name="endMoment" value="2021/09/25 12:00"/>
 		<property name="description" value="Descripcion aaaaaaaaa"></property>
 		<property name="workload" value="20.3"></property>
-		<property name="executionPeriod" value="20"></property>
-		<property name="isPublic" value="true"></property>
+		<property name="executionPeriod" value="599.50"></property>
+		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
+		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 	
 	<bean id="task02" class="acme.entities.tasks.Task">
 		<property name="title" value="Task 2"/>
-		<property name="initialMoment" value="2021/02/05 10:30"/>
+		<property name="initialMoment" value="2021/02/05 12:30"/>
 		<property name="endMoment" value="2021/03/31 12:30"/>
 		<property name="description" value="Esta es la segunda Task"></property>
 		<property name="workload" value="28.3"></property>
-		<property name="executionPeriod" value="22"></property>
-		<property name="isPublic" value="false"></property>
+		<property name="executionPeriod" value="1296.0"></property>
+		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
+		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 	
 	<bean id="task03" class="acme.entities.tasks.Task">
 		<property name="title" value="Task 3"/>
-		<property name="initialMoment" value="2021/04/20 12:30"/>
-		<property name="endMoment" value="2021/05/31 12:30"/>
+		<property name="initialMoment" value="2021/05/20 12:30"/>
+		<property name="endMoment" value="2021/05/21 12:30"/>
 		<property name="description" value="Esta es la tercera Task"></property>
-		<property name="workload" value="0"></property>
-		<property name="executionPeriod" value="30"></property>
-		<property name="isPublic" value="true"></property>
+		<property name="workload" value="23.0"></property>
+		<property name="executionPeriod" value="24.0"></property>
+		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
+		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 	
 	<bean id="task04" class="acme.entities.tasks.Task">
@@ -143,176 +178,207 @@
 		<property name="endMoment" value="2021/04/30 12:30"/>
 		<property name="description" value="aaaaaaaaaaaa"></property>
 		<property name="workload" value="25.3"></property>
-		<property name="executionPeriod" value="30"></property>
-		<property name="isPublic" value="false"></property>
+		<property name="executionPeriod" value="984.0"></property>
+		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
+		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 	
 	<bean id="task05" class="acme.entities.tasks.Task">
 		<property name="title" value="Task 5"/>
-		<property name="initialMoment" value="2021/03/20 12:30"/>
-		<property name="endMoment" value="2021/03/31 12:30"/>
+		<property name="initialMoment" value="2021/05/20 12:30"/>
+		<property name="endMoment" value="2021/06/30 12:30"/>
 		<property name="description" value="aaaaaaaaaaaa"></property>
 		<property name="workload" value="25.3"></property>
-		<property name="executionPeriod" value="10"></property>
-		<property name="isPublic" value="true"></property>
+		<property name="executionPeriod" value="960.0"></property>
+		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
+		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 	
 	<bean id="task06" class="acme.entities.tasks.Task">
 		<property name="title" value="Task 6"/>
-		<property name="initialMoment" value="2021/02/21 12:30"/>
-		<property name="endMoment" value="2021/03/12 10:30"/>
+		<property name="initialMoment" value="2021/05/21 10:30"/>
+		<property name="endMoment" value="2021/06/12 10:30"/>
 		<property name="description" value="Creando mi 6 tarea :)"></property>
 		<property name="workload" value="25.3"></property>
-		<property name="executionPeriod" value="30"></property>
-		<property name="isPublic" value="true"></property>
+		<property name="executionPeriod" value="504.0"></property>
+		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
+		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 
 	<bean id="task07" class="acme.entities.tasks.Task">
 		<property name="title" value="Task 7"/>
-		<property name="initialMoment" value="2021/05/20 09:30"/>
+		<property name="initialMoment" value="2021/05/20 17:30"/>
 		<property name="endMoment" value="2021/08/15 17:30"/>
 		<property name="description" value="Realización de la task 7"></property>
 		<property name="workload" value="25.3"></property>
-		<property name="executionPeriod" value="30"></property>
-		<property name="isPublic" value="true"></property>
+		<property name="executionPeriod" value="624.0"></property>
+		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
+		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 
 	<bean id="task08" class="acme.entities.tasks.Task">
 		<property name="title" value="Task 8"/>
-		<property name="initialMoment" value="2021/04/19 15:30"/>
-		<property name="endMoment" value="2021/05/01 10:30"/>
+		<property name="initialMoment" value="2021/06/10 13:30"/>
+		<property name="endMoment" value="2021/07/25 13:30"/>
 		<property name="description" value="Task 8 realizada"></property>
 		<property name="workload" value="25.3"></property>
-		<property name="executionPeriod" value="30"></property>
-		<property name="isPublic" value="true"></property>
+		<property name="executionPeriod" value="1080.0"></property>
+		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
+		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 
 	<bean id="task09" class="acme.entities.tasks.Task">
 		<property name="title" value="Task 9"/>
 		<property name="initialMoment" value="2021/08/10 15:30"/>
-		<property name="endMoment" value="2021/11/07 10:30"/>
+		<property name="endMoment" value="2021/11/07 15:30"/>
 		<property name="description" value="Popular base de datos"></property>
 		<property name="workload" value="25.3"></property>
-		<property name="executionPeriod" value="30"></property>
-		<property name="isPublic" value="true"></property>
+		<property name="executionPeriod" value="2136.0"></property>
+		<property name="visibility" value="PUBLIC"></property>
 		<property name="link"><null/></property>
+		<property name="manager" ref="managerManagerEx"></property>
 	</bean>
 
 	<bean id="task10" class="acme.entities.tasks.Task">
 		<property name="title" value="Task 10"/>
-		<property name="initialMoment" value="2021/02/10 13:30"/>
-		<property name="endMoment" value="2021/04/25 10:30"/>
+		<property name="initialMoment" value="2021/04/19 10:30"/>
+		<property name="endMoment" value="2021/05/01 10:30"/>
 		<property name="description" value="Task 8 realizada"></property>
 		<property name="workload" value="25.3"></property>
-		<property name="executionPeriod" value="30"></property>
-		<property name="isPublic" value="true"></property>
+		<property name="executionPeriod" value="288.0"></property>
+		<property name="visibility" value="PRIVATE"></property>
 		<property name="link"><null/></property>
-	</bean>
-	
-	
-	<!-- SpamWords-->
-	
-	<bean id="spamWord01" class="acme.entities.spam.SpamWord">
-	<property name="word" value="sex"/>
-	</bean>
-	
-	<bean id="spamWord02" class="acme.entities.spam.SpamWord">
-	<property name="word" value="hard core"/>
-	</bean>
-	<bean id="spamWord03" class="acme.entities.spam.SpamWord">
-	<property name="word" value="viagra"/>
-	</bean>
-	<bean id="spamWord04" class="acme.entities.spam.SpamWord">
-	<property name="word" value="cialis"/>
-	</bean>
-	<bean id="spamWord05" class="acme.entities.spam.SpamWord">
-	<property name="word" value="nigeria"/>
-	</bean>
-	<bean id="spamWord06" class="acme.entities.spam.SpamWord">
-	<property name="word" value="you’ve won"/>
-	</bean>
-	<bean id="spamWord07" class="acme.entities.spam.SpamWord">
-	<property name="word" value="million dollar"/>
-	</bean>
-	<bean id="spamWord08" class="acme.entities.spam.SpamWord">
-	<property name="word" value="sexo"/>
-	</bean>
-	<bean id="spamWord09" class="acme.entities.spam.SpamWord">
-	<property name="word" value="núcleo duro"/>
-	</bean>
-	<bean id="spamWord10" class="acme.entities.spam.SpamWord">
-	<property name="word" value="viagra"/>
-	</bean>
-	<bean id="spamWord11" class="acme.entities.spam.SpamWord">
-	<property name="word" value="cialis"/>
-	</bean>
-	<bean id="spamWord12" class="acme.entities.spam.SpamWord">
-	<property name="word" value="Nigeria"/>
-	</bean>
-	<bean id="spamWord13" class="acme.entities.spam.SpamWord">
-	<property name="word" value="has ganado"/>
-	</bean>
-	<bean id="spamWord14" class="acme.entities.spam.SpamWord">
-	<property name="word" value="un millón de dólares"/>
+		<property name="manager" ref="managerManagerEx"></property>
+
 	</bean>
 
-	<!-- Spam-->
-	
-	<bean id="spam" class="acme.entities.spam.Spam">
-	<property name="umbral" value="10.00"/>
-	<property name="spamWords">
-			<list>
-				<ref bean="spamWord01"/>
-				<ref bean="spamWord02"/>
-				<ref bean="spamWord03"/>
-				<ref bean="spamWord04"/>
-				<ref bean="spamWord05"/>
-				<ref bean="spamWord06"/>
-				<ref bean="spamWord07"/>
-				<ref bean="spamWord08"/>
-				<ref bean="spamWord09"/>
-				<ref bean="spamWord10"/>
-				<ref bean="spamWord11"/>
-				<ref bean="spamWord12"/>
-				<ref bean="spamWord13"/>
-				<ref bean="spamWord14"/>
-			</list>
-		</property>
-	
-	</bean>
-	
 	<!-- WorkPlan-->
 	
 		<bean id="workplan01" class="acme.entities.workplan.Workplan">
-			<property name="isPublic" value="true"/>
-			<property name="isPublished" value="true"/>
-			<property name="executionPeriod" value="4.0"/>
-			<property name="workload" value="2.0"/>
-			<property name="init" value="2021/01/01 00:00"/>
-			<property name="end" value="2021/12/31 23:59"/>
-		</bean>
-		
-		<bean id="workplan02" class="acme.entities.workplan.Workplan">
-			<property name="isPublic" value="true"/>
-			<property name="isPublished" value="true"/>
-			<property name="executionPeriod" value="4.0"/>
-			<property name="workload" value="2.0"/>
-			<property name="init" value="2021/01/01 00:00"/>
-			<property name="end" value="2021/12/31 23:59"/>
-		</bean>
-		
-		<bean id="workplan03" class="acme.entities.workplan.Workplan">
+
+			<property name="title" value="Workplan1"/>
 			<property name="isPublic" value="true"/>
 			<property name="isPublished" value="false"/>
 			<property name="executionPeriod" value="4.0"/>
-			<property name="workload" value="2.0"/>
+			<property name="workload" value="0.0"/>
 			<property name="init" value="2021/01/01 00:00"/>
 			<property name="end" value="2021/12/31 23:59"/>
+			<property name="manager" ref="managerManagerEx"/>
 		</bean>
+		
+		<bean id="workplan02" class="acme.entities.workplan.Workplan">
+
+			<property name="title" value="Workplan2"/>
+
+			<property name="isPublic" value="true"/>
+			<property name="isPublished" value="true"/>
+			<property name="executionPeriod" value="4.0"/>
+			<property name="workload" value="0.0"/>
+			<property name="init" value="2021/01/01 00:00"/>
+			<property name="end" value="2021/12/31 23:59"/>
+			<property name="manager" ref="managerManagerEx"/>
+		</bean>
+		
+		<bean id="workplan03" class="acme.entities.workplan.Workplan">
+
+			<property name="title" value="Workplan3"/>
+			<property name="isPublic" value="false"/>
+			<property name="isPublished" value="false"/>
+			<property name="executionPeriod" value="4.0"/>
+			<property name="workload" value="0.0"/>
+			<property name="init" value="2021/01/01 00:00"/>
+			<property name="end" value="2021/12/31 23:59"/>
+			<property name="manager" ref="managerManagerEx"/>
+		</bean>
+		
+		<bean id="workplan04" class="acme.entities.workplan.Workplan">
+
+			<property name="title" value="Workplan4"/>
+			<property name="isPublic" value="true"/>
+			<property name="isPublished" value="false"/>
+			<property name="executionPeriod" value="5136.0"/>
+			<property name="workload" value="0.0"/>
+			<property name="init" value="2021/06/01 00:00"/>
+			<property name="end" value="2021/12/31 23:59"/>
+			<property name="manager" ref="managerManagerEx"/>
+		</bean>
+		
+			<bean id="workplan05" class="acme.entities.workplan.Workplan">
+
+			<property name="title" value="Workplan5"/>
+			<property name="isPublic" value="false"/>
+			<property name="isPublished" value="false"/>
+			<property name="executionPeriod" value="1464.0"/>
+			<property name="workload" value="0.0"/>
+			<property name="init" value="2021/06/01 00:00"/>
+			<property name="end" value="2021/07/31 23:59"/>
+			<property name="manager" ref="managerManagerEx"/>
+		</bean>
+		
+				<bean id="workplan06" class="acme.entities.workplan.Workplan">
+
+			<property name="title" value="Workplan6"/>
+			<property name="isPublic" value="true"/>
+			<property name="isPublished" value="false"/>
+			<property name="executionPeriod" value="1224.0"/>
+			<property name="workload" value="0.0"/>
+			<property name="init" value="2021/06/11 00:00"/>
+			<property name="end" value="2021/07/31 23:59"/>
+			<property name="manager" ref="managerManagerEx"/>
+		</bean>
+		
+				<bean id="workplan07" class="acme.entities.workplan.Workplan">
+
+			<property name="title" value="Workplan7"/>
+			<property name="isPublic" value="true"/>
+			<property name="isPublished" value="false"/>
+			<property name="executionPeriod" value="2208.0"/>
+			<property name="workload" value="0.0"/>
+			<property name="init" value="2021/05/31 00:00"/>
+			<property name="end" value="2021/08/31 23:59"/>
+			<property name="manager" ref="managerManagerEx"/>
+		</bean>
+		
+			<bean id="workplan08" class="acme.entities.workplan.Workplan">
+
+			<property name="title" value="Workplan8"/>
+			<property name="isPublic" value="true"/>
+			<property name="isPublished" value="true"/>
+			<property name="executionPeriod" value="1824.0"/>
+			<property name="workload" value="0.0"/>
+			<property name="init" value="2021/06/05 00:00"/>
+			<property name="end" value="2021/08/20 23:59"/>
+			<property name="manager" ref="managerManagerEx"/>
+		</bean>
+				<bean id="workplan09" class="acme.entities.workplan.Workplan">
+
+			<property name="title" value="Workplan9"/>
+			<property name="isPublic" value="true"/>
+			<property name="isPublished" value="false"/>
+			<property name="executionPeriod" value="1056.0"/>
+			<property name="workload" value="0.0"/>
+			<property name="init" value="2021/06/03 00:00"/>
+			<property name="end" value="2021/07/17 23:59"/>
+			<property name="manager" ref="managerManagerEx"/>
+		</bean>
+				<bean id="workplan10" class="acme.entities.workplan.Workplan">
+
+			<property name="title" value="Workplan10"/>
+			<property name="isPublic" value="false"/>
+			<property name="isPublished" value="false"/>
+			<property name="executionPeriod" value="2208.0"/>
+			<property name="workload" value="0.0"/>
+			<property name="init" value="2021/06/10 00:00"/>
+			<property name="end" value="2021/09/10 23:59"/>
+			<property name="manager" ref="managerManagerEx"/>
+		</bean>
+		
+		
+		
 	
 </beans>

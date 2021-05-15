@@ -1,0 +1,49 @@
+# i18n_en.messages
+#
+# Copyright (C) 2012-2021 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+manager.workplan.form.label.title		=	 Title
+manager.workplan.form.label.workload	=	 Workload
+manager.workplan.form.label.executionPeriod=	Execution Period
+manager.workplan.form.label.init		=	 Init
+manager.workplan.form.label.end			= 	 End
+manager.workplan.form.label.isPublic	= 	 Is Public?
+manager.workplan.form.label.isPublished	= 	 Is Published?
+manager.workplan.form.button.apply		= 	 Send
+manager.workplan.form.button.return		= 	 Return
+manager.workplan.form.button.create		=	 Create
+manager.workplan.form.button.update		= 	 Update
+manager.workplan.form.button.delete		= 	 Delete
+manager.workplan.form.button.publish	=	 Publish
+manager.workplan.form.label.true		= 	 True
+manager.workplan.form.label.false		=	 False
+manager.workplan.form.error.init		= 	The start date must be later than the current one
+manager.task.form.error.period			= 	The end date must be after the start date
+manager.task.form.error.workload		=	The workload cannot exceed the execution period
+manager.workplan.form.error.spam		=   Check SPAM
+manager.workplan.form.label.link.deallocate	= Deallocate
+manager.workplan.form.label.task.unassigned	= Unnassigned Tasks
+manager.workplan.form.label.link.assign		= Assign
+manager.workplan.form.label.task.assigned	= Assign Tasks
+manager.workplan.form.label.link.unnassign	= Unnasign
+manager.workplan.form.error.isPublished 	= Cannot be edited while published
+manager.workplan.form.error.workload		= The workload cannot exceed the execution period
+manager.workplan.form.label.public			= Public
+manager.workplan.form.label.nopublic		= Private
+manager.workplan.form.error.init2			= The task start date cannot be earlier than the workplan
+manager.workplan.form.error.end2			= The end date of the task cannot be later than the workplan
+manager.workplan.form.error.init2			= The task start date cannot be earlier than the workplan
+manager.workplan.form.error.end3			= The end date of the task cannot be later than the workplan
+manager.workplan.form.error.public2			= You cannot switch to public by having private tasks
+manager.workplan.form.label.suggestionInit 	= It is suggested that the start date be: 
+manager.workplan.form.label.suggestionEnd	= It is suggested that the end date be:
+manager.workplan.form.label.task			= Task: 
+manager.workplan.form.label.noTask			= -------------No Update Tasks-------------
+
+

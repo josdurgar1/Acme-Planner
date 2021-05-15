@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.shouts.Shout;
-import acme.features.administrator.spam.AdministratorSpamListService;
+import acme.features.administrator.spam.AdministratorSpamWordListService;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -27,7 +27,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 	
 	// Other Services--------------------
 	@Autowired
-	protected AdministratorSpamListService spamService;
+	protected AdministratorSpamWordListService spamService;
 
 	// AbstractCreateService<Administrator, Shout> interface --------------
 
@@ -92,16 +92,16 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 			errors.state(request, !res, "text", "anonymous.shout.form.error.spam");
 			}
 		
-//		if (!errors.hasErrors("author")){
-//			final boolean res=SpamRead.isSpam(umbral, entity.getAuthor(), spamList);
-//			
-//			errors.state(request, !res, "author", "anonymous.shout.form.error.spam");
-//			}
-//		if (!errors.hasErrors("info")){
-//			final boolean res=SpamRead.isSpam(umbral, entity.getInfo(), spamList);
-//			
-//			errors.state(request, !res, "info", "anonymous.shout.form.error.spam");
-//			}
+		if (!errors.hasErrors("author")){
+			final boolean res=SpamRead.isSpam(umbral, entity.getAuthor(), spamList);
+			
+			errors.state(request, !res, "author", "anonymous.shout.form.error.spam");
+			}
+		if (!errors.hasErrors("info")){
+			final boolean res=SpamRead.isSpam(umbral, entity.getInfo(), spamList);
+			
+			errors.state(request, !res, "info", "anonymous.shout.form.error.spam");
+			}
 		
 	}
 

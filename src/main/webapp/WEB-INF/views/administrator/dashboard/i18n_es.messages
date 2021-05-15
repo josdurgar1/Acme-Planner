@@ -27,6 +27,15 @@ administrator.dashboard.form.label.minWorkload = Carga de trabajo mínima (Horas
 administrator.dashboard.form.label.averageNumberOfTaskWorkloads = Media de carga de trabajo
 administrator.dashboard.form.label.stdDevTaskWorkloads = Desviación de la carga de trabajo total
 
+
+
+administrator.chart.form.title.show = Chart
+
+administrator.chart.form.title.general-indicators = General indicators
+administrator.chart.form.label.totalNumberWorkplans = Número total de Workplans
+administrator.chart.form.label.totalNumberWorkplansPublished = Número total de Workplans publicados
+administrator.chart.form.label.totalNumberWorkplansNonPublished = Número total de Workplans no publicados
+
 administrator.dashboard.form.title.workplan = Planes de trabajo:
 administrator.dashboard.form.label.totalpublicworkplan = Número total de planes de trabajo públicos
 administrator.dashboard.form.label.totalprivateworkplan = Número total de planes de trabajo privados
@@ -42,4 +51,5 @@ administrator.dashboard.form.label.maxworkplanWorkload = Carga de trabajo máxim
 administrator.dashboard.form.label.minworkplanWorkload = Carga de trabajo mínima (Horas)
 administrator.dashboard.form.label.averageNumberOfworkplanWorkloads = Media de carga de trabajo
 administrator.dashboard.form.label.stdDevworkplanWorkloads = Desviación de la carga de trabajo total
+administrator.dashboard.form.title.application-statuses = Gráfica de Workplans:
 

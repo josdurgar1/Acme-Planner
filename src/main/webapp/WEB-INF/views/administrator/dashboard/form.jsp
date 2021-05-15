@@ -139,6 +139,37 @@
 			<acme:print value="${stdDevTaskWorkloads}"/>
 		</td>
 	</tr>
+	
+	<!-- CHARTS -->
+	
+	<caption>
+		<acme:message code="administrator.chart.form.title.general-indicators"/>
+	</caption>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.chart.form.label.totalNumberWorkplans"/>
+		</th>
+		<td>
+			<acme:print value="${totalNumberWorkplans}"/>
+		</td>
+	</tr>	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.chart.form.label.totalNumberWorkplansPublished"/>
+		</th>
+		<td>
+			<acme:print value="${totalNumberWorkplansPublished}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.chart.form.label.totalNumberWorkplansNonPublished"/>
+		</th>
+		<td>
+			<acme:print value="${totalNumberWorkplansNonPublished}"/>
+		</td>
+	</tr>
+	
 </table>
 
 <h2>
@@ -264,3 +295,54 @@
 	
 </table>
 
+<h2>
+	<acme:message code="administrator.dashboard.form.title.application-statuses"/>
+	</h2>
+
+<div>
+	<canvas id="canvas"></canvas>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		var data = {
+			labels : [
+					"Total Number of Workplans", "Published", "Non Published"
+			],
+			datasets : [
+				{
+					data : [
+						<jstl:out value="${totalNumberOfFinishedNonFinishedWorkplan}"/>, 
+						<jstl:out value="${totalNumberWorkplansPublished}"/>, 
+						<jstl:out value="${totalNumberWorkplansNonPublished}"/>
+					]
+				}
+			]
+		};
+		var options = {
+			scales : {
+				yAxes : [
+					{
+						ticks : {
+							suggestedMin : 0.0,
+							suggestedMax : 1.0
+						}
+					}
+				]
+			},
+			legend : {
+				display : false
+			}
+		};
+	
+		var canvas, context;
+	
+		canvas = document.getElementById("canvas");
+		context = canvas.getContext("2d");
+		new Chart(context, {
+			type : "bar",
+			data : data,
+			options : options
+		});
+	});
+</script>

@@ -1,0 +1,25 @@
+# i18n_en.messages
+#
+# Copyright (C) 2012-2021 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+anonymous.workplan.list.label.title = Título
+anonymous.workplan.list.label.isPublic = ¿Es Público?
+anonymous.workplan.list.label.isPublished = ¿Está Publicado?
+anonymous.workplan.list.label.init = Momento de inicio
+anonymous.workplan.list.label.end = Momento de fin
+anonymous.workplan.list.label.workload = Workload(Horas)
+
+anonymous.workplan.form.label.title = Título:
+anonymous.workplan.form.label.isPublic = ¿Es Público?:
+anonymous.workplan.form.label.isPublished = ¿Está Publicado?:
+anonymous.workplan.form.label.executionPeriod = Periodo de ejecución (Days):
+anonymous.workplan.form.label.workload = Workload(Hours)
+anonymous.workplan.form.label.init = Momento de inicio:
+anonymous.workplan.form.label.end = Momento de fin:
+anonymous.workplan.form.label.manager = Manager:

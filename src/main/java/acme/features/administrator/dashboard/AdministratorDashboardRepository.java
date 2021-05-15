@@ -21,10 +21,10 @@ import acme.framework.repositories.AbstractRepository;
 public interface AdministratorDashboardRepository extends AbstractRepository {
 	
 	//--------------------------------------TASK---------------------------------------------
-	@Query("select count(t) from Task t where t.isPublic = true")
+	@Query("select count(t) from Task t where t.visibility = 0")
 	Integer totalPublicTasks();
 	
-	@Query("select count(t) from Task t where t.isPublic = false")
+	@Query("select count(t) from Task t where t.visibility = 1")
 	Integer totalPrivateTasks();
 	
 	@Query("select count(t) from Task t")
@@ -63,6 +63,18 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select stddev(t.workload) from Task t")
 	Double stdDevTaskWorkloads();
 	
+
+	//CHARTS
+	
+	@Query("select count(w) from Workplan w")
+	Integer totalNumberWorkplans();
+	
+	@Query("select count(w) from Workplan w where w.isPublished=true")
+	Integer totalNumberWorkplansPublished();
+	
+	@Query("select count(w) from Workplan w where w.isPublished=false")
+	Integer totalNumberWorkplansNonPublished();
+
 	//--------------------------------------WORKPLAN---------------------------------------------
 	@Query("select count(t) from Workplan t where t.isPublic = true")
 	Integer totalPublicWorkplan();
@@ -105,5 +117,6 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	
 	@Query("select stddev(t.workload) from Workplan t")
 	Double stdDevWorkplanWorkloads();
+
 
 }
