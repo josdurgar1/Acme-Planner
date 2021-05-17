@@ -1,0 +1,54 @@
+# i18n_en.messages
+#
+# Copyright (C) 2012-2021 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.dashboard.form.title.show = Dashboard
+
+administrator.dashboard.form.title.general-indicators = General indicators
+administrator.dashboard.form.title.task = Tasks:
+administrator.dashboard.form.label.totalpublictasks = Total number of public tasks
+administrator.dashboard.form.label.totalprivatetasks = Total number of private tasks
+administrator.dashboard.form.label.totaltasks = Total numbers of public private tasks
+administrator.dashboard.form.label.average-execute-period = Average of task execution periods
+administrator.dashboard.form.label.totalFinishedTasks = Total finished tasks
+administrator.dashboard.form.label.totalNonFinishedTasks = Total non finished tasks
+administrator.dashboard.form.label.totalTaskFinishedAndNotFinished = Total number of tasks finished and not finished
+administrator.dashboard.form.label.stdDevTaskExecutionPeriods = Total deviation of execution period
+administrator.dashboard.form.label.minExecutionPeriod = Minimum execution period (Days)
+administrator.dashboard.form.label.maxExecutionPeriod = Maximum execution period (Days)
+administrator.dashboard.form.label.maxWorkload = Maximum workload (Hours)
+administrator.dashboard.form.label.minWorkload = Minimun workload (Hours)
+administrator.dashboard.form.label.averageNumberOfTaskWorkloads = Average of task workloads 
+administrator.dashboard.form.label.stdDevTaskWorkloads = Total deviation of workloads of tasks
+
+
+
+administrator.chart.form.title.show = Chart
+
+administrator.chart.form.title.general-indicators = General indicators
+administrator.chart.form.label.totalNumberWorkplans = Total number of Workplans
+administrator.chart.form.label.totalNumberWorkplansPublished = Total number of Workplans published
+administrator.chart.form.label.totalNumberWorkplansNonPublished = Total number of Workplans  non published
+
+administrator.dashboard.form.title.workplan = Workplans:
+administrator.dashboard.form.label.totalpublicworkplan = Total number of public workplans
+administrator.dashboard.form.label.totalprivateworkplan = Total number of private workplans
+administrator.dashboard.form.label.totalworkplan = Total numbers of public private workplans
+administrator.dashboard.form.label.average-execute-period-workplan = Average of workplans execution periods
+administrator.dashboard.form.label.totalFinishedworkplan = Total finished workplans
+administrator.dashboard.form.label.totalNonFinishedworkplan = Total non finished workplans
+administrator.dashboard.form.label.totalworkplanFinishedAndNotFinished = Total number of workplans finished and not finished
+administrator.dashboard.form.label.stdDevworkplanExecutionPeriods = Total deviation of execution period
+administrator.dashboard.form.label.minworkplanExecutionPeriod = Minimum execution period (Days)
+administrator.dashboard.form.label.maxworkplanExecutionPeriod = Maximum execution period (Days)
+administrator.dashboard.form.label.maxworkplanWorkload = Maximum workload (Hours)
+administrator.dashboard.form.label.minworkplanWorkload = Minimun workload (Hours)
+administrator.dashboard.form.label.averageNumberOfworkplanWorkloads = Average of workloads 
+administrator.dashboard.form.label.stdDevworkplanWorkloads = Total deviation of workloads
+administrator.dashboard.form.title.application-statuses = Chart of Workplans:

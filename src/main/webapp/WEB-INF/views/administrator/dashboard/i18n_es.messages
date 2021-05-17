@@ -1,0 +1,55 @@
+# i18n_es.messages
+#
+# Copyright (C) 2012-2021 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.dashboard.form.title.show = Panel de indicadores
+
+administrator.dashboard.form.title.general-indicators = Indicadores generales
+administrator.dashboard.form.title.task = Tareas:
+administrator.dashboard.form.label.totalpublictasks = Número total de tareas públicas
+administrator.dashboard.form.label.totalprivatetasks = Número total de tareas privadas
+administrator.dashboard.form.label.totaltasks =  Número total de tareas públicas y privadas
+administrator.dashboard.form.label.average-execute-period = Promedio del periodo de ejecución
+administrator.dashboard.form.label.totalFinishedTasks = Número de tareas finalizadas
+administrator.dashboard.form.label.totalNonFinishedTasks = Número de tareas no finalizadas
+administrator.dashboard.form.label.totalTaskFinishedAndNotFinished = Número total de tareas finalizadas y no finalizadas
+administrator.dashboard.form.label.stdDevTaskExecutionPeriods = Desviación total del periodo de ejecución
+administrator.dashboard.form.label.minExecutionPeriod = Periodo de ejecución mínimo (Días)
+administrator.dashboard.form.label.maxExecutionPeriod = Periodo de ejecución máximo (Días)
+administrator.dashboard.form.label.maxWorkload = Carga de trabajo máxima (Horas)
+administrator.dashboard.form.label.minWorkload = Carga de trabajo mínima (Horas)
+administrator.dashboard.form.label.averageNumberOfTaskWorkloads = Media de carga de trabajo
+administrator.dashboard.form.label.stdDevTaskWorkloads = Desviación de la carga de trabajo total
+
+
+
+administrator.chart.form.title.show = Chart
+
+administrator.chart.form.title.general-indicators = General indicators
+administrator.chart.form.label.totalNumberWorkplans = Número total de Workplans
+administrator.chart.form.label.totalNumberWorkplansPublished = Número total de Workplans publicados
+administrator.chart.form.label.totalNumberWorkplansNonPublished = Número total de Workplans no publicados
+
+administrator.dashboard.form.title.workplan = Planes de trabajo:
+administrator.dashboard.form.label.totalpublicworkplan = Número total de planes de trabajo públicos
+administrator.dashboard.form.label.totalprivateworkplan = Número total de planes de trabajo privados
+administrator.dashboard.form.label.totalworkplan = Número total de planes de trabajos públicos y privados
+administrator.dashboard.form.label.average-execute-period-workplan = Promedio del periodo de ejecución
+administrator.dashboard.form.label.totalFinishedworkplan = Número de planes de trabajos  finalizados
+administrator.dashboard.form.label.totalNonFinishedworkplan = Número de planes de trabajo no finalizados
+administrator.dashboard.form.label.totalworkplanFinishedAndNotFinished = Número total de planes de trabajo finalizados y no finalizados
+administrator.dashboard.form.label.stdDevworkplanExecutionPeriods = Desviación total del periodo de ejecución
+administrator.dashboard.form.label.minworkplanExecutionPeriod = Periodo de ejecución mínimo (Días)
+administrator.dashboard.form.label.maxworkplanExecutionPeriod = Periodo de ejecución máximo (Días)
+administrator.dashboard.form.label.maxworkplanWorkload = Carga de trabajo máxima (Horas)
+administrator.dashboard.form.label.minworkplanWorkload = Carga de trabajo mínima (Horas)
+administrator.dashboard.form.label.averageNumberOfworkplanWorkloads = Media de carga de trabajo
+administrator.dashboard.form.label.stdDevworkplanWorkloads = Desviación de la carga de trabajo total
+administrator.dashboard.form.title.application-statuses = Gráfica de Workplans:
+

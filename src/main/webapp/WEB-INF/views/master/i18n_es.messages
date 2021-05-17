@@ -30,20 +30,39 @@ master.menu.sign-out = Salir
 
 master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
+master.menu.anonymous.shout = Gritar
+master.menu.anonymous.shoutList = Lista de Gritos
+master.menu.anonymous.taskList = Lista de Tareas
+master.menu.anonymous.workplanList = Lista de Workplan
 
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
 master.menu.administrator.dashboard = Panel de indicadores
+master.menu.administrator.spamList = Lista de palabras spam
+master.menu.administrator.spamShow = Umbral de Spam
+master.menu.administrator.addSpamWord = Añadir SpamWord
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shutdown = Parar el sistema
 
-# master.menu.provider ########################################################
+# master.menu.authenticated #########################################################
 
-master.menu.provider = Proveedor
-master.menu.provider.favourite-link = Enlace favorito
+master.menu.authenticated = Autenticado
+master.menu.authenticated.task.list = Lista de tareas
+master.menu.manager = Manager
+master.menu.manager.task.taskList = Lista de tareas
+master.menu.manager.task.my-task = Mis tareas
+master.menu.manager.task.taskCreate = Crear tarea
+
+master.menu.authenticated.manager.taskList = Lista de tareas
+
+# master.menu.manager ########################################################
+
+master.menu.manager = Gerente
+master.menu.manager.workplan.create = Crear Plan de Trabajo
+master.menu.manager.workplan.list =  Mis planes de trabajo
 
 # master.menu.consumer ##########################################################
 
@@ -58,6 +77,8 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+master.menu.user-account.become-manager = Hazte manager
+master.menu.user-account.manager = Datos de manager
 
 ﻿# master.footer ###############################################################
 
