@@ -79,57 +79,57 @@
 	</bean>
 
 	<bean id="shout04" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2021/03/30 12:30"/>
 		<property name="author" value="Leslie Design-Testing"/>
 		<property name="text" value="Woa! This app's so cool!"/>
-		<property name="moment" value="2021/03/30 12:30"/>
 		<property name="info" value="http://sample-app.com"/>
 	</bean>
 
 	
 
 	<bean id="shout05" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2021/04/21 12:30"/>
 		<property name="author" value="Luis Delgado"/>
 		<property name="text" value="Creando mi primer bean"/>
-		<property name="moment" value="2021/04/21 12:30"/>
 		<property name="info"><null/></property>
 	</bean>
 
 	
 
 	<bean id="shout06" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2021/03/30 12:30"/>
 		<property name="author" value="Daniel Castroviejo"/>
 		<property name="text" value="Creando mi primer bean"/>
-		<property name="moment" value="2021/03/30 12:30"/>
 		<property name="info"><null/></property>
 	</bean>
 
 	
 
 	<bean id="shout07" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2020/03/21 12:30"/>
 		<property name="author" value="Holaaaaa"/>
 		<property name="text" value="Creando mi segundo bean"/>
-		<property name="moment" value="2020/03/21 12:30"/>
 		<property name="info"><null/></property>
 	</bean>
 	
 	<bean id="shout08" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2021/04/19 10:30"/>
 		<property name="author" value="Shout 8"/>
 		<property name="text" value="Poblando la BD"/>
-		<property name="moment" value="2021/04/19 10:30"/>
 		<property name="info"><null/></property>
 	</bean>
 
 	<bean id="shout09" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2021/04/21 12:30"/>
 		<property name="author" value="Shout 9"/>
 		<property name="text" value="Creando mi 9 shout!"/>
-		<property name="moment" value="2021/04/21 12:30"/>
 		<property name="info"><null/></property>
 	</bean>
 
 	<bean id="shout10" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2021/04/13 18:30"/>
 		<property name="author" value="Shout 10"/>
 		<property name="text" value="Holaaaaaaa!!!"/>
-		<property name="moment" value="2021/04/13 18:30"/>
 		<property name="info" value="http://xataka.com"></property>
 	</bean>
 
