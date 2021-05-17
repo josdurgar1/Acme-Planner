@@ -163,7 +163,7 @@
 	<bean id="task03" class="acme.entities.tasks.Task">
 		<property name="title" value="Task 3"/>
 		<property name="initialMoment" value="2021/05/20 12:30"/>
-		<property name="endMoment" value="2021/05/21 12:30"/>
+		<property name="endMoment" value="2021/06/21 12:30"/>
 		<property name="description" value="Esta es la tercera Task"></property>
 		<property name="workload" value="23.0"></property>
 		<property name="executionPeriod" value="24.0"></property>
