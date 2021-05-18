@@ -1,7 +1,5 @@
-
 package acme.features.manager.workplan;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -70,8 +68,8 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		assert entity != null;
 		assert model != null;
 		Collection<Task> tasks;
-
-		if (entity.getIsPublic()) {
+		final boolean res=entity.getIsPublic();
+		if (res) {
 			tasks = this.repository.findAllTaskByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
 		} else {
 			tasks = this.repository.findAllTaskPrivateByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
@@ -116,18 +114,19 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 			errors.state(request, !res, "title", "manager.task.form.error.title");
 		}
 		final List<Task> formulario = entity.getTasks();
-		final List<Task> newTasks = new ArrayList<Task>();
-
-		if (!formulario.isEmpty() && !formulario.getClass().getTypeName().contains("PersistentBag")) {
+		final List<Task> newTasks = this.repository.findTaskByWorkplan(entity.getId());
+		
+		if ( !formulario.getClass().getTypeName().contains("PersistentBag")) {
 			for (int i = 0; i < formulario.size(); i++) {
 				final Object ob = formulario.get(i);
 				final String id = ob.toString();
-				final Task task = this.repository.findOneTaskById(Integer.parseInt(id));
-				newTasks.add(task);
+				final Task taskA = this.repository.findOneTaskById(Integer.parseInt(id));
+				
+				newTasks.add(taskA);
 			}
 			entity.setTasks(newTasks);
 		} else {
-			entity.setTasks(this.repository.findTaskByWorkplan(entity.getId()));
+			entity.setTasks(newTasks);
 		}
 
 		if (!errors.hasErrors("init")) {
@@ -176,11 +175,11 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 			}
 			errors.state(request, !res, "init", "manager.workplan.form.error.init3");
 		}
-
+		final boolean res2=entity.getIsPublic();
 		if (!errors.hasErrors("isPublic")) {
 			boolean res = false;
 			for (final Task t : entity.getTasks()) {
-				if (t.getVisibility() == TaskVisibility.PRIVATE && (entity.getIsPublic())) {
+				if (t.getVisibility() == TaskVisibility.PRIVATE && (res2)) {
 					res = true;
 				}
 			}

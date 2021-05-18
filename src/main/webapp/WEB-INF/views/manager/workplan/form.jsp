@@ -47,15 +47,14 @@
 	</acme:form-selectwo>
 	
 	<jstl:if test="${command == 'show' && isPublished=='false'}">
-		<acme:form-selectM code="manager.workplan.form.label.task"
+		<h2><acme:form-selectM code="manager.workplan.form.label.task.unassigned"
 			path="tasks">
-			<acme:form-option code="manager.workplan.form.label.noTask" value="" selected="true"/>
 			<jstl:forEach items="${allTask}" var="task">
 				<acme:form-option
 					code="${task.title} - Workload: ${task.workload} - Init: ${task.initialMoment} - End: ${task.endMoment} - ${task.visibility}"
 					value="${task.id}" />
 			</jstl:forEach>
-		</acme:form-selectM>
+		</acme:form-selectM></h2>
 	</jstl:if>
 
 	<jstl:if test="${command == 'show' || command =='publish'}">
@@ -70,6 +69,9 @@
 				<th style="width: 20%;"><acme:message code="manager.workplan.form.label.init"/></th>
 				<th style="width: 20%;"><acme:message code="manager.workplan.form.label.end"/></th>
 				<th style="width: 15%;"><acme:message code="manager.workplan.form.label.isPublic"/></th>
+				<jstl:if test="${command == 'show' && isPublished=='false'}">
+				<th style="width: 15%;"><acme:message code="manager.workplan.form.label.link.unnassign"/></th>
+				</jstl:if>
 			</tr>
 		</thead>
 		<tbody>
@@ -93,6 +95,11 @@
 					<acme:message code="manager.workplan.form.label.nopublic"/>
 					</jstl:if>
 					</td>
+					<jstl:if test="${command == 'show' && isPublished=='false'}">
+					<td>
+					<acme:form-submit test="${command == 'show' && isPublished == 'false'}" code="manager.workplan.form.label.link.unnassign"  action="/manager/workplan/unnassign?tId=${task1.id}&wId=${id}"/>
+					</td>
+					</jstl:if>
 				</tr>
 			</jstl:forEach>
 		</tbody>
@@ -110,4 +117,3 @@
 	<acme:form-submit test="${command == 'delete'}" code="manager.workplan.form.button.delete" action="/management/workplan/delete"/>		
 	<acme:form-return code="manager.workplan.form.button.return"/>	
 </acme:form>
-

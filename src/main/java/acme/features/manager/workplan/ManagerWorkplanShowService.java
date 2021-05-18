@@ -72,6 +72,7 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 		}
 		model.setAttribute("suggestionInit", suggestionInit);
 		model.setAttribute("suggestionEnd", suggestionEnd);
+		tasks.removeAll(entity.getTasks());
 		model.setAttribute("allTask", tasks);
 		request.unbind(entity, model, "title", "isPublic", "init","end","workload","isPublished","executionPeriod","tasks");
 		
@@ -93,3 +94,4 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 	
 
 }
+
