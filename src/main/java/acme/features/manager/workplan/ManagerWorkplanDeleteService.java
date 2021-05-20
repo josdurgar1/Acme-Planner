@@ -60,8 +60,8 @@ public class ManagerWorkplanDeleteService implements AbstractDeleteService<Manag
 		assert model != null;
 		
 		Collection<Task> tasks;
-
-		if (entity.getIsPublic()) {
+		final boolean aux=entity.getIsPublic();
+		if (aux) {
 			tasks = this.repository.findAllTaskByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
 		} else {
 			tasks = this.repository.findAllTaskPrivateByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());

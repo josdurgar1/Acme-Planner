@@ -1,7 +1,9 @@
 package acme.features.manager.workplan;
 
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -53,26 +55,34 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 		assert model != null;
 		Collection<Task>tasks;
 		
-		if(entity.getIsPublic()) {
+		final boolean aux=entity.getIsPublic();
+		if (aux) {
 		tasks=this.repository.findAllTaskPublicByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
 		}else {
 			tasks=this.repository.findAllTaskByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
 		}
-		final Date suggestionInit=this.repository.findMinInitWorkplanTask(entity.getId());
+		Date suggestionInit=this.repository.findMinInitWorkplanTask(entity.getId());
 		if(suggestionInit!=null) {
-			suggestionInit.setHours(8);
-			suggestionInit.setMinutes(0);
-			suggestionInit.setDate(suggestionInit.getDate()-1);
+			final Calendar calendar = Calendar.getInstance(); // creates a new calendar instance
+			calendar.setTime(suggestionInit);   // assigns calendar to given date 
+			calendar.set(Calendar.HOUR_OF_DAY, 8); // gets hour in 24h format
+			calendar.set(Calendar.MINUTE, 0);        // gets hour in 12h format
+			calendar.set(Calendar.DAY_OF_MONTH, calendar.get(Calendar.DAY_OF_MONTH)-1);
+			suggestionInit=calendar.getTime();
 		}
-		final Date suggestionEnd=this.repository.findMaxEndWorkplanTask(entity.getId());
+		Date suggestionEnd=this.repository.findMaxEndWorkplanTask(entity.getId());
 		if(suggestionEnd!=null) {
-			suggestionEnd.setHours(17);
-			suggestionEnd.setMinutes(0);
-			suggestionEnd.setDate(suggestionEnd.getDate()+1);
+			final Calendar calendar = Calendar.getInstance(); // creates a new calendar instance
+			calendar.setTime(suggestionEnd);   // assigns calendar to given date 
+			calendar.set(Calendar.HOUR_OF_DAY, 17); // gets hour in 24h format
+			calendar.set(Calendar.MINUTE, 0);        // gets hour in 12h format
+			calendar.set(Calendar.DAY_OF_MONTH, calendar.get(Calendar.DAY_OF_MONTH)+1);
+			suggestionEnd=calendar.getTime();
 		}
 		model.setAttribute("suggestionInit", suggestionInit);
 		model.setAttribute("suggestionEnd", suggestionEnd);
-		tasks.removeAll(entity.getTasks());
+		final List<Task>assignedTasks=entity.getTasks();
+		tasks.removeAll(assignedTasks);
 		model.setAttribute("allTask", tasks);
 		request.unbind(entity, model, "title", "isPublic", "init","end","workload","isPublished","executionPeriod","tasks");
 		
