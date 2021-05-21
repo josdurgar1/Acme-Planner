@@ -1,6 +1,5 @@
 package acme.features.manager.workplan;
 
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -67,17 +66,6 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		Collection<Task> tasks;
-		final boolean res=entity.getIsPublic();
-		if (res) {
-			tasks = this.repository.findAllTaskByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
-		} else {
-			tasks = this.repository.findAllTaskPrivateByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
-		}
-		tasks.removeAll(entity.getTasks());
-
-		model.setAttribute("unnasignedTask", tasks);
-
 		request.unbind(entity, model, "title", "isPublic", "init", "end");
 
 	}
@@ -134,7 +122,7 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 			final boolean res = entity.getInit().after(now);
 			errors.state(request, res, "init", "manager.workplan.form.error.init");
 		}
-		if (!errors.hasErrors("workload")) {
+		if (!errors.hasErrors("workload")&&(entity.getEnd()!=null)&&(entity.getInit()!=null)) {
 			final long end = entity.getEnd().getTime();
 			final long init = entity.getInit().getTime();
 
@@ -150,7 +138,7 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 			errors.state(request, !entity.getIsPublished(), "isPublished", "manager.workplan.form.error.isPublished");
 		}
 
-		if (!errors.hasErrors("end")) {
+		if (!errors.hasErrors("end")&&(entity.getEnd()!=null)&&(entity.getInit()!=null)) {
 			boolean res = false;
 			res = entity.getEnd().after(entity.getInit());
 			errors.state(request, res, "end", "manager.task.form.error.period");

@@ -58,7 +58,7 @@ public class ManagerWorkplanPublishService implements AbstractUpdateService<Mana
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "title", "isPublic", "init","end","workload","executionPeriod","tasks");
+		request.bind(entity, errors, "isPublic","workload","executionPeriod","tasks");
 		
 	}
 
@@ -78,7 +78,7 @@ public class ManagerWorkplanPublishService implements AbstractUpdateService<Mana
 		//tasks.removeAll(entity.getTasks());
 
 		model.setAttribute("unnasignedTask", tasks);
-		request.unbind(entity, model);
+		request.unbind(entity, model, "title", "init","end");
 		
 	}
 
