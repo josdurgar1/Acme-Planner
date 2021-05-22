@@ -46,17 +46,15 @@ public class ManagerWorkplanDeleteTest extends AcmePlannerTest {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/workplan/delete-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
-	public void deleteNegative(final int recordIndex, final String title, final String iniMoment, final String endMoment, final String exePeriod, final String workload, final String visibility, final String published) {
+	public void deleteNegative(final int recordIndex) {
 		super.signIn("managerEx", "managerEx");
 
 		super.clickOnMenu("Manager", "List my Workplans");
-		//super.checkColumnHasValue(recordIndex, 0, title);
-
 		super.clickOnListingRecord(recordIndex);
 		super.clickOnSubmitButton("Publish");
-//		super.clickOnMenu("Manager", "List my Workplans");
-//		super.clickOnListingRecord(recordIndex);
-		this.driver.get("http://localhost:8080/Acme-Planner/management/workplan/delete?id=52");
+		final String s=this.getBaseUrl();
+//		this.driver.get("http://localhost:8080/Acme-Planner/management/workplan/delete?id=52");
+		this.driver.get(s+"/management/workplan/delete?id=52");
 		super.clickOnSubmitButton("Delete");
 		super.checkErrorsExist();
 		super.signOut();
