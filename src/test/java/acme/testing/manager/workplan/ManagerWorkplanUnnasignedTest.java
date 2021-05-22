@@ -43,23 +43,23 @@ public class ManagerWorkplanUnnasignedTest extends AcmePlannerTest {
 		super.checkNotExists(By.name("Unnasign"));
 	}
 
-//	@ParameterizedTest
-//	@CsvFileSource(resources = "/manager/workplan/publish-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-//	@Order(10)
-//	public void updateNegative(final int recordIndex, final String title, final String iniMoment, final String endMoment, final String exePeriod, final String workload, final String visibility, final String published) {
-//		super.signIn("managerEx", "managerEx");
-//
-//		super.clickOnMenu("Manager", "List my Workplans");
-//
-//		//super.checkColumnHasValue(recordIndex, 0, title);
-//
-//		super.clickOnListingRecord(recordIndex);
-//		super.fillInputBoxIn("end", endMoment);
-//		super.clickOnSubmitButton("Publish");
-//
-//		super.checkErrorsExist();
-//
-//		super.signOut();
-//	}
+	@ParameterizedTest
+	@CsvFileSource(resources = "/manager/workplan/publish-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(20)
+	public void updateNegative(final int recordIndex, final String title, final String iniMoment, final String endMoment, final String exePeriod, final String workload, final String visibility, final String published) {
+		super.signIn("managerEx", "managerEx");
+
+		super.clickOnMenu("Manager", "List my Workplans");
+
+		//super.checkColumnHasValue(recordIndex, 0, title);
+
+		super.clickOnListingRecord(recordIndex);
+		super.fillInputBoxIn("end", endMoment);
+		super.clickOnSubmitButton("Publish");
+
+		super.checkErrorsExist();
+
+		super.signOut();
+	}
 
 }

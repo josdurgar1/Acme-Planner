@@ -46,7 +46,7 @@ public class ManagerWorkplanUpdateTest extends AcmePlannerTest{
 	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/workplan/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(10)	
+	@Order(20)	
 	public void updateNegative(final int recordIndex, final String title, final String iniMoment, final String endMoment, final String exePeriod, final String workload, final String visibility, final String published) {		
 		super.signIn("managerEx", "managerEx");
 		
