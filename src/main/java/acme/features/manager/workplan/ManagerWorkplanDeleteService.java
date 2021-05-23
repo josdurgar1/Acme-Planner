@@ -1,12 +1,9 @@
 package acme.features.manager.workplan;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
-import acme.entities.tasks.Task;
 import acme.entities.workplan.Workplan;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -38,8 +35,8 @@ public class ManagerWorkplanDeleteService implements AbstractDeleteService<Manag
 		workplan = this.repository.findOneWorkplanById(workplanId);
 		manager = workplan.getManager();
 		principal = request.getPrincipal();
-		result = !workplan.getIsPublished() && manager.getUserAccount().getId() == principal.getAccountId();
-
+//		result = !workplan.getIsPublished() && manager.getUserAccount().getId() == principal.getAccountId();
+		result = manager.getUserAccount().getId() == principal.getAccountId();
 		return result;
 	}
 
@@ -58,17 +55,6 @@ public class ManagerWorkplanDeleteService implements AbstractDeleteService<Manag
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		
-		Collection<Task> tasks;
-
-		if (entity.getIsPublic()) {
-			tasks = this.repository.findAllTaskByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
-		} else {
-			tasks = this.repository.findAllTaskPrivateByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
-		}
-		tasks.removeAll(entity.getTasks());
-
-		model.setAttribute("unnasignedTask", tasks);
 		request.unbind(entity, model, "title", "isPublic", "init","end","workload","executionPeriod","tasks");
 	}
 

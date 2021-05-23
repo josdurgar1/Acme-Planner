@@ -37,12 +37,16 @@ public class ManagerWorkplanUnnassignService implements AbstractUpdateService<Ma
 		final Task task;
 		final Manager manager;
 		Principal principal;
-
+		int workplanId;
+		Workplan workplan;
+		
+		workplanId = request.getModel().getInteger("wId");
+		workplan = this.repository.findOneWorkplanById(workplanId);
 		taskId = request.getModel().getInteger("tId");
 		task = this.repository.findOneTaskById(taskId);
 		manager = task.getManager();
 		principal = request.getPrincipal();
-		result = manager.getUserAccount().getId() == principal.getAccountId();
+		result = manager.getUserAccount().getId() == principal.getAccountId() && !workplan.getIsPublished();
 
 		return result;
 	}
@@ -62,16 +66,6 @@ public class ManagerWorkplanUnnassignService implements AbstractUpdateService<Ma
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		Collection<Task> tasks;
-
-		if (entity.getIsPublic()) {
-			tasks = this.repository.findAllTaskByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
-		} else {
-			tasks = this.repository.findAllTaskPrivateByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
-		}
-		tasks.removeAll(entity.getTasks());
-
-		model.setAttribute("unnasignedTask", tasks);
 		request.unbind(entity, model, "title", "isPublic", "init", "end", "workload", "executionPeriod", "tasks");
 
 	}
@@ -111,11 +105,7 @@ public class ManagerWorkplanUnnassignService implements AbstractUpdateService<Ma
 		t = entity.getTasks();
 		t.remove(task);
 		entity.setTasks((List<Task>) t);
-		Double w = 0.0;
-		for(final Task ta:entity.getTasks()) {
-			w+=ta.getWorkload();
-		}
-		entity.setWorkload(w);
+		entity.setWorkload(entity.getWorkload()-task.getWorkload());
 		this.repository.save(entity);
 
 	}

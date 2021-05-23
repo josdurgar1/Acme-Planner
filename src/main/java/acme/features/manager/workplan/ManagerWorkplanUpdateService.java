@@ -1,8 +1,5 @@
-
 package acme.features.manager.workplan;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -69,17 +66,6 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		Collection<Task> tasks;
-
-		if (entity.getIsPublic()) {
-			tasks = this.repository.findAllTaskByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
-		} else {
-			tasks = this.repository.findAllTaskPrivateByManagerId(entity.getManager().getId(), entity.getInit(), entity.getEnd());
-		}
-		tasks.removeAll(entity.getTasks());
-
-		model.setAttribute("unnasignedTask", tasks);
-
 		request.unbind(entity, model, "title", "isPublic", "init", "end");
 
 	}
@@ -116,18 +102,19 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 			errors.state(request, !res, "title", "manager.task.form.error.title");
 		}
 		final List<Task> formulario = entity.getTasks();
-		final List<Task> newTasks = new ArrayList<Task>();
-
-		if (!formulario.isEmpty() && !formulario.getClass().getTypeName().contains("PersistentBag")) {
+		final List<Task> newTasks = this.repository.findTaskByWorkplan(entity.getId());
+		
+		if ( !formulario.getClass().getTypeName().contains("PersistentBag")) {
 			for (int i = 0; i < formulario.size(); i++) {
 				final Object ob = formulario.get(i);
 				final String id = ob.toString();
-				final Task task = this.repository.findOneTaskById(Integer.parseInt(id));
-				newTasks.add(task);
+				final Task taskA = this.repository.findOneTaskById(Integer.parseInt(id));
+				
+				newTasks.add(taskA);
 			}
 			entity.setTasks(newTasks);
 		} else {
-			entity.setTasks(this.repository.findTaskByWorkplan(entity.getId()));
+			entity.setTasks(newTasks);
 		}
 
 		if (!errors.hasErrors("init")) {
@@ -135,7 +122,7 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 			final boolean res = entity.getInit().after(now);
 			errors.state(request, res, "init", "manager.workplan.form.error.init");
 		}
-		if (!errors.hasErrors("workload")) {
+		if (!errors.hasErrors("workload")&&(entity.getEnd()!=null)&&(entity.getInit()!=null)) {
 			final long end = entity.getEnd().getTime();
 			final long init = entity.getInit().getTime();
 
@@ -151,7 +138,7 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 			errors.state(request, !entity.getIsPublished(), "isPublished", "manager.workplan.form.error.isPublished");
 		}
 
-		if (!errors.hasErrors("end")) {
+		if (!errors.hasErrors("end")&&(entity.getEnd()!=null)&&(entity.getInit()!=null)) {
 			boolean res = false;
 			res = entity.getEnd().after(entity.getInit());
 			errors.state(request, res, "end", "manager.task.form.error.period");
@@ -176,11 +163,11 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 			}
 			errors.state(request, !res, "init", "manager.workplan.form.error.init3");
 		}
-
+		final boolean res2=entity.getIsPublic();
 		if (!errors.hasErrors("isPublic")) {
 			boolean res = false;
 			for (final Task t : entity.getTasks()) {
-				if (t.getVisibility() == TaskVisibility.PRIVATE && (entity.getIsPublic())) {
+				if (t.getVisibility() == TaskVisibility.PRIVATE && (res2)) {
 					res = true;
 				}
 			}
