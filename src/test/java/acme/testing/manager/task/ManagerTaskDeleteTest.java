@@ -23,9 +23,7 @@ public class ManagerTaskDeleteTest extends AcmePlannerTest{
 		super.clickOnListingRecord(recordIndex);
 		
 		super.clickOnSubmitButton("Delete");
-		
-		super.clickOnMenu("Manager", "My tasks");
-	
+			
 		super.checkColumnHasValue(recordIndex, 0, title);
 		super.checkColumnHasValue(recordIndex, 1, iniMoment);
 		super.checkColumnHasValue(recordIndex, 2, endMoment);
@@ -56,7 +54,6 @@ public class ManagerTaskDeleteTest extends AcmePlannerTest{
 		
 		final String s = this.getBaseUrl();
 		this.driver.get(s+"/management/task/delete?id=42");
-		super.clickOnSubmitButton("Delete");
 		super.checkErrorsExist();
 		super.signOut();
 		

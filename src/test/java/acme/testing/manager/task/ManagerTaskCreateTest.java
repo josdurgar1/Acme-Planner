@@ -39,6 +39,7 @@ public class ManagerTaskCreateTest extends AcmePlannerTest {
 		super.fillInputBoxIn("description", description);
 		super.fillInputBoxIn("link", link);
 		super.fillInputBoxIn("visibility", visibility);
+		
 		super.clickOnSubmitButton("Create");
 
 		super.clickOnMenu("Manager", "My tasks");
