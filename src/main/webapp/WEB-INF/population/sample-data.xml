@@ -49,7 +49,33 @@
 		<property name="userAccount" ref="managerUserAccountEx" />
 	</bean>
 	
+	
+<bean name="managerUserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="manager" />
+		<property name="password" value="manager" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Daniel" />
+				<property name="surname" value="Castroviejo" />
+				<property name="email" value="dancasnar1@alum.us.es" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="managerManager" />
+				<ref bean="managerAuthenticated" />
+			</list>
+		</property>
+	</bean>
 
+	<bean name="managerManager" class="acme.entities.roles.Manager">
+		<property name="userAccount" ref="managerUserAccount" />
+	</bean>
+	
+	<bean name="managerAuthenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="managerUserAccount" />
+</bean>
 	
 <!-- Shouts -->
 
@@ -254,7 +280,18 @@
 		<property name="visibility" value="PRIVATE"></property>
 		<property name="link"><null/></property>
 		<property name="manager" ref="managerManagerEx"></property>
-
+	</bean>
+	
+	<bean id="task11" class="acme.entities.tasks.Task">
+		<property name="title" value="Task 11"/>
+		<property name="initialMoment" value="2021/07/10 15:30"/>
+		<property name="endMoment" value="2021/10/07 15:30"/>
+		<property name="description" value="Esta es la task 11"></property>
+		<property name="workload" value="25.3"></property>
+		<property name="executionPeriod" value="2136.0"></property>
+		<property name="visibility" value="PUBLIC"></property>
+		<property name="link"><null/></property>
+		<property name="manager" ref="managerManager"></property>
 	</bean>
 
 	<!-- WorkPlan-->
