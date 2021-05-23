@@ -39,6 +39,7 @@ public class ManagerTaskCreateTest extends AcmePlannerTest {
 		super.fillInputBoxIn("description", description);
 		super.fillInputBoxIn("link", link);
 		super.fillInputBoxIn("visibility", visibility);
+		
 		super.clickOnSubmitButton("Create");
 
 		super.clickOnMenu("Manager", "My tasks");
@@ -66,7 +67,7 @@ public class ManagerTaskCreateTest extends AcmePlannerTest {
 	}
 	
 	@ParameterizedTest
-	@CsvFileSource(resources = "/manager/task/negative-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/manager/task/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
 	public void createNegative(final int recordIndex, final String title, final String iniMoment, final String endMoment, final String exePeriod, final String workload, final String description, final String link, final String visibility) {
 		super.signIn("manager", "manager");
