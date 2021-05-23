@@ -16,7 +16,7 @@ public class ManagerTaskDeleteTest extends AcmePlannerTest{
 	@CsvFileSource(resources = "/manager/task/delete-positive.csv", encoding = "utf-8", numLinesToSkip= 1)
 	@Order(10)
 	public void deletePositive(final int recordIndex, final String title, final String iniMoment, final String endMoment, final String exePeriod, final String workload, final String description, final String visibility, final String link) {
-		super.signIn("manager", "manager");
+		super.signIn("managerEx", "managerEx");
 		
 		super.clickOnMenu("Manager", "My tasks");
 		
@@ -55,7 +55,7 @@ public class ManagerTaskDeleteTest extends AcmePlannerTest{
 		super.signIn("manager", "manager");
 		
 		final String s = this.getBaseUrl();
-		this.driver.get(s+"/management/task/delete?id=37");
+		this.driver.get(s+"/management/task/delete?id=42");
 		super.clickOnSubmitButton("Delete");
 		super.checkErrorsExist();
 		super.signOut();
