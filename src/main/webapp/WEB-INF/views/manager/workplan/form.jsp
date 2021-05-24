@@ -62,15 +62,16 @@
 
 <h2><acme:message code="manager.workplan.form.label.task.assigned"/></h2>
 	<table id="taskTable" class="table table-striped">
+	<caption></caption>
 		<thead>
 			<tr>
-				<th style="width: 14%;"><acme:message code="manager.workplan.form.label.title"/></th>
-				<th style="width: 14%;"><acme:message code="manager.workplan.form.label.workload"/></th>
-				<th style="width: 19%;"><acme:message code="manager.workplan.form.label.init"/></th>
-				<th style="width: 19%;"><acme:message code="manager.workplan.form.label.end"/></th>
-				<th style="width: 14%;"><acme:message code="manager.workplan.form.label.isPublic"/></th>
+				<th id="columnTable" style="width: 14%;"><acme:message code="manager.workplan.form.label.title"/></th>
+				<th id="columnTable" style="width: 14%;"><acme:message code="manager.workplan.form.label.workload"/></th>
+				<th id="columnTable" style="width: 19%;"><acme:message code="manager.workplan.form.label.init"/></th>
+				<th id="columnTable" style="width: 19%;"><acme:message code="manager.workplan.form.label.end"/></th>
+				<th id="columnTable" style="width: 14%;"><acme:message code="manager.workplan.form.label.isPublic"/></th>
 				<jstl:if test="${command == 'show' && isPublished=='false'}">
-				<th style="width: 10%;"><acme:message code="manager.workplan.form.label.link.unnassign"/></th>
+				<th id="columnTable" style="width: 10%;"><acme:message code="manager.workplan.form.label.link.unnassign"/></th>
 				</jstl:if>
 			</tr>
 		</thead>
