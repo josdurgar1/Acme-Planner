@@ -20,15 +20,11 @@ public class AuthenticatedManagerController extends AbstractController<Authentic
 		@Autowired
 		protected AuthenticatedManagerCreateService	createService;
 
-		@Autowired
-		protected AuthenticatedManagerUpdateService	updateService;
-
 		// Constructors -----------------------------------------------------------
 
 
 		@PostConstruct
 		protected void initialise() {
 			super.addBasicCommand(BasicCommand.CREATE, this.createService);
-			super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 		}
 }
