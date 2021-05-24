@@ -13,6 +13,12 @@ public class ManagerWorkplanCreateTest extends AcmePlannerTest {
 
 	// Test cases -------------------------------------------------------------
 
+	/*
+	 * Se autentica como un manager, después navega hasta Crear un Workplan, a continuación carga cos datos válidos
+	 * los campos, y envía el formulario. Posteriormente, lista los workplans del manager y comprueba que la lista
+	 * tiene los elementos correctos, para seguir visitando cada vista de cada workplan comprobando que se han guardado
+	 * los datos correctamente. Por último se desloguea de la aplicación.
+	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/workplan/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
@@ -24,10 +30,6 @@ public class ManagerWorkplanCreateTest extends AcmePlannerTest {
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("init", iniMoment);
 		super.fillInputBoxIn("end", endMoment);
-		//			super.fillInputBoxIn("workload", workload);
-		//			super.fillInputBoxIn("description", description);
-		//			super.fillInputBoxIn("link", link);
-		//			super.fillInputBoxIn("visibility", visibility);
 		super.clickOnSubmitButton("Create");
 
 		super.clickOnMenu("Manager", "List my Workplans");
@@ -51,6 +53,11 @@ public class ManagerWorkplanCreateTest extends AcmePlannerTest {
 		super.signOut();
 	}
 	
+	/*
+	 * Se autentica como manager, continua navegando al menu para crear un workplan, en cada prueba inserta algún
+	 * dato que contiene alguna restricción, enviando el formulario con esos errores y posteriormente comprobando que 
+	 * lanza los errores oportunos. Por último se desloguea.
+	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/workplan/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)

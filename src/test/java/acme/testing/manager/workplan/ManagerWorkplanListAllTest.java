@@ -8,7 +8,11 @@ import acme.testing.AcmePlannerTest;
 
 public class ManagerWorkplanListAllTest extends AcmePlannerTest{
 
-	
+	/*
+	 * Se autentica como un manager, posteriormente, lista los workplans del manager y comprueba que la lista
+	 * tiene los elementos correctos, para seguir visitando el show de cada workplan comprobando que los datos son los
+	 * correctos. Por último se desloguea de la aplicación.
+	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/workplan/listAll.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)

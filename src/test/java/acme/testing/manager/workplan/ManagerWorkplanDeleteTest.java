@@ -9,6 +9,12 @@ import acme.testing.AcmePlannerTest;
 
 public class ManagerWorkplanDeleteTest extends AcmePlannerTest {
 
+	/*
+	 * Se loguea como un manager, lista sus workplans, posteriormente navega para ver los detalles del workplan que le indicamos
+	 * según el recordIndex y le damos al botón de eliminar. Posteriormente comprobamos que en la lista, al volver a cargar el
+	 * mismo workplan según el recordIndex, el workplan que se carga es el siguiente, por lo que el anterior se borró
+	 * correctamente. Por último se desloguea.
+	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/workplan/delete-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
@@ -16,8 +22,6 @@ public class ManagerWorkplanDeleteTest extends AcmePlannerTest {
 		super.signIn("managerEx", "managerEx");
 
 		super.clickOnMenu("Manager", "List my Workplans");
-
-		//super.checkColumnHasValue(recordIndex, 0, title);
 
 		super.clickOnListingRecord(recordIndex);
 
@@ -40,8 +44,15 @@ public class ManagerWorkplanDeleteTest extends AcmePlannerTest {
 		super.checkInputBoxHasValue("executionPeriod", exePeriod);
 		super.checkInputBoxHasValue("isPublished", published);
 		super.checkInputBoxHasValue("isPublic", visibility);
+		super.signOut();
 
 	}
+	/*
+	 * Nos autenticamos como un manager, visitamos su lista de workplans, cargamos en detalle un workplan y lo publicamos,
+	 * a continuación navagamos hasta la pagina de eliminación del workplan que hemos publicado y le damos al botón de eliminar.
+	 * Posteriormente comprobamos que hay errores ya que no se puede eliminar un workplan que está publicado. Por último
+	 * nos delogueamos.
+	 */
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/workplan/delete-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
@@ -53,7 +64,6 @@ public class ManagerWorkplanDeleteTest extends AcmePlannerTest {
 		super.clickOnListingRecord(recordIndex);
 		super.clickOnSubmitButton("Publish");
 		final String s=this.getBaseUrl();
-//		this.driver.get("http://localhost:8080/Acme-Planner/management/workplan/delete?id=52");
 		this.driver.get(s+"/management/workplan/delete?id=53");
 		super.clickOnSubmitButton("Delete");
 		super.checkErrorsExist();
