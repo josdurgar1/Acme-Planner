@@ -13,18 +13,18 @@ public class AnonymousWorkplanListTest extends AcmePlannerTest{
 	@Order(10)
 	public void list(final int recordIndex, final String title, final String isPublic, final String isPublished, 
 		final String init, final String end, final String workload, final String executionPeriod) {
-		
+		//Clickamos en el menú de anonymous y seleccionamos la subopción Workplan List donde nos aparecerá el listado de Workplans
 		super.clickOnMenu("Anonymous", "Workplan List");
-		
+		//Comprobamos que los datos son los esperados
 		super.checkColumnHasValue(recordIndex, 0, title);
 		super.checkColumnHasValue(recordIndex, 1, isPublic);
 		super.checkColumnHasValue(recordIndex, 2, isPublished);
 		super.checkColumnHasValue(recordIndex, 3, init);
 		super.checkColumnHasValue(recordIndex, 4, end);
 		super.checkColumnHasValue(recordIndex, 5, workload);
-		
+		//Clickamos en el workplan con ese index para verlo con más detalle, hacia la vista del show
 		super.clickOnListingRecord(recordIndex);
-		
+		//Comprobamos que los datos son los esperados
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("isPublic", isPublic);
 		super.checkInputBoxHasValue("isPublished", isPublished);
