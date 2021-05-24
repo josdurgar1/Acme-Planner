@@ -22,6 +22,7 @@
 	<acme:form-submit test="${command == 'update'}" code="administrator.spam-word.form.button.update" action="/administrator/spam-word/update"/>
 	<acme:form-submit test="${command == 'show'}" code="administrator.spam-word.form.button.update" action="/administrator/spam-word/update"/>
 	<acme:form-submit test="${command == 'show'}" code="administrator.spam-word.form.button.delete" action="/administrator/spam-word/delete"/>
+	<acme:form-submit test="${command == 'delete'}" code="administrator.spam-word.form.button.delete" action="/administrator/spam-word/delete"/>
 	<acme:form-return code="administrator.spam-word.form.button.return"/>
 	
 </acme:form>

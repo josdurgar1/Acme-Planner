@@ -60,6 +60,12 @@ public class AdministratorSpamWordDeleteService implements AbstractDeleteService
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		final String namePrincipal = request.getPrincipal().getUsername();
+		final boolean esAdmin = namePrincipal.equals("administrator");
+		if(!esAdmin) {
+			errors.state(request, esAdmin, "word", "administrator.spam-word.form.error.authorities");
+		}
 	}
 
 	@Override

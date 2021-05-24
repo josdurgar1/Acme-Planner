@@ -19,3 +19,4 @@ administrator.spam-word.form.button.update = Update
 administrator.spam-word.form.button.delete = Delete
 administrator.spam-word.form.button.return = Return
 administrator.spam-word.form.label.word = Word
+administrator.spam-word.form.error.authorities = Access Denied

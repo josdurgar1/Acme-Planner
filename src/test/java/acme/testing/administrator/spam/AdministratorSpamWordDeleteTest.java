@@ -10,7 +10,7 @@ public class AdministratorSpamWordDeleteTest  extends AcmePlannerTest {
 	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/administrator/spam-word/delete-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(10)
+	@Order(20)
 	public void deletePositive(final int recordIndex, final String word) {
 		super.signIn("administrator", "administrator");
 
@@ -33,7 +33,7 @@ public class AdministratorSpamWordDeleteTest  extends AcmePlannerTest {
 	}
 	@ParameterizedTest
 	@CsvFileSource(resources = "/administrator/spam-word/delete-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(10)
+	@Order(30)
 	public void deleteNegative(final int recordIndex) {
 		super.signIn("manager", "manager");
 		
@@ -42,7 +42,22 @@ public class AdministratorSpamWordDeleteTest  extends AcmePlannerTest {
 		this.driver.get(s+"/administrator/spam-word/delete?id=7");
 		
 		super.checkErrorsExist();
+		
+		
 
+	}
+	
+	@ParameterizedTest
+	@CsvFileSource(resources = "/administrator/spam-word/delete-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(30)
+	public void deletePositive2(final int recordIndex) {
+		super.signIn("administrator", "administrator");
+		final String s=this.getBaseUrl();
+		this.driver.get(s+"/administrator/spam-word/delete?id=19");
+		super.clickOnSubmitButton("Delete");
+		this.driver.get(s+"/administrator/spam-word/delete?id=19");
+		super.checkErrorsExist();
+		super.signOut();
 	}
 
 }
