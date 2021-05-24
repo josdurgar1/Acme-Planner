@@ -54,7 +54,7 @@ public class ManagerWorkplanDeleteTest extends AcmePlannerTest {
 		super.clickOnSubmitButton("Publish");
 		final String s=this.getBaseUrl();
 //		this.driver.get("http://localhost:8080/Acme-Planner/management/workplan/delete?id=52");
-		this.driver.get(s+"/management/workplan/delete?id=52");
+		this.driver.get(s+"/management/workplan/delete?id=53");
 		super.clickOnSubmitButton("Delete");
 		super.checkErrorsExist();
 		super.signOut();
