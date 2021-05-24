@@ -8,21 +8,25 @@ import acme.testing.AcmePlannerTest;
 
 public class AnonymousTaskListTest extends AcmePlannerTest{
 
+	/*
+	 * Lista las tasks y comprueba que la lista tiene los elementos correctos.
+	 * Posteriormente visita cada tarea para comprobar que los datos son los que le corresponden
+	  */
 	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/task/list.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void list(final int recordIndex, final String title, final String iniMoment, final String endMoment, final String workload, final String exePeriod, final String description, final String link, final String visibility) {		
-		//Clickamos en el menú de anonymous y seleccionamos la subopción Task List donde nos aparecerá el listado de Tasks
+		
 		super.clickOnMenu("Anonymous", "Task List");
-		//Comprobamos que los datos son los esperados
+		
 		super.checkColumnHasValue(recordIndex, 0, title);
 		super.checkColumnHasValue(recordIndex, 1, iniMoment);
 		super.checkColumnHasValue(recordIndex, 2, endMoment);
 		super.checkColumnHasValue(recordIndex, 3, description);
-		//Clickamos en la tarea con ese index para verla con más detalle, hacia la vista del show
+		
 		super.clickOnListingRecord(recordIndex);
-		//Comprobamos que los datos son los esperados
+		
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("initialMoment", iniMoment);
 		super.checkInputBoxHasValue("endMoment", endMoment);

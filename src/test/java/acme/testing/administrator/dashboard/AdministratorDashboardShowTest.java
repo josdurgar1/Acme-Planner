@@ -6,13 +6,16 @@ import acme.testing.AcmePlannerTest;
 
 public class AdministratorDashboardShowTest extends AcmePlannerTest{
 
+	
+	/*
+	 * Se autentica como administrador, después navega hasta la vista de la Dashboard, a continuación visualiza
+	 * todos los datos que corresponden a la Dashboard
+	 */
+	
 	@Test
 	public void seeDashboard() {
-		//Nos logeamos como administrador
 		super.signIn("administrator", "administrator");
-		//Pulsamos sobre el menú de administrador y clickamos en la subopción Dashboard para ver la dashboard
 		super.clickOnMenu("Administrator", "Dashboard");
-		//Cerramos sesión
 		super.signOut();
 	}
 }
