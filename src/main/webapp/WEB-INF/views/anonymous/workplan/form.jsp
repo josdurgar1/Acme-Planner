@@ -14,13 +14,14 @@
 		
 		<h2><acme:message code="manager.workplan.form.label.task.assigned"/></h2>
 	<table id="taskTable" class="table table-striped">
+	<caption></caption>
 		<thead>
 			<tr>
-				<th style="width: 15%;"><acme:message code="manager.workplan.form.label.title"/></th>
-				<th style="width: 15%;"><acme:message code="manager.workplan.form.label.workload"/></th>
-				<th style="width: 20%;"><acme:message code="manager.workplan.form.label.init"/></th>
-				<th style="width: 20%;"><acme:message code="manager.workplan.form.label.end"/></th>
-				<th style="width: 15%;"><acme:message code="manager.workplan.form.label.isPublic"/></th>
+				<th id="columnTable" style="width: 15%;"><acme:message code="manager.workplan.form.label.title"/></th>
+				<th id="columnTable" style="width: 15%;"><acme:message code="manager.workplan.form.label.workload"/></th>
+				<th id="columnTable" style="width: 20%;"><acme:message code="manager.workplan.form.label.init"/></th>
+				<th id="columnTable" style="width: 20%;"><acme:message code="manager.workplan.form.label.end"/></th>
+				<th id="columnTable" style="width: 15%;"><acme:message code="manager.workplan.form.label.isPublic"/></th>
 			</tr>
 		</thead>
 		<tbody>
