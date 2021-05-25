@@ -11,7 +11,7 @@
 --%>
 
 <%@page language="java"
-	import="acme.framework.helpers.PrincipalHelper,acme.entities.roles.Provider,acme.entities.roles.Consumer"%>
+	import="acme.framework.helpers.PrincipalHelper,acme.entities.roles.Manager"%>
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>

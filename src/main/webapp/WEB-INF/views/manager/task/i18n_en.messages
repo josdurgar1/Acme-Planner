@@ -45,3 +45,4 @@ manager.task.form.error.nullworkload = Workload can't be null
 manager.task.form.error.negativeworkload = Workload must be greater than 0
 manager.task.form.error.nullendMoment = The end moment cannot be null
 manager.task.form.error.nullinitialMoment = The initial moment cannot be null
+manager.task.form.error.ended= Cannot delete task ended

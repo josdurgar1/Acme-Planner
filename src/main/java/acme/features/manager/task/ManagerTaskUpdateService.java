@@ -162,6 +162,12 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 			res = SpamRead.isSpam(umbral, entity.getTitle(), spamList);
 			errors.state(request, !res, "title", "manager.task.form.error.title");
 		}
+		if (!errors.hasErrors("endMoment")&& entity.getEndMoment()!=null) {
+			boolean res;
+			final Date now = new Date();
+			res=entity.getEndMoment().before(now);
+			errors.state(request, !res, "endMoment", "manager.task.form.error.ended");
+		}
 
 	}
 

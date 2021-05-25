@@ -45,3 +45,4 @@ manager.task.form.error.nullworkload = La carga de trabajo no puede ser nula
 manager.task.form.error.negativeworkload = La carga de trabajo debe ser mayor que 0
 manager.task.form.error.nullendMoment = El momento de finalización no puede ser nulo
 manager.task.form.error.nullinitialMoment = El momento de inicio no puede ser nulo
+manager.task.form.error.ended= No se puede modifcar ni eliminar una tarea que ha finalizado
