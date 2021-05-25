@@ -5,7 +5,7 @@
 
 
 <acme:list>
-			<acme:list-column code="administrator.spam.list.label.spamWords" path="umbral" width="60%"/>
+			<acme:list-column code="administrator.spam.form.label.threshold" path="umbral" width="60%"/>
 </acme:list>
 	
 	

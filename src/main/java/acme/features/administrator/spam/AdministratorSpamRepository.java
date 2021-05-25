@@ -22,7 +22,7 @@ public interface AdministratorSpamRepository extends AbstractRepository {
 	@Query("select s.umbral from Spam s")
 	double umbral();
 	
-	@Query("select spam from Spam spam JOIN FETCH spam.spamWords")
+	@Query("select spam from Spam spam")
 	List<Spam> findAllSpam();
 	
 	@Query("select spam from Spam spam")
