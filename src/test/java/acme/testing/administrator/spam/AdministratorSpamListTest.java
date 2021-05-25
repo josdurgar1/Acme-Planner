@@ -9,7 +9,7 @@ import acme.testing.AcmePlannerTest;
 public class AdministratorSpamListTest extends AcmePlannerTest{
 	
 	/*
-	 * Nos logueamos como administardor, navegamos hasta la lista de spam, donde tenemos el listado de 1 solo objeto de tipo
+	 * Nos logueamos como administrator, navegamos hasta la lista de spam, donde tenemos el listado de 1 solo objeto de tipo
 	 * umbral, comprobamos el listado, navegamos al objeto spam y comprobamos que el valor del atributo umbral es correcto.
 	 * Por último nos deslogueamos.
 	 */

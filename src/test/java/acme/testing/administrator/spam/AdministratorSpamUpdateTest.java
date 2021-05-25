@@ -8,6 +8,16 @@ import acme.testing.AcmePlannerTest;
 
 public class AdministratorSpamUpdateTest extends AcmePlannerTest{
 	
+	/* CASO POSITIVO
+	 * Se autentifica como administrator, accede al menu desplegable de administrator y navega hasta Spam Threshold, una vez dentro, comprueba que esta en el lugar correcto
+	 * y procede a modificar el umbral por un valor correcto proporcionado por el archivo .csv
+	 * CASO NEGATIVO
+	 * Se autentifica como administrator, accede al menu desplegable de administrator y navega hasta Spam Threshold, una vez dentro, comprueba que esta en el lugar correcto
+	 * y procede a modificar el umbral por valores incorrectos proporcionados por el archivo .csv devolviendo errores ya que se cumplen las restricciones.
+	 * 
+	 */
+	
+	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/administrator/spam/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
