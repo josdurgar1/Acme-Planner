@@ -24,6 +24,15 @@ public class ManagerTaskCreateTest extends AcmePlannerTest {
 
 	// Test cases -------------------------------------------------------------
 
+	/* CASO POSITIVO
+	 * Se autentifica como manager, accede al menu desplegable de manager y navega hasta la opcion de crear tarea, una vez dentro, introduce los valores
+	 * proporcionados en el archivo .csv los cuales son validos y pulsa el boton de crear. Una vez creada, accede a la lista de tareas propias, comprueba
+	 * que esta en la lista de las tareas y accede a la tarea creada y comprueba que los datos introducidos son los mismos.
+	 * CASO NEGATIVO
+	 * Se autentifica como manager, accede al menu desplegable de manager y navega hasta la opcion de crear tarea, una vez dentro, introduce los valores
+	 * proporcionados en el archivo .csv los cuales no son validos para comprobar que se cumplen todas las restricciones, una vez introducidos los datos, 
+	 * intenta crear una tarea y devuelve errores por lo no realiza acciones ilegales.
+	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)

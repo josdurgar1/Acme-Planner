@@ -8,6 +8,15 @@ import acme.testing.AcmePlannerTest;
 
 public class ManagerTaskUpdateTest extends AcmePlannerTest{
 	
+	/* CASO POSITIVO.
+	 * Se autentifica como manager, usa el menu desplegable de manager y accede a la lista de tareas propias, accede a la tarea con posición indicada en el archivo .csv
+	 * e introduce datos validos para actualizar la tarea.
+	 * CASO NEGATIVO.
+	 * Se autentifica como manager, usa el menu desplegable de manager y accede a la lista de tareas propias, accede a la tarea con posición indicada en el archivo .csv
+	 * e introduce datos no validos para comprobar que se cumplen las restricciones.
+	 * 
+	 */
+	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)	

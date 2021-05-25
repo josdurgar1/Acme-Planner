@@ -12,6 +12,16 @@ public class ManagerTaskDeleteTest extends AcmePlannerTest{
 	
 	// Test cases -----------------------------------------
 	
+	/*
+	 * CASO POSITIVO
+	 * Se autentifica como manager, accede al menu desplegable de manager y navega hasta las tareas propias, una vez en el listado de tareas propias
+	 * accede a la tarea indicada en el .csv y pulsa el boton "Delete", una vez borrada la tarea, vuelve a la lista de tareas propias y accede a la misma
+	 * posicion introducida anteriormente y comprueba que los datos que se muestran son los de la tarea siguiente a la borrada.
+	 * CASO NEGATIVO
+	 * Se autentifica como otro manager e introduce la url de una tarea ajena con la query de borrarla, al intentar esta acción devolverá un "Access Not Authorized"
+	 * por lo que devuelve un error frente a una accion ilegal.
+	 */
+	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task/delete-positive.csv", encoding = "utf-8", numLinesToSkip= 1)
 	@Order(10)

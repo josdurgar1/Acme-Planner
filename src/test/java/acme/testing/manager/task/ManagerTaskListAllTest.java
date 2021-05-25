@@ -8,7 +8,12 @@ import acme.testing.AcmePlannerTest;
 
 public class ManagerTaskListAllTest extends AcmePlannerTest{
 
-	
+	/*
+	 * Se autentifica como manager, usa el menu desplegable de manager y accede a la lista de tareas, comprueba que las columnas de 
+	 * la lista corresponden con las introducidas y va accediendo a las tareas una a una y comprobando que los datos del archivo .csv
+	 * corresponden con los mostrados.
+	 * 
+	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task/list-all.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
