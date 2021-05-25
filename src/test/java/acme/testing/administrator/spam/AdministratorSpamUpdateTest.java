@@ -12,8 +12,7 @@ public class AdministratorSpamUpdateTest extends AcmePlannerTest{
 	 * Se autentifica como administrator, accede al menu desplegable de administrator y navega hasta Spam Threshold, una vez dentro, comprueba que esta en el lugar correcto
 	 * y procede a modificar el umbral por un valor correcto proporcionado por el archivo .csv
 	 * CASO NEGATIVO
-	 * Se autentifica como administrator, accede al menu desplegable de administrator y navega hasta Spam Threshold, una vez dentro, comprueba que esta en el lugar correcto
-	 * y procede a modificar el umbral por valores incorrectos proporcionados por el archivo .csv devolviendo errores ya que se cumplen las restricciones.
+	 * Se autentifica como administrator, accede a la url para actualizar el umbral, procede a modificar el umbral por valores incorrectos proporcionados por el archivo .csv devolviendo errores ya que se cumplen las restricciones.
 	 * 
 	 */
 	
@@ -40,8 +39,9 @@ public class AdministratorSpamUpdateTest extends AcmePlannerTest{
 	@Order(20)
 	public void updateNegative(final int recordIndex, final String umbral) {
 		super.signIn("administrator", "administrator");
-
-		super.clickOnMenu("Administrator", "Spam Threshold");
+		
+		final String s=super.getBaseUrl();
+		super.driver.get(s+"/administrator/spam/update?id=20");
 		
 		super.fillInputBoxIn("umbral", umbral);
 
