@@ -15,7 +15,8 @@ public class AdministratorSpamWordDeleteTest  extends AcmePlannerTest {
 	 * de la palabra que ha borrado, hay otra palabra y que se ha borrado correctamente.
 	 * CASO NEGATIVO
 	 * Se autentifica como manager e intenta acceder a la url de una palabra con intencion de borrarla lo que devolvera un "Access Not Authorized" cumpliendo la restriccion
-	 * 
+	 * En el segundo negativo, se autentifica como administrator y accede a una palabra de spam, la borra y luego intenta acceder de nuevo
+	 * lo cual devuelve un error ya que no se puede borrar una palabra que no existe.
 	 * 
 	 */
 	
