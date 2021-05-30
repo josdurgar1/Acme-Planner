@@ -5,7 +5,6 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.tasks.Task;
 import acme.entities.workplan.Workplan;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -20,9 +19,9 @@ public class AnonymousWorkplanListService implements AbstractListService<Anonymo
 
 		protected AnonymousWorkplanRepository repository;
 		
-		public Double getWorkload(final Request<Task> request,  final Task entity, final Model model){
-			return (double) (entity.getEndMoment().getTime() - entity.getInitialMoment().getTime()) / 3600000;
-		}
+//		public Double getWorkload(final Request<Task> request,  final Task entity, final Model model){
+//			return (double) (entity.getEndMoment().getTime() - entity.getInitialMoment().getTime()) / 3600000;
+//		}
 			
 		@Override
 		public boolean authorise(final Request<Workplan> request) {
