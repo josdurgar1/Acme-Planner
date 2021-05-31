@@ -50,7 +50,7 @@
 		<h2><acme:form-selectM code="manager.workplan.form.label.task.unassigned"
 			path="tasks">
 			<jstl:forEach items="${allTask}" var="task">
-				<acme:form-option
+				<acme:form-optionScript
 					code="${task.title} - Workload: ${task.workload} - Init: ${task.initialMoment} - End: ${task.endMoment} - ${task.visibility}"
 					value="${task.id}" />
 			</jstl:forEach>
