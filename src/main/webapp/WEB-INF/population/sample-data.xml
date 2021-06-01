@@ -338,9 +338,9 @@
 			<property name="title" value="Workplan4"/>
 			<property name="isPublic" value="true"/>
 			<property name="isPublished" value="false"/>
-			<property name="executionPeriod" value="5136.98"/>
+			<property name="executionPeriod" value="4416.98"/>
 			<property name="workload" value="20.3"/>
-			<property name="init" value="2021/06/01 00:00"/>
+			<property name="init" value="2021/07/01 00:00"/>
 			<property name="end" value="2021/12/31 23:59"/>
 			<property name="manager" ref="managerManagerEx"/>
 			<property name="tasks">
