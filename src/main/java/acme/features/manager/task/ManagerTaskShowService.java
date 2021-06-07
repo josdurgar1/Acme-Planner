@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
-import acme.entities.tasks.TaskVisibility;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
@@ -36,8 +35,7 @@ public class ManagerTaskShowService implements AbstractShowService<Manager, Task
 			task = this.repository.findOneTaskById(taskId);
 			manager = task.getManager();
 			principal = request.getPrincipal();
-
-			result = manager.getUserAccount().getId() == principal.getAccountId() || task.getVisibility()==TaskVisibility.PUBLIC;
+			result = manager.getUserAccount().getId() == principal.getAccountId();
 			return result;
 		}
 
