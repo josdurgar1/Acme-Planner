@@ -116,8 +116,18 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		} else {
 			entity.setTasks(newTasks);
 		}
+		
+		final int workplanId;
+		Workplan workplan;
+		workplanId = request.getModel().getInteger("id");
+		workplan = this.repository.findOneWorkplanById(workplanId);
+		
+		final Date inicial=workplan.getInit();
+		final boolean b =inicial.after(entity.getInit());
+		final boolean b2=inicial.before(entity.getInit());
+		final boolean b3=b||b2;
 
-		if (!errors.hasErrors("init")) {
+		if (!errors.hasErrors("init")&&b3) {
 			final Date now = new Date();
 			final boolean res = entity.getInit().after(now);
 			errors.state(request, res, "init", "manager.workplan.form.error.init");
