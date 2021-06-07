@@ -46,4 +46,7 @@ manager.workplan.form.label.suggestionEnd	= It is suggested that the end date be
 manager.workplan.form.label.task			= Task: 
 manager.workplan.form.label.noTask			= -------------No Update Tasks-------------
 
+manager.workplan.form.label.link.detalles 	= Details
+
+
 

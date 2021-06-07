@@ -46,6 +46,6 @@ manager.workplan.form.label.suggestionEnd	= Se sugiere que la fecha de finalizac
 manager.workplan.form.label.task			= Tareas: 
 manager.workplan.form.label.noTask			= -------------Sin modificaciones de tareas-------------
 
-
+manager.workplan.form.label.link.detalles	= Detalles
 
 

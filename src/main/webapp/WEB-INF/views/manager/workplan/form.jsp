@@ -67,11 +67,12 @@
 			<tr>
 				<th id="columnTable" style="width: 14%;"><acme:message code="manager.workplan.form.label.title"/></th>
 				<th id="columnTable" style="width: 14%;"><acme:message code="manager.workplan.form.label.workload"/></th>
-				<th id="columnTable" style="width: 19%;"><acme:message code="manager.workplan.form.label.init"/></th>
-				<th id="columnTable" style="width: 19%;"><acme:message code="manager.workplan.form.label.end"/></th>
+				<th id="columnTable" style="width: 14%;"><acme:message code="manager.workplan.form.label.init"/></th>
+				<th id="columnTable" style="width: 14%;"><acme:message code="manager.workplan.form.label.end"/></th>
 				<th id="columnTable" style="width: 14%;"><acme:message code="manager.workplan.form.label.isPublic"/></th>
+				<th id="columnTable" style="width: 14%;"><acme:message code="manager.workplan.form.label.link.detalles"/></th>
 				<jstl:if test="${command == 'show' && isPublished=='false'}">
-				<th id="columnTable" style="width: 10%;"><acme:message code="manager.workplan.form.label.link.unnassign"/></th>
+				<th id="columnTable" style="width: 14%;"><acme:message code="manager.workplan.form.label.link.unnassign"/></th>
 				</jstl:if>
 			</tr>
 		</thead>
@@ -95,6 +96,10 @@
 					<jstl:if test="${task1.visibility=='PRIVATE'}" >
 					<acme:message code="manager.workplan.form.label.nopublic"/>
 					</jstl:if>
+					</td>
+					<td>
+				
+					<a 	class="btn btn-primary active" role="button" href="management/task/show?id=${task1.id}" class="nav-link"><acme:message code="manager.workplan.form.label.link.detalles"/></a>
 					</td>
 					<jstl:if test="${command == 'show' && isPublished=='false'}">
 					<td>
