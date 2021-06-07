@@ -22,6 +22,7 @@
 				<th id="columnTable" style="width: 20%;"><acme:message code="manager.workplan.form.label.init"/></th>
 				<th id="columnTable" style="width: 20%;"><acme:message code="manager.workplan.form.label.end"/></th>
 				<th id="columnTable" style="width: 15%;"><acme:message code="manager.workplan.form.label.isPublic"/></th>
+				<th id="columnTable" style="width: 14%;"><acme:message code="manager.workplan.form.label.link.detalles"/></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -44,6 +45,10 @@
 					<jstl:if test="${task.visibility=='PRIVATE'}" >
 					<acme:message code="manager.workplan.form.label.nopublic"/>
 					</jstl:if>
+					</td>
+					<td>
+				
+					<a 	class="btn btn-primary active" role="button" href="anonymous/task/show?id=${task.id}" class="nav-link"><acme:message code="manager.workplan.form.label.link.detalles"/></a>
 					</td>
 				</tr>
 			</jstl:forEach>
