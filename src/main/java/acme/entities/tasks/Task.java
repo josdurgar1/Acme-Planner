@@ -12,6 +12,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -37,12 +38,15 @@ public class Task extends DomainEntity {
 	protected String				title;
 	
 	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
 	protected Date					initialMoment;
 	
 	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
 	protected Date					endMoment;
 	
 	@Digits(integer = 3, fraction = 2)
+	@Positive
 	protected Double 				workload;
 
 	@NotEmpty
