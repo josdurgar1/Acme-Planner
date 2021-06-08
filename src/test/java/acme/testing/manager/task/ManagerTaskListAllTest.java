@@ -20,7 +20,7 @@ public class ManagerTaskListAllTest extends AcmePlannerTest{
 	public void listAll(final int recordIndex, final String title, final String iniMoment, final String endMoment, final String exePeriod, final String workload, final String description, final String visibility, final String link) {		
 		super.signIn("manager", "manager");
 		
-		super.clickOnMenu("Manager", "Tasks List");
+		super.clickOnMenu("Manager", "My tasks");
 		
 		super.checkColumnHasValue(recordIndex, 0, title);
 		super.checkColumnHasValue(recordIndex, 1, iniMoment);
